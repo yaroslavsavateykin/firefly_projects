@@ -1,0 +1,26 @@
+! H2 plain UHF/STO-3G singlet symmetric-candidate surface
+! Firefly 8.2.0, one RUNTYP=SURFACE job
+! Grid: R(H-H) = 5.000000 down to 0.400000 Angstrom, 93 points
+! $DATA starts at R=5.000000 Angstrom; $SURF moves atom 2 by DISP1.
+
+ $CONTRL SCFTYP=UHF RUNTYP=SURFACE MULT=1 ICHARG=0
+      MAXIT=100 UNITS=ANGS $END
+ $SYSTEM TIMLIM=600 MEMORY=1000000 $END
+ $BASIS GBASIS=STO NGAUSS=3 $END
+ $GUESS GUESS=HUCKEL $END
+ $SCF DAMP=.T. DIIS=.T. DIRSCF=.T. FDIFF=.F. SHIFT=.T.
+      SOSCF=.F. DENTOL=1.0E-4 $END
+ $SURF
+   IVEC1(1)=1,2
+   IGRP1(1)=2
+   ORIG1=0.000000
+   DISP1=-0.050000
+   NDISP1=93
+ $END
+
+ $DATA
+H2 plain UHF/STO-3G singlet symmetric-candidate surface; reverse scan R_start=5.000000 A, R_end=0.400000 A
+C1
+H 1.0 0.000000 0.000000 0.000000
+H 1.0 0.000000 0.000000 5.000000
+ $END

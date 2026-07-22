@@ -1,0 +1,112 @@
+              Grand Master is running on host yaroslavhonor
+              rank #     1 is running on host yaroslavhonor
+              rank #     2 is running on host yaroslavhonor
+              rank #     3 is running on host yaroslavhonor
+              rank #     4 is running on host yaroslavhonor
+              rank #     5 is running on host yaroslavhonor
+              rank #     6 is running on host yaroslavhonor
+              rank #     7 is running on host yaroslavhonor
+
+          ******************************************************
+          *      Firefly version 8.2.0, build number 10203     *
+          *   Compiled on    Monday,    19-09-2016, 15:30:23   *
+          *Code development and Intel/AMD specific optimization*
+          *  Copyright (c) 1994, 2016 by  Alex A. Granovsky,   *
+          *          Firefly Project, Moscow, Russia.          *
+          *   Some parts of this program include code due to   *
+          * work of Jim Kress, Peter Burger, and Robert Ponec. *
+          ******************************************************
+          *             Firefly Project homepage:              *
+          * http://classic.chem.msu.su/gran/firefly/index.html *
+          *                      e-mail:                       *
+          *               gran@classic.chem.msu.su             *
+          *This program is not a free software and is provided *
+          *exclusively to its registered users under the terms *
+          *       of Firefly package license agreement         *
+          * Unauthorized use of Firefly is strongly prohibited *
+          *   This program may not be redistributed without    *
+          * the specific, written permission of its developers.*
+          ******************************************************
+
+          ******************************************************
+          *  PARTIALLY BASED ON  US GAMESS VERSION 6 JUN 1999, *
+          *   US GAMESS VERSIONS  6 SEP 2001 AND 12 DEC 2003   *
+          *             FROM IOWA STATE UNIVERSITY             *
+          * M.W.SCHMIDT, K.K.BALDRIDGE, J.A.BOATZ, S.T.ELBERT, *
+          *   M.S.GORDON, J.H.JENSEN, S.KOSEKI, N.MATSUNAGA,   *
+          *          K.A.NGUYEN, S.J.SU, T.L.WINDUS,           *
+          *       TOGETHER WITH M.DUPUIS, J.A.MONTGOMERY       *
+          *         J.COMPUT.CHEM.  14, 1347-1363(1993)        *
+          ******************************************************
+
+
+ Core i7    / Linux  Firefly version running under Linux.
+ Running on Intel CPU:  Brand ID  0, Family  6, Model 170, Stepping  4
+ CPU Brand String    :  Intel(R) Core(TM) Ultra 5 125H                  
+ CPU Features        :  x87 FPU, CMOV, MMX, SSE, SSE2, SSE3, SSSE3, SSE4.1, SSE4.2, AVX, AVX2, FMA3, HTT, MWAIT, EM64T
+ Data cache size     :  L1 32 KB, L2 2048 KB, L3 18432 KB
+ max    # of   cores/package :  64
+ max    # of threads/package : 128
+ max     cache sharing level :  64
+ actual # of   cores/package :  18
+ actual # of threads/package :  18
+ actual # of threads/core    :   1
+ Operating System successfully passed SSE support test.
+ Operating System supports AVX/FMA.
+
+
+ PARALLEL VERSION (MPICH) RUNNING USING    8 PROCESSES (RANKS)
+
+
+ WARNING! THIS VERSION OF FIREFLY IS PROBABLY OUTDATED!
+ PLEASE CHECK FIREFLY HOMEPAGE FOR INFORMATION ON UPDATES!
+
+ EXECUTION OF FIREFLY BEGUN  9:24:33  7-MAY-2026    
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD> $CONTRL CITYP=ALDET D5=.T. EXETYP=RUN FSTINT=.T. GENCON=.F. ICHARG=0 ICUT=13   
+ INPUT CARD>      INTTYP=HONDO ITOL=30 MAXIT=100 MULT=1 RUNTYP=ENERGY SCFTYP=RHF WIDE=1 NOSY
+ INPUT CARD> $END                                                                           
+ INPUT CARD> $MOORTH NOSTF=.T. NOZERO=.T. SYMDEN=.T. SYMS=.T. SYMVEC=.T. SYMVX=.T.          
+ INPUT CARD>      TOLE=0.0D0 TOLZ=0.0D0 $END                                                
+ INPUT CARD> $GUESS GUESS=HUCKEL $END                                                       
+ INPUT CARD> $BASIS EXTFIL=.T. GBASIS=acc-pVDZ $END                                         
+ INPUT CARD> $SYSTEM KDIAG=0 MASMEM=200000000 MWORDS=200 MXBCST=-1 NOJAC=1 TIMLIM=60000 $END
+ INPUT CARD> $SCF DAMP=.T. DIIS=.T. DIRSCF=.T. FDIFF=.F. SHIFT=.T. SOSCF=.F. $END           
+ INPUT CARD> $CIDET NACT=29 NCORE=3 NELS=6 NSTATE=3 GROUP=c2v CVGTOL=1e-4 $END              
+ INPUT CARD> $DATA                                                                          
+ INPUT CARD> LiF CI coefficients R=6.50 Ang                                                 
+ INPUT CARD> Cnv 2                                                                          
+ INPUT CARD>                                                                                
+ INPUT CARD>Li    3.0     0.0000000000     0.0000000000     0.0000000000                    
+ INPUT CARD>F     9.0     0.0000000000     0.0000000000     6.5000000000                    
+ INPUT CARD>$END                                                                            
+
+ NAMELIST EXPECTS = OR ( 
+ **** ERROR READING INPUT GROUP $CONTRL   *****
+ THE PROBLEM IS WITH THIS CARD, BEFORE OR NEAR THE $ POINTER
+  $END                                                                           
+   $
+
+ LEGAL KEYWORDS FOR THIS GROUP ARE:
+  SCFTYP    RUNTYP    EXETYP    ICHARG    MULT      UNITS   
+  INTTYP    LOCAL     MAXIT     NPRINT    IREST     NORMF   
+  NORMP     ITOL      ICUT      NZVAR     NOSYM     GEOM    
+  MPLEVL    AIMPAC    ECP       PLTORB    MOLPLT    RPAC    
+  COORD     FRIEND    NOSO      CITYP     WIDE      OLDECP  
+  DFTTYP    D5        FSTINT    LEXCUT    REORDR    GENCON  
+  NUMDER    DFTD      HPGRAD    ICHECP    DFTNL   
+ ERROR IN $CONTRL INPUT - ABORTING
+
+ ADDRESS 0xAEA480F2 HAS INITIATED PROGRAM ABORT BECAUSE OF FATAL ERROR(S)
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.1 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.0 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     100.00%
+
+
+ WARNING! THIS VERSION OF FIREFLY IS PROBABLY OUTDATED!
+ PLEASE CHECK FIREFLY HOMEPAGE FOR INFORMATION ON UPDATES!
+
+ EXECUTION OF FIREFLY TERMINATED ABNORMALLY AT  9:24:33  7-MAY-2026    

@@ -1,0 +1,2516 @@
+              Grand Master is running on host yaroslavhonor
+              rank #     1 is running on host yaroslavhonor
+              rank #     2 is running on host yaroslavhonor
+              rank #     3 is running on host yaroslavhonor
+              rank #     4 is running on host yaroslavhonor
+              rank #     5 is running on host yaroslavhonor
+              rank #     6 is running on host yaroslavhonor
+              rank #     7 is running on host yaroslavhonor
+
+          ******************************************************
+          *      Firefly version 8.2.0, build number 10203     *
+          *   Compiled on    Monday,    19-09-2016, 15:30:23   *
+          *Code development and Intel/AMD specific optimization*
+          *  Copyright (c) 1994, 2016 by  Alex A. Granovsky,   *
+          *          Firefly Project, Moscow, Russia.          *
+          *   Some parts of this program include code due to   *
+          * work of Jim Kress, Peter Burger, and Robert Ponec. *
+          ******************************************************
+          *             Firefly Project homepage:              *
+          * http://classic.chem.msu.su/gran/firefly/index.html *
+          *                      e-mail:                       *
+          *               gran@classic.chem.msu.su             *
+          *This program is not a free software and is provided *
+          *exclusively to its registered users under the terms *
+          *       of Firefly package license agreement         *
+          * Unauthorized use of Firefly is strongly prohibited *
+          *   This program may not be redistributed without    *
+          * the specific, written permission of its developers.*
+          ******************************************************
+
+          ******************************************************
+          *  PARTIALLY BASED ON  US GAMESS VERSION 6 JUN 1999, *
+          *   US GAMESS VERSIONS  6 SEP 2001 AND 12 DEC 2003   *
+          *             FROM IOWA STATE UNIVERSITY             *
+          * M.W.SCHMIDT, K.K.BALDRIDGE, J.A.BOATZ, S.T.ELBERT, *
+          *   M.S.GORDON, J.H.JENSEN, S.KOSEKI, N.MATSUNAGA,   *
+          *          K.A.NGUYEN, S.J.SU, T.L.WINDUS,           *
+          *       TOGETHER WITH M.DUPUIS, J.A.MONTGOMERY       *
+          *         J.COMPUT.CHEM.  14, 1347-1363(1993)        *
+          ******************************************************
+
+
+ Core i7    / Linux  Firefly version running under Linux.
+ Running on Intel CPU:  Brand ID  0, Family  6, Model 170, Stepping  4
+ CPU Brand String    :  Intel(R) Core(TM) Ultra 5 125H                  
+ CPU Features        :  x87 FPU, CMOV, MMX, SSE, SSE2, SSE3, SSSE3, SSE4.1, SSE4.2, AVX, AVX2, FMA3, HTT, MWAIT, EM64T
+ Data cache size     :  L1 48 KB, L2 2048 KB, L3 18432 KB
+ max    # of   cores/package :  64
+ max    # of threads/package : 128
+ max     cache sharing level :  64
+ actual # of   cores/package :   9
+ actual # of threads/package :  18
+ actual # of threads/core    :   2
+ Operating System successfully passed SSE support test.
+ Operating System supports AVX/FMA.
+
+
+ PARALLEL VERSION (MPICH) RUNNING USING    8 PROCESSES (RANKS)
+
+
+ WARNING! THIS VERSION OF FIREFLY IS PROBABLY OUTDATED!
+ PLEASE CHECK FIREFLY HOMEPAGE FOR INFORMATION ON UPDATES!
+
+ EXECUTION OF FIREFLY BEGUN  8:28:12  7-MAY-2026    
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD> $CONTRL CITYP=ALDET D5=.T. EXETYP=RUN FSTINT=.T. GENCON=.F. ICHARG=0 ICUT=13   
+ INPUT CARD>      INTTYP=HONDO ITOL=30 MAXIT=100 MULT=1 NUMDER=.T. RUNTYP=SURFACE SCFTYP=RHF
+ INPUT CARD> $END                                                                           
+ INPUT CARD> $MOORTH NOSTF=.T. NOZERO=.T. SYMDEN=.T. SYMS=.T. SYMVEC=.T. SYMVX=.T.          
+ INPUT CARD>      TOLE=0.0D0 TOLZ=0.0D0 $END                                                
+ INPUT CARD> $GUESS GUESS=HUCKEL $END                                                       
+ INPUT CARD> $BASIS EXTFIL=.T. GBASIS=acc-pVDZ $END                                         
+ INPUT CARD> $SYSTEM KDIAG=0 MASMEM=200000000 MWORDS=200 MXBCST=-1 NOJAC=1 TIMLIM=60000 $END
+ INPUT CARD> $SURF DISP1=0.10 NDISP1=31 IGRP1(1)=2 IVEC1(1)=1,2 NSURF=3 $END                
+ INPUT CARD> $SCF DAMP=.T. DIIS=.T. DIRSCF=.T. FDIFF=.F. SHIFT=.T. SOSCF=.F. $END           
+ INPUT CARD> $CIDET NACT=29 NCORE=3 NELS=6 NSTATE=3 GROUP=c2v CVGTOL=1e-4 $END              
+ INPUT CARD> $DATA                                                                          
+ INPUT CARD> LiF dense crossing scan R=5.25-8.25 Ang                                        
+ INPUT CARD> Cnv 2                                                                          
+ INPUT CARD>                                                                                
+ INPUT CARD>Li    3.0     0.0000000000     0.0000000000     0.0000000000                    
+ INPUT CARD>F     9.0     0.0000000000     0.0000000000     5.2500000000                    
+ INPUT CARD>$END                                                                            
+  200000000 WORDS OF MEMORY AVAILABLE
+
+ This job is executing on     1 unique host(s)
+ Minimum number of processes per host is:    8
+ Maximum number of processes per host is:    8
+
+ On master's host, detected   18 CPU core(s) in aggregate
+
+ Using processor-specific dynamic link DGEMM library code.
+
+
+ Warning: HTT is enabled, bitmask of physically unique cores is 0x000000B4
+
+ SMT aware parts of program will use              2 threads.
+
+ Creating thread pool to serve up to            128 threads.
+
+
+ Loading P2P interface library... loaded successfully (version 2.4).
+ Initializing global P2P interface... topology done.
+
+
+     $BASIS REQUESTS READING THE "ACC-PVDZ" BASIS SET FROM AN EXTERNAL FILE
+
+
+     RUN TITLE
+     ---------
+  LiF dense crossing scan R=5.25-8.25 Ang                                        
+
+ THE POINT GROUP OF THE MOLECULE IS CNV     
+ THE ORDER OF THE PRINCIPAL AXIS IS     2
+ *** WARNING! ATOM   2 SHELL   10 TYPE S HAS NORMALIZATION   0.99954745
+ *** WARNING! ATOM   2 SHELL   11 TYPE S HAS NORMALIZATION   1.94662964
+ *** WARNING! ATOM   2 SHELL   13 TYPE P HAS NORMALIZATION   1.44467270
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ LI          3.0     0.0000000000        0.0000000000        0.0000000000
+ F           9.0     0.0000000000        0.0000000000        9.9210621587
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                    LI             F         
+
+  1  LI              0.0000000      5.2500000    
+  2  F               5.2500000      0.0000000    
+
+  * ... LESS THAN  3.000
+
+
+     ATOMIC BASIS SET
+     ----------------
+ THE CONTRACTED PRIMITIVE FUNCTIONS HAVE BEEN UNNORMALIZED
+ THE CONTRACTED BASIS FUNCTIONS ARE NOW NORMALIZED TO UNITY
+
+ SHELL TYPE PRIM    EXPONENT          CONTRACTION COEFFICIENTS
+
+ LI        
+
+   1   S    1    1469.000000    0.129540 (  0.000766) 
+   1   S    2     220.500000    0.240287 (  0.005892) 
+   1   S    3      50.260000    0.399171 (  0.029671) 
+   1   S    4      14.240000    0.570408 (  0.109180) 
+   1   S    5       4.581000    0.631093 (  0.282789) 
+   1   S    6       1.580000    0.455113 (  0.453123) 
+   1   S    7       0.564000    0.127452 (  0.274774) 
+   1   S    8       0.073450    0.000981 (  0.009751) 
+   1   S    9       0.028050   -0.000155 ( -0.003180) 
+
+   2   S   10    1469.000000   -0.020294 ( -0.000120) 
+   2   S   11     220.500000   -0.037642 ( -0.000923) 
+   2   S   12      50.260000   -0.063082 ( -0.004689) 
+   2   S   13      14.240000   -0.092379 ( -0.017682) 
+   2   S   14       4.581000   -0.109133 ( -0.048902) 
+   2   S   15       1.580000   -0.096431 ( -0.096009) 
+   2   S   16       0.564000   -0.063259 ( -0.136380) 
+   2   S   17       0.073450    0.057829 (  0.575102) 
+   2   S   18       0.028050    0.025287 (  0.517661) 
+
+   3   S   19       0.028050    0.048849 (  1.000000) 
+
+   4   P   20       1.534000    0.055444 (  0.022784) 
+   4   P   21       0.274900    0.039469 (  0.139107) 
+   4   P   22       0.073620    0.027351 (  0.500375) 
+   4   P   23       0.024030    0.006857 (  0.508474) 
+
+   5   P   24       0.024030    0.013486 (  1.000000) 
+
+   6   D   25       0.114400    0.037039 (  1.000000) 
+
+   7   S   26       0.008600    0.020127 (  1.000000) 
+
+   8   P   27       0.005800    0.002282 (  1.000000) 
+
+   9   D   28       0.073300    0.016996 (  1.000000) 
+
+ F         
+
+  10   S   29   14710.000000    0.686054 (  0.000721) 
+  10   S   30    2207.000000    1.273776 (  0.005553) 
+  10   S   31     502.800000    2.138157 (  0.028267) 
+  10   S   32     142.600000    3.129135 (  0.106444) 
+  10   S   33      46.470000    3.636582 (  0.286814) 
+  10   S   34      16.700000    2.640279 (  0.448641) 
+  10   S   35       6.356000    0.755015 (  0.264761) 
+  10   S   36       1.316000    0.013421 (  0.015333) 
+
+  11   S   37   14710.000000   -0.305764 ( -0.000165) 
+  11   S   38    2207.000000   -0.584323 ( -0.001308) 
+  11   S   39     502.800000   -0.956795 ( -0.006495) 
+  11   S   40     142.600000   -1.528086 ( -0.026691) 
+  11   S   41      46.470000   -1.819623 ( -0.073690) 
+  11   S   42      16.700000   -1.957301 ( -0.170776) 
+  11   S   43       6.356000   -0.623829 ( -0.112327) 
+  11   S   44       1.316000    0.959401 (  0.562814) 
+
+  12   S   45       0.389700    0.351526 (  1.000000) 
+
+  13   P   46      22.670000    4.571487 (  0.044878) 
+  13   P   47       4.977000    3.608377 (  0.235718) 
+  13   P   48       1.347000    1.519595 (  0.508521) 
+
+  14   P   49       0.347100    0.379759 (  1.000000) 
+
+  15   D   50       1.640000    3.911886 (  1.000000) 
+
+  16   S   51       0.098630    0.125434 (  1.000000) 
+
+  17   P   52       0.085020    0.065440 (  1.000000) 
+
+  18   D   53       0.464000    0.429354 (  1.000000) 
+
+ TOTAL NUMBER OF SHELLS              =   18
+ TOTAL NUMBER OF BASIS FUNCTIONS     =   50
+ NUMBER OF ELECTRONS                 =   12
+ CHARGE OF MOLECULE                  =    0
+ STATE MULTIPLICITY                  =    1
+ NUMBER OF OCCUPIED ORBITALS (ALPHA) =    6
+ NUMBER OF OCCUPIED ORBITALS (BETA ) =    6
+ TOTAL NUMBER OF ATOMS               =    2
+ THE NUCLEAR REPULSION ENERGY IS        2.7214827977
+ TOTAL NUMBER OF CONTAMINANTS DROPPED=    4
+
+
+ THIS MOLECULE IS RECOGNIZED AS BEING LINEAR.
+
+     $CONTRL OPTIONS
+     ---------------
+     SCFTYP=RHF          RUNTYP=SURFACE      EXETYP=RUN     
+     MPLEVL=       0     LOCAL =NONE         UNITS =ANGS    
+     MULT  =       1     ICHARG=       0     MAXIT =     100
+     NPRINT=       7     IREST =       0     COORD =UNIQUE  
+     ECP   =NONE         NORMF =       0     NORMP =       0
+     ITOL  =      30     ICUT  =      13     NZVAR =       0
+     NOSYM =       0     INTTYP=HONDO        GEOM  =INPUT   
+     PLTORB=       F     MOLPLT=       F     RPAC  =       F
+     AIMPAC=       0     FRIEND=             CITYP =ALDET   
+     DFTTYP=NONE    
+
+     $SYSTEM OPTIONS
+     ---------------
+     KDIAG =       0     MEMORY=200000000     TIMLIM=  3600000.0 SEC.
+     COREFL=       F     PTIME =        F     XDR   =       F
+     BALTYP=NXTVAL       CBASE = 09001000     FBASE = B11B10C0
+
+          ----------------
+          PROPERTIES INPUT
+          ----------------
+
+     MOMENTS            FIELD           POTENTIAL          DENSITY
+ IEMOM =       1   IEFLD =       0   IEPOT =       0   IEDEN =       0
+ WHERE =COMASS     WHERE =NUCLEI     WHERE =NUCLEI     WHERE =NUCLEI  
+ OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH    
+ IEMINT=       0   IEFINT=       0                     IEDINT=       0
+                                                       MORB  =       0
+
+          EXTRAPOLATION IN EFFECT
+          DAMPING IN EFFECT
+          LEVEL SHIFTING IN EFFECT
+          DIIS IN EFFECT
+
+          ----------------------
+          INTEGRAL INPUT OPTIONS
+          ----------------------
+ NOPK  =       1 NORDER=       0 SCHWRZ=       T
+
+ ATTENTION! AO INTEGRALS WILL BE PACKED.
+ THRESHOLD FOR PACKING PKTHR =  0.10000000D-05
+
+     -------------------------------
+     INTEGRAL TRANSFORMATION OPTIONS
+     -------------------------------
+     NWORD  =       0     CUTTRF = 1.0E-09
+     MPTRAN =       0     DIRTRF =       T
+     AOINTS =DUP          IREST  =       0
+
+     ------------------------------------------
+     THE POINT GROUP IS CNV, NAXIS= 2, ORDER= 4
+     ------------------------------------------
+
+     DIMENSIONS OF THE SYMMETRY SUBSPACES ARE
+ A1  =  26      A2  =   4      B1  =  10      B2  =  10
+
+ ..... DONE SETTING UP THE RUN .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.16 ,  TOTAL =        0.3 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.21 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =     77.69%,  TOTAL =     150.52%
+
+     ---------------------------
+     POTENTIAL SURFACE MAP INPUT
+     ---------------------------
+ COORD 1 LYING ALONG ATOM PAIR    1    2
+ HAS ORIGIN= 0.000, DISPLACEMENT= 0.100  AND  31 STEPS.
+ GROUP 1 CONTAINS    1 ATOMS:
+     2
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =        0.3 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =     75.59%,  TOTAL =     146.00%
+
+          -------------
+          GUESS OPTIONS
+          -------------
+          GUESS =HUCKEL            NORB  =       0          NORDER=       0
+          MIX   =       F          PRTMO =       F          SYMDEN=       F
+          TOLZ  = 0.0E+00          TOLE  = 0.0E+00
+
+ INITIAL GUESS ORBITALS GENERATED BY HUCKEL   ROUTINE.
+ HUCKEL GUESS REQUIRES     19614 WORDS.
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.17568064E+00
+
+ SYMMETRIES FOR INITIAL GUESS ORBITALS FOLLOW.   BOTH SET(S).
+     6 ORBITALS ARE OCCUPIED (    2 CORE ORBITALS).
+     3=A1       4=A1       5=B1       6=B2       7=A1       8=A1       9=A1  
+    10=B2      11=B1      12=A1      13=A1      14=B2      15=B1      16=A2  
+ ...... END OF INITIAL ORBITAL SELECTION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =        0.3 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.03 ,  TOTAL =        0.3 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =     30.42%,  TOTAL =     130.93%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.3 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =        0.3 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     127.18%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+   1  0  0  -106.493950327  -106.493950327   1.666460337   1.009150600     0.000000000     1.000000000         863013      1132
+   2  1  0  -105.469919833     1.024030493   0.158844632   0.908900747     2.000000000     1.000000000         863013      1132
+   3  2  0  -105.821211827    -0.351291993   0.071631560   0.617376124     4.000000000     4.000000000         863013      1132
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   4  3  0  -105.930878027    -0.109666201   1.528636460   0.487739581     0.000000000     4.000000000         863013      1132
+   5  4  0  -106.198895613    -0.268017586   0.203032330   0.620039504     0.000000000     4.000000000         863013      1132
+   6  5  0  -106.585840856    -0.386945243   0.119710263   0.383461839     0.000000000     4.000000000         863013      1132
+   7  6  0  -106.721840450    -0.135999594   0.067881613   0.199984108     0.000000000     4.000000000         863013      1132
+   8  7  0  -106.757444354    -0.035603904   0.029260839   0.087891017     0.000000000     4.000000000         863013      1132
+   9  8  0  -106.763673330    -0.006228976   0.032043426   0.043202515     0.000000000     4.000000000         863013      1132
+  10  9  0  -106.765673816    -0.002000485   0.003577428   0.004827240     0.000000000     4.000000000         863013      1132
+  11 10  0  -106.765694065    -0.000020250   0.002402914   0.000837680     0.000000000     4.000000000         863013      1132
+  12 11  0  -106.765697302    -0.000003237   0.000691651   0.000172558     0.000000000     4.000000000         863013      1132
+  13 12  0  -106.765697378    -0.000000076   0.000121893   0.000190530     0.000000000     4.000000000         863013      1132
+  14 13  0  -106.765697413    -0.000000035   0.000013278   0.000009215     0.000000000     4.000000000         863013      1132
+  15 14  0  -106.765697413     0.000000000   0.000008562   0.000002252     0.000000000     4.000000000         863013      1132
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.23 SECONDS (       0.02 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.02, LAST ITERATION=       0.02
+     TIME TO SOLVE SCF EQUATIONS =       0.06 SECONDS (       0.00 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7656974130 AFTER  15 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.29 ,  TOTAL =        0.6 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.38 ,  TOTAL =        0.6 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =     76.46%,  TOTAL =      97.06%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        0.6 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        0.6 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      96.39%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   0.00000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7899890580        -106.7712325599        -106.7701189559 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          5.2500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     65.44 ,  TOTAL =       66.1 SECONDS (    1.1 MIN)
+ WALL CLOCK TIME:   STEP =     91.96 ,  TOTAL =       92.6 SECONDS (    1.5 MIN)
+ CPU UTILIZATION:   STEP =     71.16%,  TOTAL =      71.34%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.16930677E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =       66.1 SECONDS (    1.1 MIN)
+ WALL CLOCK TIME:   STEP =      0.07 ,  TOTAL =       92.7 SECONDS (    1.5 MIN)
+ CPU UTILIZATION:   STEP =     13.67%,  TOTAL =      71.29%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.763767980  -106.763767980   0.001097708   0.000413255     0.000000000     1.000000000         863013      1132
+   2  1  0  -106.763768829    -0.000000849   0.000368467   0.000160985     0.022667255     1.000000000         863013      1132
+   3  2  0  -106.763768968    -0.000000139   0.000254213   0.000117582     0.000000000     1.000000000         863013      1132
+   4  3  0  -106.763769023    -0.000000055   0.000269747   0.000055503     0.000000000     1.000000000         863013      1132
+   5  4  0  -106.763769047    -0.000000024   0.000100746   0.000015417     0.000000000     1.000000000         863013      1132
+   6  5  0  -106.763769049    -0.000000003   0.000016317   0.000002932     0.000000000     1.000000000         863013      1132
+   7  6  0  -106.763769049     0.000000000   0.000001190   0.000000930     0.000000000     1.000000000         863013      1132
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.08 SECONDS (       0.01 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.01, LAST ITERATION=       0.01
+     TIME TO SOLVE SCF EQUATIONS =       0.04 SECONDS (       0.01 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7637690494 AFTER   7 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.15 ,  TOTAL =       66.2 SECONDS (    1.1 MIN)
+ WALL CLOCK TIME:   STEP =      0.44 ,  TOTAL =       93.1 SECONDS (    1.6 MIN)
+ CPU UTILIZATION:   STEP =     34.02%,  TOTAL =      71.12%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =       66.2 SECONDS (    1.1 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =       93.1 SECONDS (    1.6 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      71.11%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   0.10000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7879487370        -106.7711623674        -106.7701342709 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          5.3500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     64.50 ,  TOTAL =      130.7 SECONDS (    2.2 MIN)
+ WALL CLOCK TIME:   STEP =     91.09 ,  TOTAL =      184.2 SECONDS (    3.1 MIN)
+ CPU UTILIZATION:   STEP =     70.81%,  TOTAL =      70.96%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.16355072E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =      130.7 SECONDS (    2.2 MIN)
+ WALL CLOCK TIME:   STEP =      0.04 ,  TOTAL =      184.2 SECONDS (    3.1 MIN)
+ CPU UTILIZATION:   STEP =     27.05%,  TOTAL =      70.95%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.761913673  -106.761913673   0.001007451   0.000413176     0.000000000     1.000000000         863013      1132
+   2  1  0  -106.761914415    -0.000000741   0.000330742   0.000147617     0.025991901     1.000000000         863013      1132
+   3  2  0  -106.761914535    -0.000000120   0.000235261   0.000107364     0.000000000     1.000000000         863013      1132
+   4  3  0  -106.761914583    -0.000000048   0.000252079   0.000052202     0.000000000     1.000000000         863013      1132
+   5  4  0  -106.761914604    -0.000000021   0.000095461   0.000014564     0.000000000     1.000000000         863013      1132
+   6  5  0  -106.761914607    -0.000000002   0.000016684   0.000002732     0.000000000     1.000000000         863013      1132
+   7  6  0  -106.761914607     0.000000000   0.000001031   0.000000868     0.000000000     1.000000000         863013      1132
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.11 SECONDS (       0.02 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.02, LAST ITERATION=       0.02
+     TIME TO SOLVE SCF EQUATIONS =       0.04 SECONDS (       0.01 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7619146066 AFTER   7 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.15 ,  TOTAL =      130.9 SECONDS (    2.2 MIN)
+ WALL CLOCK TIME:   STEP =      0.34 ,  TOTAL =      184.6 SECONDS (    3.1 MIN)
+ CPU UTILIZATION:   STEP =     44.49%,  TOTAL =      70.90%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =      130.9 SECONDS (    2.2 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =      184.6 SECONDS (    3.1 MIN)
+ CPU UTILIZATION:   STEP =    195.24%,  TOTAL =      70.91%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   0.20000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7859900825        -106.7710925395        -106.7701367142 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          5.4500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     62.63 ,  TOTAL =      193.5 SECONDS (    3.2 MIN)
+ WALL CLOCK TIME:   STEP =     88.64 ,  TOTAL =      273.2 SECONDS (    4.6 MIN)
+ CPU UTILIZATION:   STEP =     70.66%,  TOTAL =      70.83%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.15839778E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =      193.5 SECONDS (    3.2 MIN)
+ WALL CLOCK TIME:   STEP =      0.03 ,  TOTAL =      273.3 SECONDS (    4.6 MIN)
+ CPU UTILIZATION:   STEP =     30.54%,  TOTAL =      70.82%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.760128974  -106.760128974   0.000922616   0.000407675     0.000000000     1.000000000         863013      1132
+   2  1  0  -106.760129621    -0.000000647   0.000296553   0.000135567     0.029205710     1.000000000         863013      1132
+   3  2  0  -106.760129726    -0.000000105   0.000218740   0.000097912     0.000000000     1.000000000         863013      1132
+   4  3  0  -106.760129768    -0.000000042   0.000235632   0.000048995     0.000000000     1.000000000         863013      1132
+   5  4  0  -106.760129787    -0.000000019   0.000090567   0.000013756     0.000000000     1.000000000         863013      1132
+   6  5  0  -106.760129788    -0.000000002   0.000017028   0.000002538     0.000000000     1.000000000         863013      1132
+   7  6  0  -106.760129789     0.000000000   0.000000947   0.000000805     0.000000000     1.000000000         863013      1132
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.07 SECONDS (       0.01 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.01, LAST ITERATION=       0.00
+     TIME TO SOLVE SCF EQUATIONS =       0.03 SECONDS (       0.00 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7601297886 AFTER   7 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.11 ,  TOTAL =      193.6 SECONDS (    3.2 MIN)
+ WALL CLOCK TIME:   STEP =      0.45 ,  TOTAL =      273.7 SECONDS (    4.6 MIN)
+ CPU UTILIZATION:   STEP =     24.49%,  TOTAL =      70.75%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =      193.6 SECONDS (    3.2 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =      273.7 SECONDS (    4.6 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      70.74%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   0.30000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7841095584        -106.7710233538        -106.7701267406 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          5.5500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     65.51 ,  TOTAL =      259.1 SECONDS (    4.3 MIN)
+ WALL CLOCK TIME:   STEP =     93.77 ,  TOTAL =      367.5 SECONDS (    6.1 MIN)
+ CPU UTILIZATION:   STEP =     69.86%,  TOTAL =      70.52%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.15382377E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =      259.1 SECONDS (    4.3 MIN)
+ WALL CLOCK TIME:   STEP =      0.06 ,  TOTAL =      367.6 SECONDS (    6.1 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      70.51%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.758409905  -106.758409905   0.000843423   0.000397657     0.000000000     1.000000000         863013      1132
+   2  1  0  -106.758410471    -0.000000566   0.000266997   0.000124598     0.032314059     1.000000000         863013      1132
+   3  2  0  -106.758410562    -0.000000091   0.000203811   0.000089213     0.000000000     1.000000000         863013      1132
+   4  3  0  -106.758410599    -0.000000037   0.000219897   0.000045872     0.000000000     1.000000000         863013      1132
+   5  4  0  -106.758410616    -0.000000017   0.000086036   0.000012998     0.000000000     1.000000000         863013      1132
+   6  5  0  -106.758410617    -0.000000002   0.000017360   0.000002352     0.000000000     1.000000000         863013      1132
+   7  6  0  -106.758410617     0.000000000   0.000000874   0.000000743     0.000000000     1.000000000         863013      1132
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.05 SECONDS (       0.01 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.01, LAST ITERATION=       0.00
+     TIME TO SOLVE SCF EQUATIONS =       0.05 SECONDS (       0.01 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7584106175 AFTER   7 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.12 ,  TOTAL =      259.3 SECONDS (    4.3 MIN)
+ WALL CLOCK TIME:   STEP =      0.31 ,  TOTAL =      367.9 SECONDS (    6.1 MIN)
+ CPU UTILIZATION:   STEP =     39.18%,  TOTAL =      70.48%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =      259.3 SECONDS (    4.3 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =      367.9 SECONDS (    6.1 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      70.48%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   0.40000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7823044983        -106.7709552384        -106.7701044320 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          5.6500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     66.10 ,  TOTAL =      325.4 SECONDS (    5.4 MIN)
+ WALL CLOCK TIME:   STEP =     95.65 ,  TOTAL =      463.5 SECONDS (    7.7 MIN)
+ CPU UTILIZATION:   STEP =     69.11%,  TOTAL =      70.20%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.14979770E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =      325.4 SECONDS (    5.4 MIN)
+ WALL CLOCK TIME:   STEP =      0.11 ,  TOTAL =      463.6 SECONDS (    7.7 MIN)
+ CPU UTILIZATION:   STEP =      9.22%,  TOTAL =      70.18%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.756752788  -106.756752788   0.000769630   0.000383994     0.000000000     1.000000000         863013      1132
+   2  1  0  -106.756753285    -0.000000497   0.000243879   0.000114598     0.035322024     1.000000000         863013      1132
+   3  2  0  -106.756753364    -0.000000080   0.000190145   0.000081279     0.000000000     1.000000000         863013      1132
+   4  3  0  -106.756753397    -0.000000032   0.000204819   0.000042850     0.000000000     1.000000000         863013      1132
+   5  4  0  -106.756753411    -0.000000015   0.000081883   0.000012293     0.000000000     1.000000000         863013      1132
+   6  5  0  -106.756753413    -0.000000002   0.000017674   0.000002175     0.000000000     1.000000000         863013      1132
+   7  6  0  -106.756753413     0.000000000   0.000000803   0.000000681     0.000000000     1.000000000         863013      1132
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.07 SECONDS (       0.01 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.01, LAST ITERATION=       0.00
+     TIME TO SOLVE SCF EQUATIONS =       0.03 SECONDS (       0.00 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7567534126 AFTER   7 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.10 ,  TOTAL =      325.5 SECONDS (    5.4 MIN)
+ WALL CLOCK TIME:   STEP =      0.76 ,  TOTAL =      464.4 SECONDS (    7.7 MIN)
+ CPU UTILIZATION:   STEP =     13.19%,  TOTAL =      70.09%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =      325.5 SECONDS (    5.4 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =      464.4 SECONDS (    7.7 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      70.09%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   0.50000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7805733257        -106.7708886600        -106.7700691045 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          5.7500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     61.30 ,  TOTAL =      386.8 SECONDS (    6.4 MIN)
+ WALL CLOCK TIME:   STEP =    107.96 ,  TOTAL =      572.3 SECONDS (    9.5 MIN)
+ CPU UTILIZATION:   STEP =     56.78%,  TOTAL =      67.58%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.14628371E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =      386.8 SECONDS (    6.4 MIN)
+ WALL CLOCK TIME:   STEP =      0.10 ,  TOTAL =      572.4 SECONDS (    9.5 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      67.57%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.755154217  -106.755154217   0.000701032   0.000367466     0.000000000     1.000000000         861429      1136
+   2  1  0  -106.755154656    -0.000000439   0.000222756   0.000105459     0.038234369     1.000000000         861429      1136
+   3  2  0  -106.755154725    -0.000000070   0.000177479   0.000074086     0.000000000     1.000000000         861429      1136
+   4  3  0  -106.755154754    -0.000000029   0.000190369   0.000039945     0.000000000     1.000000000         861429      1136
+   5  4  0  -106.755154767    -0.000000013   0.000078088   0.000011639     0.000000000     1.000000000         861429      1136
+   6  5  0  -106.755154768    -0.000000001   0.000017968   0.000002009     0.000000000     1.000000000         861429      1136
+   7  6  0  -106.755154768     0.000000000   0.000000736   0.000000621     0.000000000     1.000000000         861429      1136
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.08 SECONDS (       0.01 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.01, LAST ITERATION=       0.02
+     TIME TO SOLVE SCF EQUATIONS =       0.01 SECONDS (       0.00 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7551547682 AFTER   7 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.10 ,  TOTAL =      386.9 SECONDS (    6.4 MIN)
+ WALL CLOCK TIME:   STEP =      0.80 ,  TOTAL =      573.2 SECONDS (    9.6 MIN)
+ CPU UTILIZATION:   STEP =     12.48%,  TOTAL =      67.49%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =      386.9 SECONDS (    6.4 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =      573.2 SECONDS (    9.6 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      67.49%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   0.60000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7789160500        -106.7708240959        -106.7700187469 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          5.8500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     56.47 ,  TOTAL =      443.3 SECONDS (    7.4 MIN)
+ WALL CLOCK TIME:   STEP =     99.92 ,  TOTAL =      673.2 SECONDS (   11.2 MIN)
+ CPU UTILIZATION:   STEP =     56.51%,  TOTAL =      65.86%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.14324257E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =      443.4 SECONDS (    7.4 MIN)
+ WALL CLOCK TIME:   STEP =      0.03 ,  TOTAL =      673.2 SECONDS (   11.2 MIN)
+ CPU UTILIZATION:   STEP =     38.39%,  TOTAL =      65.86%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.753611043  -106.753611043   0.000637418   0.000348722     0.000000000     1.000000000         861393      1137
+   2  1  0  -106.753611433    -0.000000390   0.000203447   0.000097090     0.041055565     1.000000000         861177      1138
+   3  2  0  -106.753611494    -0.000000061   0.000165616   0.000067586     0.000000000     1.000000000         861177      1138
+   4  3  0  -106.753611519    -0.000000025   0.000176544   0.000037167     0.000000000     1.000000000         861177      1138
+   5  4  0  -106.753611530    -0.000000011   0.000074601   0.000011031     0.000000000     1.000000000         861177      1138
+   6  5  0  -106.753611531    -0.000000001   0.000018236   0.000001857     0.000000000     1.000000000         861177      1138
+   7  6  0  -106.753611531     0.000000000   0.000000864   0.000000563     0.000000000     1.000000000         861177      1138
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.12 SECONDS (       0.02 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.02, LAST ITERATION=       0.01
+     TIME TO SOLVE SCF EQUATIONS =       0.01 SECONDS (       0.00 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7536115312 AFTER   7 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.15 ,  TOTAL =      443.5 SECONDS (    7.4 MIN)
+ WALL CLOCK TIME:   STEP =      0.26 ,  TOTAL =      673.5 SECONDS (   11.2 MIN)
+ CPU UTILIZATION:   STEP =     56.90%,  TOTAL =      65.86%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =      443.5 SECONDS (    7.4 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =      673.5 SECONDS (   11.2 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      65.86%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   0.70000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7773353228        -106.7707619705        -106.7699488602 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          5.9500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     53.04 ,  TOTAL =      496.5 SECONDS (    8.3 MIN)
+ WALL CLOCK TIME:   STEP =     94.18 ,  TOTAL =      767.6 SECONDS (   12.8 MIN)
+ CPU UTILIZATION:   STEP =     56.32%,  TOTAL =      64.68%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.14063286E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =      496.6 SECONDS (    8.3 MIN)
+ WALL CLOCK TIME:   STEP =      0.06 ,  TOTAL =      767.7 SECONDS (   12.8 MIN)
+ CPU UTILIZATION:   STEP =     17.70%,  TOTAL =      64.68%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.752120345  -106.752120345   0.000578536   0.000328249     0.000000000     1.000000000         860961      1139
+   2  1  0  -106.752120693    -0.000000348   0.000185757   0.000089409     0.043789816     1.000000000         860961      1139
+   3  2  0  -106.752120747    -0.000000054   0.000154419   0.000061714     0.000000000     1.000000000         860961      1139
+   4  3  0  -106.752120769    -0.000000022   0.000163354   0.000034522     0.000000000     1.000000000         860961      1139
+   5  4  0  -106.752120779    -0.000000010   0.000071360   0.000010462     0.000000000     1.000000000         860961      1139
+   6  5  0  -106.752120780    -0.000000001   0.000018473   0.000001808     0.000000000     1.000000000         860961      1139
+   7  6  0  -106.752120780     0.000000000   0.000001104   0.000000507     0.000000000     1.000000000         860961      1139
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.08 SECONDS (       0.01 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.01, LAST ITERATION=       0.00
+     TIME TO SOLVE SCF EQUATIONS =       0.03 SECONDS (       0.00 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7521207799 AFTER   7 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.12 ,  TOTAL =      496.7 SECONDS (    8.3 MIN)
+ WALL CLOCK TIME:   STEP =      0.26 ,  TOTAL =      768.0 SECONDS (   12.8 MIN)
+ CPU UTILIZATION:   STEP =     45.73%,  TOTAL =      64.67%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =      496.7 SECONDS (    8.3 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =      768.0 SECONDS (   12.8 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      64.67%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   0.80000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7758387624        -106.7707027040        -106.7698500914 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          6.0500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     52.80 ,  TOTAL =      549.5 SECONDS (    9.2 MIN)
+ WALL CLOCK TIME:   STEP =     94.27 ,  TOTAL =      862.2 SECONDS (   14.4 MIN)
+ CPU UTILIZATION:   STEP =     56.01%,  TOTAL =      63.73%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.13841206E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =      549.5 SECONDS (    9.2 MIN)
+ WALL CLOCK TIME:   STEP =      0.10 ,  TOTAL =      862.3 SECONDS (   14.4 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      63.72%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.750679413  -106.750679413   0.000524070   0.000306389     0.000000000     1.000000000         860877      1144
+   2  1  0  -106.750679726    -0.000000313   0.000169488   0.000082350     0.046441074     1.000000000         860877      1144
+   3  2  0  -106.750679774    -0.000000047   0.000143792   0.000056401     0.000000000     1.000000000         860877      1144
+   4  3  0  -106.750679793    -0.000000020   0.000150808   0.000032014     0.000000000     1.000000000         860877      1144
+   5  4  0  -106.750679802    -0.000000008   0.000068300   0.000009923     0.000000000     1.000000000         860877      1144
+   6  5  0  -106.750679803    -0.000000001   0.000018678   0.000001813     0.000000000     1.000000000         860877      1144
+   7  6  0  -106.750679803     0.000000000   0.000001320   0.000000455     0.000000000     1.000000000         860877      1144
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.09 SECONDS (       0.01 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.01, LAST ITERATION=       0.01
+     TIME TO SOLVE SCF EQUATIONS =       0.05 SECONDS (       0.01 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7506798028 AFTER   7 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.15 ,  TOTAL =      549.6 SECONDS (    9.2 MIN)
+ WALL CLOCK TIME:   STEP =      0.24 ,  TOTAL =      862.6 SECONDS (   14.4 MIN)
+ CPU UTILIZATION:   STEP =     61.99%,  TOTAL =      63.72%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =      549.6 SECONDS (    9.2 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =      862.6 SECONDS (   14.4 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      63.72%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   0.90000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7744442642        -106.7706466083        -106.7697028213 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          6.1500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     50.06 ,  TOTAL =      599.7 SECONDS (   10.0 MIN)
+ WALL CLOCK TIME:   STEP =     87.90 ,  TOTAL =      950.5 SECONDS (   15.8 MIN)
+ CPU UTILIZATION:   STEP =     56.95%,  TOTAL =      63.09%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.13653751E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =      599.7 SECONDS (   10.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.10 ,  TOTAL =      950.6 SECONDS (   15.8 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      63.09%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.749285729  -106.749285729   0.000473648   0.000283376     0.000000000     1.000000000         860709      1148
+   2  1  0  -106.749286012    -0.000000283   0.000154448   0.000075854     0.049013059     1.000000000         860493      1149
+   3  2  0  -106.749286054    -0.000000042   0.000133677   0.000051574     0.000000000     1.000000000         860493      1149
+   4  3  0  -106.749286071    -0.000000018   0.000138908   0.000029643     0.000000000     1.000000000         860493      1149
+   5  4  0  -106.749286079    -0.000000007   0.000065370   0.000009409     0.000000000     1.000000000         860493      1149
+   6  5  0  -106.749286080    -0.000000001   0.000018848   0.000001812     0.000000000     1.000000000         860493      1149
+   7  6  0  -106.749286080     0.000000000   0.000001512   0.000000405     0.000000000     1.000000000         860493      1149
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.06 SECONDS (       0.01 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.01, LAST ITERATION=       0.01
+     TIME TO SOLVE SCF EQUATIONS =       0.03 SECONDS (       0.00 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7492860797 AFTER   7 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.10 ,  TOTAL =      599.8 SECONDS (   10.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.78 ,  TOTAL =      951.4 SECONDS (   15.9 MIN)
+ CPU UTILIZATION:   STEP =     12.79%,  TOTAL =      63.04%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =      599.8 SECONDS (   10.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =      951.4 SECONDS (   15.9 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      63.04%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   1.00000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7731915000        -106.7705939545        -106.7694656834 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          6.2500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     59.82 ,  TOTAL =      659.6 SECONDS (   11.0 MIN)
+ WALL CLOCK TIME:   STEP =     72.31 ,  TOTAL =     1023.7 SECONDS (   17.1 MIN)
+ CPU UTILIZATION:   STEP =     82.73%,  TOTAL =      64.43%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.13496743E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =      659.6 SECONDS (   11.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =     1023.7 SECONDS (   17.1 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      64.43%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.747936947  -106.747936947   0.000432073   0.000260766     0.000000000     1.000000000         858693      1154
+   2  1  0  -106.747937204    -0.000000257   0.000140463   0.000069873     0.051509272     1.000000000         858657      1155
+   3  2  0  -106.747937241    -0.000000037   0.000124041   0.000047172     0.000000000     1.000000000         858657      1155
+   4  3  0  -106.747937257    -0.000000016   0.000127646   0.000027405     0.000000000     1.000000000         858657      1155
+   5  4  0  -106.747937263    -0.000000006   0.000062533   0.000008914     0.000000000     1.000000000         858657      1155
+   6  5  0  -106.747937264    -0.000000001   0.000018985   0.000001806     0.000000000     1.000000000         858657      1155
+   7  6  0  -106.747937264     0.000000000   0.000001682   0.000000358     0.000000000     1.000000000         858657      1155
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.13 SECONDS (       0.02 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.01, LAST ITERATION=       0.02
+     TIME TO SOLVE SCF EQUATIONS =       0.06 SECONDS (       0.01 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7479372639 AFTER   7 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.22 ,  TOTAL =      659.8 SECONDS (   11.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.51 ,  TOTAL =     1024.2 SECONDS (   17.1 MIN)
+ CPU UTILIZATION:   STEP =     43.05%,  TOTAL =      64.42%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =      659.8 SECONDS (   11.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =     1024.2 SECONDS (   17.1 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      64.42%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   1.10000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7721573220        -106.7705448790        -106.7690600668 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          6.3500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     56.84 ,  TOTAL =      716.7 SECONDS (   11.9 MIN)
+ WALL CLOCK TIME:   STEP =     56.87 ,  TOTAL =     1081.1 SECONDS (   18.0 MIN)
+ CPU UTILIZATION:   STEP =     99.95%,  TOTAL =      66.29%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.13366170E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =      716.7 SECONDS (   11.9 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =     1081.1 SECONDS (   18.0 MIN)
+ CPU UTILIZATION:   STEP =     81.50%,  TOTAL =      66.29%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.746630881  -106.746630881   0.000451890   0.000250328     0.000000000     1.000000000         856869      1161
+   2  1  0  -106.746631114    -0.000000233   0.000127384   0.000064364     0.053933012     1.000000000         856869      1161
+   3  2  0  -106.746631147    -0.000000033   0.000114862   0.000043140     0.000000000     1.000000000         856869      1161
+   4  3  0  -106.746631161    -0.000000014   0.000117007   0.000025297     0.000000000     1.000000000         856869      1161
+   5  4  0  -106.746631167    -0.000000006   0.000059770   0.000008438     0.000000000     1.000000000         856869      1161
+   6  5  0  -106.746631167    -0.000000001   0.000019085   0.000001795     0.000000000     1.000000000         856869      1161
+   7  6  0  -106.746631167     0.000000000   0.000001830   0.000000314     0.000000000     1.000000000         856869      1161
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.11 SECONDS (       0.02 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.02, LAST ITERATION=       0.01
+     TIME TO SOLVE SCF EQUATIONS =       0.02 SECONDS (       0.00 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7466311674 AFTER   7 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.15 ,  TOTAL =      716.8 SECONDS (   11.9 MIN)
+ WALL CLOCK TIME:   STEP =      0.24 ,  TOTAL =     1081.3 SECONDS (   18.0 MIN)
+ CPU UTILIZATION:   STEP =     61.76%,  TOTAL =      66.29%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =      716.8 SECONDS (   11.9 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =     1081.3 SECONDS (   18.0 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      66.29%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   1.20000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7714289204        -106.7704994829        -106.7683970478 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          6.4500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     56.91 ,  TOTAL =      773.7 SECONDS (   12.9 MIN)
+ WALL CLOCK TIME:   STEP =     56.34 ,  TOTAL =     1137.7 SECONDS (   19.0 MIN)
+ CPU UTILIZATION:   STEP =    101.01%,  TOTAL =      68.01%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.13258260E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =      773.8 SECONDS (   12.9 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =     1137.7 SECONDS (   19.0 MIN)
+ CPU UTILIZATION:   STEP =     94.04%,  TOTAL =      68.01%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.745365486  -106.745365486   0.000468526   0.000240344     0.000000000     1.000000000         856131      1170
+   2  1  0  -106.745365699    -0.000000213   0.000115087   0.000059720     0.056287389     1.000000000         856023      1171
+   3  2  0  -106.745365729    -0.000000030   0.000106132   0.000039432     0.000000000     1.000000000         856023      1171
+   4  3  0  -106.745365741    -0.000000012   0.000106972   0.000023313     0.000000000     1.000000000         856023      1171
+   5  4  0  -106.745365746    -0.000000005   0.000057074   0.000007978     0.000000000     1.000000000         856023      1171
+   6  5  0  -106.745365747    -0.000000001   0.000019146   0.000001779     0.000000000     1.000000000         856023      1171
+   7  6  0  -106.745365747     0.000000000   0.000001959   0.000000273     0.000000000     1.000000000         856023      1171
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.15 SECONDS (       0.02 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.02, LAST ITERATION=       0.02
+     TIME TO SOLVE SCF EQUATIONS =       0.06 SECONDS (       0.01 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7453657466 AFTER   7 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.21 ,  TOTAL =      774.0 SECONDS (   12.9 MIN)
+ WALL CLOCK TIME:   STEP =      0.52 ,  TOTAL =     1138.2 SECONDS (   19.0 MIN)
+ CPU UTILIZATION:   STEP =     40.54%,  TOTAL =      68.00%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =      774.0 SECONDS (   12.9 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =     1138.2 SECONDS (   19.0 MIN)
+ CPU UTILIZATION:   STEP =    176.49%,  TOTAL =      68.00%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   1.30000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7709941673        -106.7704577745        -106.7674869700 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          6.5500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     52.56 ,  TOTAL =      826.5 SECONDS (   13.8 MIN)
+ WALL CLOCK TIME:   STEP =     51.98 ,  TOTAL =     1190.2 SECONDS (   19.8 MIN)
+ CPU UTILIZATION:   STEP =    101.12%,  TOTAL =      69.45%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.13169528E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =      826.5 SECONDS (   13.8 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =     1190.2 SECONDS (   19.8 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      69.44%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.744138855  -106.744138855   0.000482119   0.000230785     0.000000000     1.000000000         853395      1184
+   2  1  0  -106.744139049    -0.000000194   0.000103481   0.000058765     0.058575331     1.000000000         853395      1184
+   3  2  0  -106.744139075    -0.000000026   0.000097847   0.000036013     0.000000000     1.000000000         853395      1184
+   4  3  0  -106.744139086    -0.000000011   0.000097529   0.000021448     0.000000000     1.000000000         853395      1184
+   5  4  0  -106.744139090    -0.000000004   0.000054444   0.000007537     0.000000000     1.000000000         853395      1184
+   6  5  0  -106.744139091    -0.000000001   0.000019163   0.000001758     0.000000000     1.000000000         853395      1184
+   7  6  0  -106.744139091     0.000000000   0.000002072   0.000000236     0.000000000     1.000000000         853395      1184
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.11 SECONDS (       0.02 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.02, LAST ITERATION=       0.02
+     TIME TO SOLVE SCF EQUATIONS =       0.03 SECONDS (       0.00 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7441390910 AFTER   7 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.15 ,  TOTAL =      826.7 SECONDS (   13.8 MIN)
+ WALL CLOCK TIME:   STEP =      0.21 ,  TOTAL =     1190.4 SECONDS (   19.8 MIN)
+ CPU UTILIZATION:   STEP =     73.12%,  TOTAL =      69.45%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =      826.7 SECONDS (   13.8 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =     1190.4 SECONDS (   19.8 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      69.45%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   1.40000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7707455749        -106.7704196870        -106.7664355020 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          6.6500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     50.63 ,  TOTAL =      877.3 SECONDS (   14.6 MIN)
+ WALL CLOCK TIME:   STEP =     50.58 ,  TOTAL =     1241.0 SECONDS (   20.7 MIN)
+ CPU UTILIZATION:   STEP =    100.09%,  TOTAL =      70.69%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.13096806E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =      877.3 SECONDS (   14.6 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =     1241.0 SECONDS (   20.7 MIN)
+ CPU UTILIZATION:   STEP =     95.27%,  TOTAL =      70.69%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.742949197  -106.742949197   0.000492757   0.000221629     0.000000000     1.000000000         851379      1195
+   2  1  0  -106.742949374    -0.000000177   0.000102747   0.000057736     0.060799606     1.000000000         851307      1197
+   3  2  0  -106.742949398    -0.000000024   0.000090003   0.000032855     0.000000000     1.000000000         851307      1197
+   4  3  0  -106.742949408    -0.000000010   0.000088671   0.000019696     0.000000000     1.000000000         851307      1197
+   5  4  0  -106.742949412    -0.000000004   0.000051879   0.000007113     0.000000000     1.000000000         851307      1197
+   6  5  0  -106.742949412    -0.000000001   0.000019131   0.000001733     0.000000000     1.000000000         851307      1197
+   7  6  0  -106.742949412     0.000000000   0.000002172   0.000000212     0.000000000     1.000000000         851307      1197
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.11 SECONDS (       0.02 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.03, LAST ITERATION=       0.02
+     TIME TO SOLVE SCF EQUATIONS =       0.02 SECONDS (       0.00 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7429494122 AFTER   7 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.15 ,  TOTAL =      877.5 SECONDS (   14.6 MIN)
+ WALL CLOCK TIME:   STEP =      0.23 ,  TOTAL =     1241.2 SECONDS (   20.7 MIN)
+ CPU UTILIZATION:   STEP =     66.15%,  TOTAL =      70.69%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =      877.5 SECONDS (   14.6 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =     1241.2 SECONDS (   20.7 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      70.69%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   1.50000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7705942045        -106.7703851051        -106.7653297600 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          6.7500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     49.88 ,  TOTAL =      927.3 SECONDS (   15.5 MIN)
+ WALL CLOCK TIME:   STEP =     49.36 ,  TOTAL =     1290.6 SECONDS (   21.5 MIN)
+ CPU UTILIZATION:   STEP =    101.04%,  TOTAL =      71.85%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.13037259E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =      927.4 SECONDS (   15.5 MIN)
+ WALL CLOCK TIME:   STEP =      0.02 ,  TOTAL =     1290.6 SECONDS (   21.5 MIN)
+ CPU UTILIZATION:   STEP =     52.55%,  TOTAL =      71.85%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.741794838  -106.741794838   0.000500481   0.000212859     0.000000000     1.000000000         848025      1212
+   2  1  0  -106.741795000    -0.000000162   0.000104271   0.000056629     0.062962822     1.000000000         848529      1213
+   3  2  0  -106.741795021    -0.000000021   0.000082595   0.000029984     0.000000000     1.000000000         848529      1213
+   4  3  0  -106.741795030    -0.000000009   0.000080404   0.000018053     0.000000000     1.000000000         848529      1213
+   5  4  0  -106.741795033    -0.000000003   0.000049375   0.000006708     0.000000000     1.000000000         848529      1213
+   6  5  0  -106.741795034     0.000000000   0.000019043   0.000001703     0.000000000     1.000000000         848529      1213
+   7  6  0  -106.741795034     0.000000000   0.000002262   0.000000203     0.000000000     1.000000000         848529      1213
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.09 SECONDS (       0.01 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.02, LAST ITERATION=       0.01
+     TIME TO SOLVE SCF EQUATIONS =       0.09 SECONDS (       0.01 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7417950339 AFTER   7 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.19 ,  TOTAL =      927.5 SECONDS (   15.5 MIN)
+ WALL CLOCK TIME:   STEP =      0.43 ,  TOTAL =     1291.0 SECONDS (   21.5 MIN)
+ CPU UTILIZATION:   STEP =     44.59%,  TOTAL =      71.85%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =      927.5 SECONDS (   15.5 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =     1291.0 SECONDS (   21.5 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      71.84%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   1.60000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7704939362        -106.7703538756        -106.7642140747 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          6.8500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     49.97 ,  TOTAL =      977.5 SECONDS (   16.3 MIN)
+ WALL CLOCK TIME:   STEP =     49.40 ,  TOTAL =     1340.4 SECONDS (   22.3 MIN)
+ CPU UTILIZATION:   STEP =    101.16%,  TOTAL =      72.93%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.12988383E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =      977.5 SECONDS (   16.3 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =     1340.5 SECONDS (   22.3 MIN)
+ CPU UTILIZATION:   STEP =    110.98%,  TOTAL =      72.93%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.740674205  -106.740674205   0.000505306   0.000204459     0.000000000     1.000000000         843855      1231
+   2  1  0  -106.740674354    -0.000000149   0.000105182   0.000055442     0.065067445     1.000000000         843963      1230
+   3  2  0  -106.740674373    -0.000000019   0.000075619   0.000027876     0.000000000     1.000000000         843963      1230
+   4  3  0  -106.740674381    -0.000000008   0.000072741   0.000016516     0.000000000     1.000000000         843963      1230
+   5  4  0  -106.740674384    -0.000000003   0.000046925   0.000006318     0.000000000     1.000000000         843963      1230
+   6  5  0  -106.740674384     0.000000000   0.000018893   0.000001669     0.000000000     1.000000000         843963      1230
+   7  6  0  -106.740674384     0.000000000   0.000002345   0.000000194     0.000000000     1.000000000         843963      1230
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.11 SECONDS (       0.02 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.01, LAST ITERATION=       0.02
+     TIME TO SOLVE SCF EQUATIONS =       0.10 SECONDS (       0.01 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7406743842 AFTER   7 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.22 ,  TOTAL =      977.8 SECONDS (   16.3 MIN)
+ WALL CLOCK TIME:   STEP =      0.64 ,  TOTAL =     1341.1 SECONDS (   22.4 MIN)
+ CPU UTILIZATION:   STEP =     34.60%,  TOTAL =      72.91%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =      977.8 SECONDS (   16.3 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =     1341.1 SECONDS (   22.4 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      72.91%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   1.70000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7704226726        -106.7703258099        -106.7631087510 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          6.9500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     50.73 ,  TOTAL =     1028.5 SECONDS (   17.1 MIN)
+ WALL CLOCK TIME:   STEP =     50.48 ,  TOTAL =     1391.6 SECONDS (   23.2 MIN)
+ CPU UTILIZATION:   STEP =    100.50%,  TOTAL =      73.91%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.12947999E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =     1028.5 SECONDS (   17.1 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =     1391.6 SECONDS (   23.2 MIN)
+ CPU UTILIZATION:   STEP =    106.02%,  TOTAL =      73.91%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.739585822  -106.739585822   0.000507232   0.000196420     0.000000000     1.000000000         841647      1250
+   2  1  0  -106.739585959    -0.000000137   0.000105462   0.000054180     0.067115807     1.000000000         841215      1252
+   3  2  0  -106.739585976    -0.000000017   0.000069065   0.000025887     0.000000000     1.000000000         841431      1251
+   4  3  0  -106.739585984    -0.000000007   0.000065697   0.000015082     0.000000000     1.000000000         841431      1251
+   5  4  0  -106.739585986    -0.000000002   0.000044514   0.000005944     0.000000000     1.000000000         841431      1251
+   6  5  0  -106.739585986     0.000000000   0.000018678   0.000001631     0.000000000     1.000000000         841431      1251
+   7  6  0  -106.739585986     0.000000000   0.000002421   0.000000188     0.000000000     1.000000000         841431      1251
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.09 SECONDS (       0.01 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.02, LAST ITERATION=       0.01
+     TIME TO SOLVE SCF EQUATIONS =       0.03 SECONDS (       0.00 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7395859862 AFTER   7 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.13 ,  TOTAL =     1028.6 SECONDS (   17.1 MIN)
+ WALL CLOCK TIME:   STEP =      0.15 ,  TOTAL =     1391.7 SECONDS (   23.2 MIN)
+ CPU UTILIZATION:   STEP =     88.44%,  TOTAL =      73.91%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =     1028.6 SECONDS (   17.1 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =     1391.7 SECONDS (   23.2 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      73.91%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   1.80000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7703693025        -106.7703006976        -106.7620231471 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          7.0500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     51.15 ,  TOTAL =     1079.8 SECONDS (   18.0 MIN)
+ WALL CLOCK TIME:   STEP =     51.65 ,  TOTAL =     1443.4 SECONDS (   24.1 MIN)
+ CPU UTILIZATION:   STEP =     99.03%,  TOTAL =      74.81%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.12914232E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.02 ,  TOTAL =     1079.8 SECONDS (   18.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.08 ,  TOTAL =     1443.5 SECONDS (   24.1 MIN)
+ CPU UTILIZATION:   STEP =     25.81%,  TOTAL =      74.81%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.738528301  -106.738528301   0.000506263   0.000188730     0.000000000     1.000000000         838653      1279
+   2  1  0  -106.738528427    -0.000000126   0.000105103   0.000052850     0.069110116     1.000000000         837087      1283
+   3  2  0  -106.738528443    -0.000000016   0.000062924   0.000024016     0.000000000     1.000000000         837087      1283
+   4  3  0  -106.738528449    -0.000000006   0.000059290   0.000013749     0.000000000     1.000000000         837087      1283
+   5  4  0  -106.738528451    -0.000000002   0.000042124   0.000005582     0.000000000     1.000000000         837087      1283
+   6  5  0  -106.738528452     0.000000000   0.000018395   0.000001588     0.000000000     1.000000000         837087      1283
+   7  6  0  -106.738528452     0.000000000   0.000002493   0.000000197     0.000000000     1.000000000         837087      1283
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.14 SECONDS (       0.02 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.03, LAST ITERATION=       0.01
+     TIME TO SOLVE SCF EQUATIONS =       0.07 SECONDS (       0.01 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7385284515 AFTER   7 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.22 ,  TOTAL =     1080.0 SECONDS (   18.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.51 ,  TOTAL =     1444.0 SECONDS (   24.1 MIN)
+ CPU UTILIZATION:   STEP =     42.87%,  TOTAL =      74.79%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =     1080.0 SECONDS (   18.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =     1444.0 SECONDS (   24.1 MIN)
+ CPU UTILIZATION:   STEP =    434.59%,  TOTAL =      74.80%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   1.90000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7703277969        -106.7702783158        -106.7609615832 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          7.1500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     50.84 ,  TOTAL =     1130.9 SECONDS (   18.8 MIN)
+ WALL CLOCK TIME:   STEP =     51.43 ,  TOTAL =     1495.4 SECONDS (   24.9 MIN)
+ CPU UTILIZATION:   STEP =     98.85%,  TOTAL =      75.62%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.12885494E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =     1130.9 SECONDS (   18.8 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =     1495.4 SECONDS (   24.9 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      75.62%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.737500334  -106.737500334   0.000502420   0.000181378     0.000000000     1.000000000         833985      1308
+   2  1  0  -106.737500451    -0.000000117   0.000104106   0.000051460     0.071052464     1.000000000         834291      1308
+   3  2  0  -106.737500465    -0.000000014   0.000057183   0.000022259     0.000000000     1.000000000         833049      1308
+   4  3  0  -106.737500471    -0.000000006   0.000053529   0.000012515     0.000000000     1.000000000         833049      1308
+   5  4  0  -106.737500473    -0.000000002   0.000039741   0.000005231     0.000000000     1.000000000         833049      1308
+   6  5  0  -106.737500473     0.000000000   0.000018043   0.000001542     0.000000000     1.000000000         833085      1307
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.12 SECONDS (       0.02 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.01, LAST ITERATION=       0.02
+     TIME TO SOLVE SCF EQUATIONS =       0.06 SECONDS (       0.01 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7375004730 AFTER   6 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.20 ,  TOTAL =     1131.1 SECONDS (   18.9 MIN)
+ WALL CLOCK TIME:   STEP =      0.56 ,  TOTAL =     1496.0 SECONDS (   24.9 MIN)
+ CPU UTILIZATION:   STEP =     35.72%,  TOTAL =      75.61%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =     1131.1 SECONDS (   18.9 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =     1496.0 SECONDS (   24.9 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      75.61%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   2.00000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7702946358        -106.7702584429        -106.7599259262 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          7.2500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     52.51 ,  TOTAL =     1183.6 SECONDS (   19.7 MIN)
+ WALL CLOCK TIME:   STEP =     52.60 ,  TOTAL =     1548.6 SECONDS (   25.8 MIN)
+ CPU UTILIZATION:   STEP =     99.84%,  TOTAL =      76.43%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.12860458E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =     1183.6 SECONDS (   19.7 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =     1548.6 SECONDS (   25.8 MIN)
+ CPU UTILIZATION:   STEP =     67.50%,  TOTAL =      76.43%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.736500691  -106.736500691   0.000495990   0.000174338     0.000000000     1.000000000         828495      1345
+   2  1  0  -106.736500799    -0.000000108   0.000102531   0.000049952     0.072944871     1.000000000         827631      1348
+   3  2  0  -106.736500811    -0.000000013   0.000052331   0.000020989     0.000000000     1.000000000         827469      1350
+   4  3  0  -106.736500817    -0.000000005   0.000048740   0.000011647     0.000000000     1.000000000         827469      1350
+   5  4  0  -106.736500818    -0.000000001   0.000037542   0.000004906     0.000000000     1.000000000         827523      1349
+   6  5  0  -106.736500818     0.000000000   0.000017667   0.000001493     0.000000000     1.000000000         827523      1349
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.09 SECONDS (       0.01 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.01, LAST ITERATION=       0.01
+     TIME TO SOLVE SCF EQUATIONS =       0.01 SECONDS (       0.00 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7365008182 AFTER   6 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.11 ,  TOTAL =     1183.7 SECONDS (   19.7 MIN)
+ WALL CLOCK TIME:   STEP =      0.14 ,  TOTAL =     1548.7 SECONDS (   25.8 MIN)
+ CPU UTILIZATION:   STEP =     76.52%,  TOTAL =      76.43%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =     1183.7 SECONDS (   19.7 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =     1548.7 SECONDS (   25.8 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      76.43%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   2.10000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7702676152        -106.7702408426        -106.7589167849 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          7.3500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     58.92 ,  TOTAL =     1242.6 SECONDS (   20.7 MIN)
+ WALL CLOCK TIME:   STEP =     58.63 ,  TOTAL =     1607.4 SECONDS (   26.8 MIN)
+ CPU UTILIZATION:   STEP =    100.50%,  TOTAL =      77.31%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.12838037E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =     1242.6 SECONDS (   20.7 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =     1607.4 SECONDS (   26.8 MIN)
+ CPU UTILIZATION:   STEP =     84.98%,  TOTAL =      77.31%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.735528206  -106.735528206   0.000486588   0.000167631     0.000000000     1.000000000         821703      1399
+   2  1  0  -106.735528306    -0.000000100   0.000100302   0.000048479     0.074789147     1.000000000         821649      1401
+   3  2  0  -106.735528318    -0.000000012   0.000047373   0.000020398     0.000000000     1.000000000         821649      1401
+   4  3  0  -106.735528322    -0.000000005   0.000044256   0.000011161     0.000000000     1.000000000         821649      1401
+   5  4  0  -106.735528324    -0.000000001   0.000035136   0.000004570     0.000000000     1.000000000         821649      1401
+   6  5  0  -106.735528324     0.000000000   0.000017195   0.000001439     0.000000000     1.000000000         821649      1401
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.10 SECONDS (       0.02 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.02, LAST ITERATION=       0.01
+     TIME TO SOLVE SCF EQUATIONS =       0.05 SECONDS (       0.01 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7355283238 AFTER   6 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.15 ,  TOTAL =     1242.8 SECONDS (   20.7 MIN)
+ WALL CLOCK TIME:   STEP =      0.35 ,  TOTAL =     1607.7 SECONDS (   26.8 MIN)
+ CPU UTILIZATION:   STEP =     42.97%,  TOTAL =      77.30%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =     1242.8 SECONDS (   20.7 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =     1607.7 SECONDS (   26.8 MIN)
+ CPU UTILIZATION:   STEP =    470.59%,  TOTAL =      77.30%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   2.20000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7702452791        -106.7702252938        -106.7579340781 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          7.4500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     58.64 ,  TOTAL =     1301.4 SECONDS (   21.7 MIN)
+ WALL CLOCK TIME:   STEP =     58.65 ,  TOTAL =     1666.4 SECONDS (   27.8 MIN)
+ CPU UTILIZATION:   STEP =     99.98%,  TOTAL =      78.10%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.12817354E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =     1301.4 SECONDS (   21.7 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =     1666.4 SECONDS (   27.8 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      78.10%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.734581782  -106.734581782   0.000474573   0.000161229     0.000000000     1.000000000         815967      1448
+   2  1  0  -106.734581874    -0.000000093   0.000097506   0.000046983     0.076587124     1.000000000         815823      1451
+   3  2  0  -106.734581885    -0.000000010   0.000042780   0.000019804     0.000000000     1.000000000         815823      1451
+   4  3  0  -106.734581889    -0.000000004   0.000040380   0.000010599     0.000000000     1.000000000         815715      1452
+   5  4  0  -106.734581890    -0.000000001   0.000032706   0.000004241     0.000000000     1.000000000         815049      1454
+   6  5  0  -106.734581890     0.000000000   0.000016666   0.000001382     0.000000000     1.000000000         815049      1454
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.07 SECONDS (       0.01 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.01, LAST ITERATION=       0.02
+     TIME TO SOLVE SCF EQUATIONS =       0.03 SECONDS (       0.00 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7345818901 AFTER   6 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.11 ,  TOTAL =     1301.5 SECONDS (   21.7 MIN)
+ WALL CLOCK TIME:   STEP =      0.13 ,  TOTAL =     1666.5 SECONDS (   27.8 MIN)
+ CPU UTILIZATION:   STEP =     87.62%,  TOTAL =      78.10%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =     1301.5 SECONDS (   21.7 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =     1666.5 SECONDS (   27.8 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      78.10%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   2.30000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7702266082        -106.7702115722        -106.7569773569 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          7.5500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     55.01 ,  TOTAL =     1356.5 SECONDS (   22.6 MIN)
+ WALL CLOCK TIME:   STEP =     55.25 ,  TOTAL =     1721.8 SECONDS (   28.7 MIN)
+ CPU UTILIZATION:   STEP =     99.56%,  TOTAL =      78.79%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.12797721E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =     1356.5 SECONDS (   22.6 MIN)
+ WALL CLOCK TIME:   STEP =      0.02 ,  TOTAL =     1721.8 SECONDS (   28.7 MIN)
+ CPU UTILIZATION:   STEP =     49.90%,  TOTAL =      78.79%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.733660377  -106.733660377   0.000460109   0.000155120     0.000000000     1.000000000         809037      1494
+   2  1  0  -106.733660463    -0.000000086   0.000094192   0.000045474     0.078340505     1.000000000         808695      1497
+   3  2  0  -106.733660472    -0.000000009   0.000039234   0.000019213     0.000000000     1.000000000         808371      1499
+   4  3  0  -106.733660476    -0.000000004   0.000037071   0.000009978     0.000000000     1.000000000         808479      1498
+   5  4  0  -106.733660476    -0.000000001   0.000030255   0.000003916     0.000000000     1.000000000         808479      1498
+
+          ----------------
+          ENERGY CONVERGED
+          ----------------
+     TIME TO FORM FOCK OPERATORS =       0.10 SECONDS (       0.02 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.03, LAST ITERATION=       0.02
+     TIME TO SOLVE SCF EQUATIONS =       0.00 SECONDS (       0.00 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7336604765 AFTER   5 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.11 ,  TOTAL =     1356.7 SECONDS (   22.6 MIN)
+ WALL CLOCK TIME:   STEP =      0.15 ,  TOTAL =     1721.9 SECONDS (   28.7 MIN)
+ CPU UTILIZATION:   STEP =     75.63%,  TOTAL =      78.79%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =     1356.7 SECONDS (   22.6 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =     1721.9 SECONDS (   28.7 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      78.79%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   2.40000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7702109531        -106.7701995804        -106.7560459684 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          7.6500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     53.50 ,  TOTAL =     1410.2 SECONDS (   23.5 MIN)
+ WALL CLOCK TIME:   STEP =     52.72 ,  TOTAL =     1774.7 SECONDS (   29.6 MIN)
+ CPU UTILIZATION:   STEP =    101.47%,  TOTAL =      79.46%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.12778617E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =     1410.2 SECONDS (   23.5 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =     1774.7 SECONDS (   29.6 MIN)
+ CPU UTILIZATION:   STEP =     93.99%,  TOTAL =      79.46%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.732763005  -106.732763005   0.000441805   0.000149244     0.000000000     1.000000000         801735      1545
+   2  1  0  -106.732763085    -0.000000080   0.000090090   0.000043882     0.080051119     1.000000000         801591      1547
+   3  2  0  -106.732763093    -0.000000009   0.000037891   0.000018588     0.000000000     1.000000000         801051      1550
+   4  3  0  -106.732763097    -0.000000003   0.000035961   0.000009383     0.000000000     1.000000000         800943      1551
+   5  4  0  -106.732763097    -0.000000001   0.000028747   0.000003741     0.000000000     1.000000000         800943      1551
+
+          ----------------
+          ENERGY CONVERGED
+          ----------------
+     TIME TO FORM FOCK OPERATORS =       0.05 SECONDS (       0.01 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.02, LAST ITERATION=       0.01
+     TIME TO SOLVE SCF EQUATIONS =       0.05 SECONDS (       0.01 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7327630975 AFTER   5 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.10 ,  TOTAL =     1410.3 SECONDS (   23.5 MIN)
+ WALL CLOCK TIME:   STEP =      0.15 ,  TOTAL =     1774.8 SECONDS (   29.6 MIN)
+ CPU UTILIZATION:   STEP =     68.17%,  TOTAL =      79.46%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =     1410.3 SECONDS (   23.5 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =     1774.8 SECONDS (   29.6 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      79.46%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   2.50000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7701976203        -106.7701889695        -106.7551391343 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          7.7500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     54.04 ,  TOTAL =     1464.3 SECONDS (   24.4 MIN)
+ WALL CLOCK TIME:   STEP =     54.15 ,  TOTAL =     1829.0 SECONDS (   30.5 MIN)
+ CPU UTILIZATION:   STEP =     99.80%,  TOTAL =      80.06%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.12759659E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =     1464.3 SECONDS (   24.4 MIN)
+ WALL CLOCK TIME:   STEP =      0.03 ,  TOTAL =     1829.0 SECONDS (   30.5 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      80.06%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.731888733  -106.731888733   0.000423115   0.000143685     0.000000000     1.000000000         793485      1593
+   2  1  0  -106.731888807    -0.000000073   0.000085928   0.000042385     0.081720082     1.000000000         793215      1596
+   3  2  0  -106.731888815    -0.000000008   0.000036436   0.000018017     0.000000000     1.000000000         792999      1598
+   4  3  0  -106.731888818    -0.000000003   0.000033609   0.000008690     0.000000000     1.000000000         792999      1598
+   5  4  0  -106.731888818    -0.000000001   0.000026240   0.000003637     0.000000000     1.000000000         792999      1598
+
+          ----------------
+          ENERGY CONVERGED
+          ----------------
+     TIME TO FORM FOCK OPERATORS =       0.08 SECONDS (       0.02 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.02, LAST ITERATION=       0.02
+     TIME TO SOLVE SCF EQUATIONS =       0.01 SECONDS (       0.00 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7318888182 AFTER   5 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.11 ,  TOTAL =     1464.4 SECONDS (   24.4 MIN)
+ WALL CLOCK TIME:   STEP =      0.19 ,  TOTAL =     1829.2 SECONDS (   30.5 MIN)
+ CPU UTILIZATION:   STEP =     59.41%,  TOTAL =      80.06%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =     1464.4 SECONDS (   24.4 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =     1829.2 SECONDS (   30.5 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      80.06%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   2.60000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7701862546        -106.7701796454        -106.7542560346 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          7.8500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     53.77 ,  TOTAL =     1518.2 SECONDS (   25.3 MIN)
+ WALL CLOCK TIME:   STEP =     55.05 ,  TOTAL =     1884.2 SECONDS (   31.4 MIN)
+ CPU UTILIZATION:   STEP =     97.68%,  TOTAL =      80.57%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.12740585E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =     1518.2 SECONDS (   25.3 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =     1884.3 SECONDS (   31.4 MIN)
+ CPU UTILIZATION:   STEP =    105.14%,  TOTAL =      80.57%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.731036674  -106.731036674   0.000402661   0.000138384     0.000000000     1.000000000         781143      1660
+   2  1  0  -106.731036741    -0.000000068   0.000081441   0.000040915     0.083349095     1.000000000         780477      1664
+   3  2  0  -106.731036748    -0.000000007   0.000034787   0.000017463     0.000000000     1.000000000         780315      1666
+   4  3  0  -106.731036751    -0.000000003   0.000031631   0.000008000     0.000000000     1.000000000         779649      1668
+   5  4  0  -106.731036752    -0.000000001   0.000023721   0.000003521     0.000000000     1.000000000         779649      1668
+
+          ----------------
+          ENERGY CONVERGED
+          ----------------
+     TIME TO FORM FOCK OPERATORS =       0.08 SECONDS (       0.02 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.02, LAST ITERATION=       0.01
+     TIME TO SOLVE SCF EQUATIONS =       0.03 SECONDS (       0.01 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7310367516 AFTER   5 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.12 ,  TOTAL =     1518.3 SECONDS (   25.3 MIN)
+ WALL CLOCK TIME:   STEP =      0.27 ,  TOTAL =     1884.5 SECONDS (   31.4 MIN)
+ CPU UTILIZATION:   STEP =     44.65%,  TOTAL =      80.57%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =     1518.3 SECONDS (   25.3 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =     1884.5 SECONDS (   31.4 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      80.57%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   2.70000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7701765184        -106.7701714501        -106.7533958256 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          7.9500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     54.11 ,  TOTAL =     1572.4 SECONDS (   26.2 MIN)
+ WALL CLOCK TIME:   STEP =     54.95 ,  TOTAL =     1939.5 SECONDS (   32.3 MIN)
+ CPU UTILIZATION:   STEP =     98.48%,  TOTAL =      81.08%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.12721234E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =     1572.4 SECONDS (   26.2 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =     1939.5 SECONDS (   32.3 MIN)
+ CPU UTILIZATION:   STEP =     98.97%,  TOTAL =      81.08%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.730205984  -106.730205984   0.000380702   0.000133326     0.000000000     1.000000000         774225      1727
+   2  1  0  -106.730206046    -0.000000062   0.000076696   0.000039470     0.084939560     1.000000000         774336      1725
+   3  2  0  -106.730206052    -0.000000006   0.000032974   0.000016922     0.000000000     1.000000000         774120      1726
+   4  3  0  -106.730206055    -0.000000002   0.000029991   0.000007330     0.000000000     1.000000000         774120      1726
+   5  4  0  -106.730206055     0.000000000   0.000021244   0.000003390     0.000000000     1.000000000         774120      1726
+
+          ----------------
+          ENERGY CONVERGED
+          ----------------
+     TIME TO FORM FOCK OPERATORS =       0.07 SECONDS (       0.01 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.02, LAST ITERATION=       0.02
+     TIME TO SOLVE SCF EQUATIONS =       0.03 SECONDS (       0.01 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7302060550 AFTER   5 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.10 ,  TOTAL =     1572.5 SECONDS (   26.2 MIN)
+ WALL CLOCK TIME:   STEP =      0.14 ,  TOTAL =     1939.6 SECONDS (   32.3 MIN)
+ CPU UTILIZATION:   STEP =     73.30%,  TOTAL =      81.07%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =     1572.5 SECONDS (   26.2 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =     1939.6 SECONDS (   32.3 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      81.07%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   2.80000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7701681396        -106.7701642406        -106.7525576651 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          8.0500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     55.33 ,  TOTAL =     1627.9 SECONDS (   27.1 MIN)
+ WALL CLOCK TIME:   STEP =     56.08 ,  TOTAL =     1995.7 SECONDS (   33.3 MIN)
+ CPU UTILIZATION:   STEP =     98.67%,  TOTAL =      81.57%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.12701524E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =     1627.9 SECONDS (   27.1 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =     1995.7 SECONDS (   33.3 MIN)
+ CPU UTILIZATION:   STEP =     99.60%,  TOTAL =      81.57%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.729395863  -106.729395863   0.000357511   0.000128499     0.000000000     1.000000000         766970      1786
+   2  1  0  -106.729395920    -0.000000057   0.000071764   0.000038056     0.086492818     1.000000000         766937      1786
+   3  2  0  -106.729395925    -0.000000006   0.000032064   0.000016395     0.000000000     1.000000000         766937      1786
+   4  3  0  -106.729395928    -0.000000002   0.000028616   0.000006694     0.000000000     1.000000000         766721      1788
+   5  4  0  -106.729395928     0.000000000   0.000018845   0.000003239     0.000000000     1.000000000         766721      1788
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.05 SECONDS (       0.01 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.01, LAST ITERATION=       0.00
+     TIME TO SOLVE SCF EQUATIONS =       0.02 SECONDS (       0.00 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7293959280 AFTER   5 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.08 ,  TOTAL =     1628.0 SECONDS (   27.1 MIN)
+ WALL CLOCK TIME:   STEP =      0.09 ,  TOTAL =     1995.8 SECONDS (   33.3 MIN)
+ CPU UTILIZATION:   STEP =     89.17%,  TOTAL =      81.57%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =     1628.0 SECONDS (   27.1 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =     1995.8 SECONDS (   33.3 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      81.57%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   2.90000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7701608953        -106.7701578877        -106.7517407266 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          8.1500000000
+ ----------------------------------
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     55.02 ,  TOTAL =     1683.0 SECONDS (   28.0 MIN)
+ WALL CLOCK TIME:   STEP =     56.27 ,  TOTAL =     2052.1 SECONDS (   34.2 MIN)
+ CPU UTILIZATION:   STEP =     97.77%,  TOTAL =      82.01%
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  2.12681439E+00
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =     1683.0 SECONDS (   28.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =     2052.1 SECONDS (   34.2 MIN)
+ CPU UTILIZATION:   STEP =     70.67%,  TOTAL =      82.01%
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   1  0  0  -106.728605550  -106.728605550   0.000333365   0.000123891     0.000000000     1.000000000         762024      1844
+   2  1  0  -106.728605602    -0.000000052   0.000066710   0.000036678     0.088010148     1.000000000         761682      1846
+   3  2  0  -106.728605607    -0.000000005   0.000031775   0.000015883     0.000000000     1.000000000         761034      1848
+   4  3  0  -106.728605609    -0.000000002   0.000027427   0.000006103     0.000000000     1.000000000         761034      1848
+   5  4  0  -106.728605609     0.000000000   0.000016568   0.000003065     0.000000000     1.000000000         760926      1849
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.07 SECONDS (       0.01 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.01, LAST ITERATION=       0.01
+     TIME TO SOLVE SCF EQUATIONS =       0.00 SECONDS (       0.00 SEC/ITER)
+
+ FINAL ENERGY IS     -106.7286056091 AFTER   5 ITERATIONS
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.09 ,  TOTAL =     1683.1 SECONDS (   28.1 MIN)
+ WALL CLOCK TIME:   STEP =      0.11 ,  TOTAL =     2052.2 SECONDS (   34.2 MIN)
+ CPU UTILIZATION:   STEP =     82.29%,  TOTAL =      82.01%
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =     1683.1 SECONDS (   28.1 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =     2052.2 SECONDS (   34.2 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      82.01%
+
+ DETERMINANT CI OPTIONS   NRNFG   NPFLG
+ INTEGRAL TRANSFORMATION    1      -5
+ DIAGONALIZE HAMILTONIAN    1      -5
+ FORM 1E- DENSITY MATRIX    1      -5
+ FORM 2E- DENSITY MATRIX    0      -5
+
+ ---- SURFACE MAPPING GEOMETRY ----
+ COORD 1=   3.00000  COORD 2=   0.00000
+ HAS ENERGY VALUES       -106.7701546011        -106.7701522757        -106.7509442074 
+ LI            0.0000000000          0.0000000000          0.0000000000
+ F             0.0000000000          0.0000000000          8.2500000000
+ ----------------------------------
+
+
+                    INTERSTATE MINIMUM ENERGY SEPARATION DATA
+
+ STATES   1   2: MIN SEPARATION IS   0.0000023253 (ICOORD1=   31, ICOORD2=    1)
+ STATES   1   3: MIN SEPARATION IS   0.0030318726 (ICOORD1=   13, ICOORD2=    1)
+ STATES   2   3: MIN SEPARATION IS   0.0008053490 (ICOORD1=    7, ICOORD2=    1)
+
+
+ OVERALL RESULTS OF THE POTENTIAL SURFACE SCAN
+
+
+          RESULTS FOR STATE NUMBER   1
+
+ ------------------------------------
+   ICOORD1,     |
+    COORD1      |       ENERGY
+ ---------------+--------------------
+  1 (   0.00000)|     -106.7899890580  
+  2 (   0.10000)|     -106.7879487370  
+  3 (   0.20000)|     -106.7859900825  
+  4 (   0.30000)|     -106.7841095584  
+  5 (   0.40000)|     -106.7823044983  
+  6 (   0.50000)|     -106.7805733257  
+  7 (   0.60000)|     -106.7789160500  
+  8 (   0.70000)|     -106.7773353228  
+  9 (   0.80000)|     -106.7758387624  
+ 10 (   0.90000)|     -106.7744442642  
+ 11 (   1.00000)|     -106.7731915000  
+ 12 (   1.10000)|     -106.7721573220  
+ 13 (   1.20000)|     -106.7714289204  
+ 14 (   1.30000)|     -106.7709941673  
+ 15 (   1.40000)|     -106.7707455749  
+ 16 (   1.50000)|     -106.7705942045  
+ 17 (   1.60000)|     -106.7704939362  
+ 18 (   1.70000)|     -106.7704226726  
+ 19 (   1.80000)|     -106.7703693025  
+ 20 (   1.90000)|     -106.7703277969  
+ 21 (   2.00000)|     -106.7702946358  
+ 22 (   2.10000)|     -106.7702676152  
+ 23 (   2.20000)|     -106.7702452791  
+ 24 (   2.30000)|     -106.7702266082  
+ 25 (   2.40000)|     -106.7702109531  
+ 26 (   2.50000)|     -106.7701976203  
+ 27 (   2.60000)|     -106.7701862546  
+ 28 (   2.70000)|     -106.7701765184  
+ 29 (   2.80000)|     -106.7701681396  
+ 30 (   2.90000)|     -106.7701608953  
+ 31 (   3.00000)|     -106.7701546011  
+
+          RESULTS FOR STATE NUMBER   2
+
+ ------------------------------------
+   ICOORD1,     |
+    COORD1      |       ENERGY
+ ---------------+--------------------
+  1 (   0.00000)|     -106.7712325599  
+  2 (   0.10000)|     -106.7711623674  
+  3 (   0.20000)|     -106.7710925395  
+  4 (   0.30000)|     -106.7710233538  
+  5 (   0.40000)|     -106.7709552384  
+  6 (   0.50000)|     -106.7708886600  
+  7 (   0.60000)|     -106.7708240959  
+  8 (   0.70000)|     -106.7707619705  
+  9 (   0.80000)|     -106.7707027040  
+ 10 (   0.90000)|     -106.7706466083  
+ 11 (   1.00000)|     -106.7705939545  
+ 12 (   1.10000)|     -106.7705448790  
+ 13 (   1.20000)|     -106.7704994829  
+ 14 (   1.30000)|     -106.7704577745  
+ 15 (   1.40000)|     -106.7704196870  
+ 16 (   1.50000)|     -106.7703851051  
+ 17 (   1.60000)|     -106.7703538756  
+ 18 (   1.70000)|     -106.7703258099  
+ 19 (   1.80000)|     -106.7703006976  
+ 20 (   1.90000)|     -106.7702783158  
+ 21 (   2.00000)|     -106.7702584429  
+ 22 (   2.10000)|     -106.7702408426  
+ 23 (   2.20000)|     -106.7702252938  
+ 24 (   2.30000)|     -106.7702115722  
+ 25 (   2.40000)|     -106.7701995804  
+ 26 (   2.50000)|     -106.7701889695  
+ 27 (   2.60000)|     -106.7701796454  
+ 28 (   2.70000)|     -106.7701714501  
+ 29 (   2.80000)|     -106.7701642406  
+ 30 (   2.90000)|     -106.7701578877  
+ 31 (   3.00000)|     -106.7701522757  
+
+          RESULTS FOR STATE NUMBER   3
+
+ ------------------------------------
+   ICOORD1,     |
+    COORD1      |       ENERGY
+ ---------------+--------------------
+  1 (   0.00000)|     -106.7701189559  
+  2 (   0.10000)|     -106.7701342709  
+  3 (   0.20000)|     -106.7701367142  
+  4 (   0.30000)|     -106.7701267406  
+  5 (   0.40000)|     -106.7701044320  
+  6 (   0.50000)|     -106.7700691045  
+  7 (   0.60000)|     -106.7700187469  
+  8 (   0.70000)|     -106.7699488602  
+  9 (   0.80000)|     -106.7698500914  
+ 10 (   0.90000)|     -106.7697028213  
+ 11 (   1.00000)|     -106.7694656834  
+ 12 (   1.10000)|     -106.7690600668  
+ 13 (   1.20000)|     -106.7683970478  
+ 14 (   1.30000)|     -106.7674869700  
+ 15 (   1.40000)|     -106.7664355020  
+ 16 (   1.50000)|     -106.7653297600  
+ 17 (   1.60000)|     -106.7642140747  
+ 18 (   1.70000)|     -106.7631087510  
+ 19 (   1.80000)|     -106.7620231471  
+ 20 (   1.90000)|     -106.7609615832  
+ 21 (   2.00000)|     -106.7599259262  
+ 22 (   2.10000)|     -106.7589167849  
+ 23 (   2.20000)|     -106.7579340781  
+ 24 (   2.30000)|     -106.7569773569  
+ 25 (   2.40000)|     -106.7560459684  
+ 26 (   2.50000)|     -106.7551391343  
+ 27 (   2.60000)|     -106.7542560346  
+ 28 (   2.70000)|     -106.7533958256  
+ 29 (   2.80000)|     -106.7525576651  
+ 30 (   2.90000)|     -106.7517407266  
+ 31 (   3.00000)|     -106.7509442074  
+
+
+ ENERGY DELTA MAP(S) (W.R. TO THE LOWEST FOUND)
+
+
+          RESULTS FOR STATE NUMBER   1
+
+ ------------------------------------
+   ICOORD1,     |         ENERGY
+    COORD1      |         DELTA
+ ---------------+--------------------
+  1 (   0.00000)|        0.0000000000  
+  2 (   0.10000)|        0.0020403211  
+  3 (   0.20000)|        0.0039989755  
+  4 (   0.30000)|        0.0058794996  
+  5 (   0.40000)|        0.0076845598  
+  6 (   0.50000)|        0.0094157323  
+  7 (   0.60000)|        0.0110730080  
+  8 (   0.70000)|        0.0126537352  
+  9 (   0.80000)|        0.0141502957  
+ 10 (   0.90000)|        0.0155447938  
+ 11 (   1.00000)|        0.0167975580  
+ 12 (   1.10000)|        0.0178317361  
+ 13 (   1.20000)|        0.0185601377  
+ 14 (   1.30000)|        0.0189948907  
+ 15 (   1.40000)|        0.0192434831  
+ 16 (   1.50000)|        0.0193948535  
+ 17 (   1.60000)|        0.0194951218  
+ 18 (   1.70000)|        0.0195663854  
+ 19 (   1.80000)|        0.0196197556  
+ 20 (   1.90000)|        0.0196612612  
+ 21 (   2.00000)|        0.0196944222  
+ 22 (   2.10000)|        0.0197214428  
+ 23 (   2.20000)|        0.0197437789  
+ 24 (   2.30000)|        0.0197624499  
+ 25 (   2.40000)|        0.0197781050  
+ 26 (   2.50000)|        0.0197914377  
+ 27 (   2.60000)|        0.0198028034  
+ 28 (   2.70000)|        0.0198125396  
+ 29 (   2.80000)|        0.0198209184  
+ 30 (   2.90000)|        0.0198281627  
+ 31 (   3.00000)|        0.0198344570  
+
+          RESULTS FOR STATE NUMBER   2
+
+ ------------------------------------
+   ICOORD1,     |         ENERGY
+    COORD1      |         DELTA
+ ---------------+--------------------
+  1 (   0.00000)|        0.0187564981  
+  2 (   0.10000)|        0.0188266907  
+  3 (   0.20000)|        0.0188965186  
+  4 (   0.30000)|        0.0189657042  
+  5 (   0.40000)|        0.0190338197  
+  6 (   0.50000)|        0.0191003980  
+  7 (   0.60000)|        0.0191649622  
+  8 (   0.70000)|        0.0192270875  
+  9 (   0.80000)|        0.0192863540  
+ 10 (   0.90000)|        0.0193424497  
+ 11 (   1.00000)|        0.0193951035  
+ 12 (   1.10000)|        0.0194441790  
+ 13 (   1.20000)|        0.0194895751  
+ 14 (   1.30000)|        0.0195312835  
+ 15 (   1.40000)|        0.0195693710  
+ 16 (   1.50000)|        0.0196039529  
+ 17 (   1.60000)|        0.0196351824  
+ 18 (   1.70000)|        0.0196632481  
+ 19 (   1.80000)|        0.0196883604  
+ 20 (   1.90000)|        0.0197107423  
+ 21 (   2.00000)|        0.0197306151  
+ 22 (   2.10000)|        0.0197482155  
+ 23 (   2.20000)|        0.0197637642  
+ 24 (   2.30000)|        0.0197774859  
+ 25 (   2.40000)|        0.0197894777  
+ 26 (   2.50000)|        0.0198000885  
+ 27 (   2.60000)|        0.0198094126  
+ 28 (   2.70000)|        0.0198176079  
+ 29 (   2.80000)|        0.0198248175  
+ 30 (   2.90000)|        0.0198311703  
+ 31 (   3.00000)|        0.0198367823  
+
+          RESULTS FOR STATE NUMBER   3
+
+ ------------------------------------
+   ICOORD1,     |         ENERGY
+    COORD1      |         DELTA
+ ---------------+--------------------
+  1 (   0.00000)|        0.0198701022  
+  2 (   0.10000)|        0.0198547871  
+  3 (   0.20000)|        0.0198523438  
+  4 (   0.30000)|        0.0198623175  
+  5 (   0.40000)|        0.0198846261  
+  6 (   0.50000)|        0.0199199536  
+  7 (   0.60000)|        0.0199703112  
+  8 (   0.70000)|        0.0200401978  
+  9 (   0.80000)|        0.0201389666  
+ 10 (   0.90000)|        0.0202862367  
+ 11 (   1.00000)|        0.0205233747  
+ 12 (   1.10000)|        0.0209289912  
+ 13 (   1.20000)|        0.0215920103  
+ 14 (   1.30000)|        0.0225020881  
+ 15 (   1.40000)|        0.0235535560  
+ 16 (   1.50000)|        0.0246592980  
+ 17 (   1.60000)|        0.0257749833  
+ 18 (   1.70000)|        0.0268803071  
+ 19 (   1.80000)|        0.0279659110  
+ 20 (   1.90000)|        0.0290274749  
+ 21 (   2.00000)|        0.0300631318  
+ 22 (   2.10000)|        0.0310722731  
+ 23 (   2.20000)|        0.0320549799  
+ 24 (   2.30000)|        0.0330117011  
+ 25 (   2.40000)|        0.0339430896  
+ 26 (   2.50000)|        0.0348499238  
+ 27 (   2.60000)|        0.0357330234  
+ 28 (   2.70000)|        0.0365932325  
+ 29 (   2.80000)|        0.0374313930  
+ 30 (   2.90000)|        0.0382483315  
+ 31 (   3.00000)|        0.0390448506  
+
+
+ ENERGY DELTA MAP(S): E(N) minus E(N-1)
+
+
+          RESULTS FOR STATE NUMBER   2
+
+ ------------------------------------
+   ICOORD1,     |         ENERGY
+    COORD1      |         DELTA
+ ---------------+--------------------
+  1 (   0.00000)|        0.0187564981  
+  2 (   0.10000)|        0.0167863696  
+  3 (   0.20000)|        0.0148975431  
+  4 (   0.30000)|        0.0130862046  
+  5 (   0.40000)|        0.0113492599  
+  6 (   0.50000)|        0.0096846657  
+  7 (   0.60000)|        0.0080919542  
+  8 (   0.70000)|        0.0065733523  
+  9 (   0.80000)|        0.0051360583  
+ 10 (   0.90000)|        0.0037976559  
+ 11 (   1.00000)|        0.0025975455  
+ 12 (   1.10000)|        0.0016124430  
+ 13 (   1.20000)|        0.0009294374  
+ 14 (   1.30000)|        0.0005363928  
+ 15 (   1.40000)|        0.0003258879  
+ 16 (   1.50000)|        0.0002090994  
+ 17 (   1.60000)|        0.0001400606  
+ 18 (   1.70000)|        0.0000968627  
+ 19 (   1.80000)|        0.0000686048  
+ 20 (   1.90000)|        0.0000494811  
+ 21 (   2.00000)|        0.0000361929  
+ 22 (   2.10000)|        0.0000267726  
+ 23 (   2.20000)|        0.0000199853  
+ 24 (   2.30000)|        0.0000150360  
+ 25 (   2.40000)|        0.0000113727  
+ 26 (   2.50000)|        0.0000086508  
+ 27 (   2.60000)|        0.0000066092  
+ 28 (   2.70000)|        0.0000050683  
+ 29 (   2.80000)|        0.0000038990  
+ 30 (   2.90000)|        0.0000030076  
+ 31 (   3.00000)|        0.0000023253  
+
+          RESULTS FOR STATE NUMBER   3
+
+ ------------------------------------
+   ICOORD1,     |         ENERGY
+    COORD1      |         DELTA
+ ---------------+--------------------
+  1 (   0.00000)|        0.0011136041  
+  2 (   0.10000)|        0.0010280965  
+  3 (   0.20000)|        0.0009558253  
+  4 (   0.30000)|        0.0008966133  
+  5 (   0.40000)|        0.0008508064  
+  6 (   0.50000)|        0.0008195555  
+  7 (   0.60000)|        0.0008053490  
+  8 (   0.70000)|        0.0008131103  
+  9 (   0.80000)|        0.0008526126  
+ 10 (   0.90000)|        0.0009437870  
+ 11 (   1.00000)|        0.0011282711  
+ 12 (   1.10000)|        0.0014848122  
+ 13 (   1.20000)|        0.0021024351  
+ 14 (   1.30000)|        0.0029708045  
+ 15 (   1.40000)|        0.0039841850  
+ 16 (   1.50000)|        0.0050553450  
+ 17 (   1.60000)|        0.0061398009  
+ 18 (   1.70000)|        0.0072170590  
+ 19 (   1.80000)|        0.0082775506  
+ 20 (   1.90000)|        0.0093167326  
+ 21 (   2.00000)|        0.0103325167  
+ 22 (   2.10000)|        0.0113240576  
+ 23 (   2.20000)|        0.0122912157  
+ 24 (   2.30000)|        0.0132342152  
+ 25 (   2.40000)|        0.0141536120  
+ 26 (   2.50000)|        0.0150498353  
+ 27 (   2.60000)|        0.0159236108  
+ 28 (   2.70000)|        0.0167756246  
+ 29 (   2.80000)|        0.0176065755  
+ 30 (   2.90000)|        0.0184171611  
+ 31 (   3.00000)|        0.0192080683  
+
+ ... DONE WITH POTENTIAL SURFACE SCAN ...
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =     55.55 ,  TOTAL =     1738.6 SECONDS (   29.0 MIN)
+ WALL CLOCK TIME:   STEP =     56.49 ,  TOTAL =     2108.7 SECONDS (   35.1 MIN)
+ CPU UTILIZATION:   STEP =     98.34%,  TOTAL =      82.45%
+
+                         OVERALL  TIMING  STATISTICS:
+ GLOBAL CPU TIME ELAPSED      =     14507.5 SECONDS (   241.8 MIN)
+ RANK 0 WALL CLOCK TIME       =      2108.7 SECONDS (    35.1 MIN)
+ JOB CPU UTILIZATION:   TOTAL =    687.99%, PER RANK AVERAGE =     86.00%
+
+    24300539 WORDS OF    DYNAMIC MEMORY USED
+     5602051 BYTES OF    HEAP MEMORY    USED,      121911 BYTES REMAIN IN USE
+
+ WARNING! THIS VERSION OF FIREFLY IS PROBABLY OUTDATED!
+ PLEASE CHECK FIREFLY HOMEPAGE FOR INFORMATION ON UPDATES!
+
+ EXECUTION OF FIREFLY TERMINATED NORMALLY  9:03:21  7-MAY-2026    

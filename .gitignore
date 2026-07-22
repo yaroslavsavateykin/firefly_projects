@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.log
+*.pid
+*.lock
+*.tmp
+.max_frame_config
+imgui.ini
+
+# Local Firefly executable and runtime modules
+shared/firefly/

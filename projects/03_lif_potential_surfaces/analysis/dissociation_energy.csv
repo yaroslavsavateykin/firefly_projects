@@ -1,0 +1,2 @@
+R_min_A,E_min_Ha,R_limit_A,E_limit_Ha,De_Ha,De_eV,De_kJ_mol,De_cm-1,source_limit,notes
+1.600000,-106.983628676100,9.000000,-106.770125509200,0.213503166900,5.80971714,560.552487,46858.529,new_runs/scan_dissociation/lif_dissociation_scan.out,dissociation limit is provisional; verify energy plateau at largest R; last step dE=0.0000072583 Ha

@@ -1,0 +1,17 @@
+ $DATA
+H atom STO-3G                                                                   
+C1       0
+H           1.0      0.0000000000      0.0000000000      0.0000000000
+   STO        3
+           
+ $END      
+--- ROHF ORBITALS --- GENERATED AT 13:51:10 23-APR-2026    
+H atom STO-3G                                                                   
+E(ROHF)=       -0.4665818504, E(NUC)=    0.0000000000,    2 ITERS
+ $VEC
+ 1  1 1.00000000E+00
+ $END
+ POPULATION ANALYSIS
+H            1.00000   0.00000   1.00000   0.00000
+ MOMENTS AT POINT    1 X,Y,Z=  0.000000  0.000000  0.000000
+ DIPOLE       0.000000  0.000000  0.000000

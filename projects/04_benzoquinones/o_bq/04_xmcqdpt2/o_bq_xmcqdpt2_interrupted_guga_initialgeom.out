@@ -1,0 +1,1894 @@
+              Grand Master is running on host yaroslavhonor
+              rank #     1 is running on host yaroslavhonor
+              rank #     2 is running on host yaroslavhonor
+              rank #     3 is running on host yaroslavhonor
+              rank #     4 is running on host yaroslavhonor
+              rank #     5 is running on host yaroslavhonor
+
+          ******************************************************
+          *      Firefly version 8.2.0, build number 10203     *
+          *   Compiled on    Monday,    19-09-2016, 15:30:23   *
+          *Code development and Intel/AMD specific optimization*
+          *  Copyright (c) 1994, 2016 by  Alex A. Granovsky,   *
+          *          Firefly Project, Moscow, Russia.          *
+          *   Some parts of this program include code due to   *
+          * work of Jim Kress, Peter Burger, and Robert Ponec. *
+          ******************************************************
+          *             Firefly Project homepage:              *
+          * http://classic.chem.msu.su/gran/firefly/index.html *
+          *                      e-mail:                       *
+          *               gran@classic.chem.msu.su             *
+          *This program is not a free software and is provided *
+          *exclusively to its registered users under the terms *
+          *       of Firefly package license agreement         *
+          * Unauthorized use of Firefly is strongly prohibited *
+          *   This program may not be redistributed without    *
+          * the specific, written permission of its developers.*
+          ******************************************************
+
+          ******************************************************
+          *  PARTIALLY BASED ON  US GAMESS VERSION 6 JUN 1999, *
+          *   US GAMESS VERSIONS  6 SEP 2001 AND 12 DEC 2003   *
+          *             FROM IOWA STATE UNIVERSITY             *
+          * M.W.SCHMIDT, K.K.BALDRIDGE, J.A.BOATZ, S.T.ELBERT, *
+          *   M.S.GORDON, J.H.JENSEN, S.KOSEKI, N.MATSUNAGA,   *
+          *          K.A.NGUYEN, S.J.SU, T.L.WINDUS,           *
+          *       TOGETHER WITH M.DUPUIS, J.A.MONTGOMERY       *
+          *         J.COMPUT.CHEM.  14, 1347-1363(1993)        *
+          ******************************************************
+
+
+ Core i7    / Linux  Firefly version running under Linux.
+ Running on Intel CPU:  Brand ID  0, Family  6, Model 170, Stepping  4
+ CPU Brand String    :  Intel(R) Core(TM) Ultra 5 125H                  
+ CPU Features        :  x87 FPU, CMOV, MMX, SSE, SSE2, SSE3, SSSE3, SSE4.1, SSE4.2, AVX, AVX2, FMA3, HTT, MWAIT, EM64T
+ Data cache size     :  L1 48 KB, L2 2048 KB, L3 18432 KB
+ max    # of   cores/package :  64
+ max    # of threads/package : 128
+ max     cache sharing level :  64
+ actual # of   cores/package :   9
+ actual # of threads/package :  18
+ actual # of threads/core    :   2
+ Operating System successfully passed SSE support test.
+ Operating System supports AVX/FMA.
+
+
+ PARALLEL VERSION (MPICH) RUNNING USING    6 PROCESSES (RANKS)
+
+
+ WARNING! THIS VERSION OF FIREFLY IS PROBABLY OUTDATED!
+ PLEASE CHECK FIREFLY HOMEPAGE FOR INFORMATION ON UPDATES!
+
+ EXECUTION OF FIREFLY BEGUN  4:50:38 18-MAY-2026    
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD> $CONTRL SCFTYP=MCSCF RUNTYP=ENERGY ICHARG=0 MULT=1 MPLEVL=2 EXETYP=RUN         
+ INPUT CARD>      INTTYP=HONDO ICUT=13 ITOL=30 D5=.T. MAXIT=100 GENCON=.F. WIDE=1 FSTINT=.T.
+ INPUT CARD> $END                                                                           
+ INPUT CARD> $SYSTEM TIMLIM=60000 MWORDS=200 MASMEM=200000000 MXBCST=-1 KDIAG=0 NOJAC=1 $END
+ INPUT CARD> $MOORTH NOSTF=.T. NOZERO=.T. SYMS=.T. SYMDEN=.T. SYMVEC=.T. SYMVX=.T.          
+ INPUT CARD>      TOLE=0.0D0 TOLZ=0.0D0 $END                                                
+ INPUT CARD> $GUESS GUESS=MOREAD NORB=160 IORDER(22)=-23 IORDER(32)=-45 NORDER=1 $END       
+ INPUT CARD> $GUGDIA NSTATE=15 ITERMX=1000 CVGTOL=1D-8 $END                                 
+ INPUT CARD> $GUGDM2 WSTATE(1)=1,1,1,1,1 CUTOFF=1D-12 $END                                  
+ INPUT CARD> $DRT GROUP=C1 FORS=.TRUE. NMCC=22 NDOC=6 NVAL=4 $END                           
+ INPUT CARD> $MCSCF CISTEP=GUGA MAXIT=200 ACURCY=1D-4 ENGTOL=1D-6 SOSCF=.T. $END            
+ INPUT CARD> $XMCQDPT KSTATE(1)=1,1,1,1,1 EDSHFT=0.02 THRGEN=1D-10 GENZRO=1D-10 $END        
+ INPUT CARD> $DATA                                                                          
+ INPUT CARD>o_bq XMCQDPT2/ALDET-CASSCF(12,10) Andrew-style geometry                         
+ INPUT CARD>C1                                                                              
+ INPUT CARD>C      6.0     0.0000000000     1.4000000000     0.0000000000                   
+ INPUT CARD>S   8                                                                           
+ INPUT CARD>  1    6665.0000000       0.0006920                                             
+ INPUT CARD>  2    1000.0000000       0.0053290                                             
+ INPUT CARD>  3     228.0000000       0.0270770                                             
+ INPUT CARD>  4      64.7100000       0.1017180                                             
+ INPUT CARD>  5      21.0600000       0.2747400                                             
+ INPUT CARD>  6       7.4950000       0.4485640                                             
+ INPUT CARD>  7       2.7970000       0.2850740                                             
+ INPUT CARD>  8       0.5215000       0.0152040                                             
+ INPUT CARD>S   8                                                                           
+ INPUT CARD>  1    6665.0000000      -0.0001460                                             
+ INPUT CARD>  2    1000.0000000      -0.0011540                                             
+ INPUT CARD>  3     228.0000000      -0.0057250                                             
+ INPUT CARD>  4      64.7100000      -0.0233120                                             
+ INPUT CARD>  5      21.0600000      -0.0639550                                             
+ INPUT CARD>  6       7.4950000      -0.1499810                                             
+ INPUT CARD>  7       2.7970000      -0.1272620                                             
+ INPUT CARD>  8       0.5215000       0.5445290                                             
+ INPUT CARD>S   1                                                                           
+ INPUT CARD>  1       0.1596000       1.0000000                                             
+ INPUT CARD>P   3                                                                           
+ INPUT CARD>  1       9.4390000       0.0381090                                             
+ INPUT CARD>  2       2.0020000       0.2094800                                             
+ INPUT CARD>  3       0.5456000       0.5085570                                             
+ INPUT CARD>P   1                                                                           
+ INPUT CARD>  1       0.1517000       1.0000000                                             
+ INPUT CARD>D   1                                                                           
+ INPUT CARD>  1       0.5500000       1.0000000                                             
+ INPUT CARD>                                                                                
+ INPUT CARD>C      6.0     1.2124355650     0.7000000000     0.0000000000                   
+ INPUT CARD>S   8                                                                           
+ INPUT CARD>  1    6665.0000000       0.0006920                                             
+ INPUT CARD>  2    1000.0000000       0.0053290                                             
+ INPUT CARD>  3     228.0000000       0.0270770                                             
+  200000000 WORDS OF MEMORY AVAILABLE
+
+ This job is executing on     1 unique host(s)
+ Minimum number of processes per host is:    6
+ Maximum number of processes per host is:    6
+
+ On master's host, detected   18 CPU core(s) in aggregate
+
+ Using processor-specific dynamic link DGEMM library code.
+
+
+ Warning: HTT is enabled, bitmask of physically unique cores is 0x000000B4
+
+ SMT aware parts of program will use              2 threads.
+
+ Creating thread pool to serve up to            128 threads.
+
+
+ Loading P2P interface library... loaded successfully (version 2.4).
+ Initializing global P2P interface... topology done.
+
+
+
+     RUN TITLE
+     ---------
+ o_bq XMCQDPT2/ALDET-CASSCF(12,10) Andrew-style geometry                         
+
+ THE POINT GROUP OF THE MOLECULE IS C1      
+ THE ORDER OF THE PRINCIPAL AXIS IS     0
+ *** WARNING! ATOM   1 SHELL    1 TYPE S HAS NORMALIZATION   0.99939879
+ *** WARNING! ATOM   1 SHELL    2 TYPE S HAS NORMALIZATION   2.00869625
+ *** WARNING! ATOM   1 SHELL    4 TYPE P HAS NORMALIZATION   1.49516523
+ *** WARNING! ATOM   2 SHELL    7 TYPE S HAS NORMALIZATION   0.99939879
+ *** WARNING! ATOM   2 SHELL    8 TYPE S HAS NORMALIZATION   2.00869625
+ *** WARNING! ATOM   2 SHELL   10 TYPE P HAS NORMALIZATION   1.49516523
+ *** WARNING! ATOM   3 SHELL   13 TYPE S HAS NORMALIZATION   0.99939879
+ *** WARNING! ATOM   3 SHELL   14 TYPE S HAS NORMALIZATION   2.00869625
+ *** WARNING! ATOM   3 SHELL   16 TYPE P HAS NORMALIZATION   1.49516523
+ *** WARNING! ATOM   4 SHELL   19 TYPE S HAS NORMALIZATION   0.99939879
+ *** WARNING! ATOM   4 SHELL   20 TYPE S HAS NORMALIZATION   2.00869625
+ *** WARNING! ATOM   4 SHELL   22 TYPE P HAS NORMALIZATION   1.49516523
+ *** WARNING! ATOM   5 SHELL   25 TYPE S HAS NORMALIZATION   0.99939879
+ *** WARNING! ATOM   5 SHELL   26 TYPE S HAS NORMALIZATION   2.00869625
+ *** WARNING! ATOM   5 SHELL   28 TYPE P HAS NORMALIZATION   1.49516523
+ *** WARNING! ATOM   6 SHELL   31 TYPE S HAS NORMALIZATION   0.99939879
+ *** WARNING! ATOM   6 SHELL   32 TYPE S HAS NORMALIZATION   2.00869625
+ *** WARNING! ATOM   6 SHELL   34 TYPE P HAS NORMALIZATION   1.49516523
+ *** WARNING! ATOM   7 SHELL   37 TYPE S HAS NORMALIZATION   0.99950133
+ *** WARNING! ATOM   7 SHELL   38 TYPE S HAS NORMALIZATION   1.96527132
+ *** WARNING! ATOM   7 SHELL   41 TYPE P HAS NORMALIZATION   1.45704510
+ *** WARNING! ATOM   8 SHELL   46 TYPE S HAS NORMALIZATION   0.99950133
+ *** WARNING! ATOM   8 SHELL   47 TYPE S HAS NORMALIZATION   1.96527132
+ *** WARNING! ATOM   8 SHELL   50 TYPE P HAS NORMALIZATION   1.45704510
+ *** WARNING! ATOM   9 SHELL   55 TYPE S HAS NORMALIZATION   1.70173870
+ *** WARNING! ATOM  10 SHELL   58 TYPE S HAS NORMALIZATION   1.70173870
+ *** WARNING! ATOM  11 SHELL   61 TYPE S HAS NORMALIZATION   1.70173870
+ *** WARNING! ATOM  12 SHELL   64 TYPE S HAS NORMALIZATION   1.70173870
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ C           6.0     0.0000000000        2.6456165756        0.0000000000
+ C           6.0     2.2911711626        1.3228082878        0.0000000000
+ C           6.0     2.2911711626       -1.3228082878        0.0000000000
+ C           6.0     0.0000000000       -2.6456165756        0.0000000000
+ C           6.0    -2.2911711626       -1.3228082878        0.0000000000
+ C           6.0    -2.2911711626        1.3228082878        0.0000000000
+ O           8.0     0.0000000000        4.9510824487        0.0000000000
+ O           8.0     4.2868437156        2.4755412243        0.0000000000
+ H           1.0     4.0629111697       -2.3451501217        0.0000000000
+ H           1.0     0.0000000000       -4.6865207911        0.0000000000
+ H           1.0    -4.0629111697       -2.3451501217        0.0000000000
+ H           1.0    -4.0629111697        2.3451501217        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                    C              C              C              C         
+
+  1  C               0.0000000      1.4000000 *    2.4248711 *    2.8000000 *  
+  2  C               1.4000000 *    0.0000000      1.4000000 *    2.4248711 *  
+  3  C               2.4248711 *    1.4000000 *    0.0000000      1.4000000 *  
+  4  C               2.8000000 *    2.4248711 *    1.4000000 *    0.0000000    
+  5  C               2.4248711 *    2.8000000 *    2.4248711 *    1.4000000 *  
+  6  C               1.4000000 *    2.4248711 *    2.8000000 *    2.4248711 *  
+  7  O               1.2200000 *    2.2707708 *    3.5344589      4.0200000    
+  8  O               2.2702846 *    1.2195787 *    2.2705444 *    3.5341466    
+  9  H               3.4054928      2.1555760 *    1.0824547 *    2.1558713 *  
+ 10  H               3.8800000      3.4032925      2.1536945 *    1.0800000 *  
+ 11  H               3.4054928      3.8824546      3.4056797      2.1558713 *  
+ 12  H               2.1558713 *    3.4056797      3.8824546      3.4054928    
+
+                    C              C              O              O         
+
+  1  C               2.4248711 *    1.4000000 *    1.2200000 *    2.2702846 *  
+  2  C               2.8000000 *    2.4248711 *    2.2707708 *    1.2195787 *  
+  3  C               2.4248711 *    2.8000000 *    3.5344589      2.2705444 *  
+  4  C               1.4000000 *    2.4248711 *    4.0200000      3.5341466    
+  5  C               0.0000000      1.4000000 *    3.5344589      4.0195786    
+  6  C               1.4000000 *    0.0000000      2.2707708 *    3.5339797    
+  7  O               3.5344589      2.2707708 *    0.0000000      2.6195786 *  
+  8  O               4.0195786      3.5339797      2.6195786 *    0.0000000    
+  9  H               3.4056797      3.8824546      4.4192557      2.5537508 *  
+ 10  H               2.1536945 *    3.4032925      5.1000000      4.4170343    
+ 11  H               1.0824547 *    2.1555760 *    4.4192557      5.1020332    
+ 12  H               2.1555760 *    1.0824547 *    2.5542398 *    4.4190387    
+
+                    H              H              H              H         
+
+  1  C               3.4054928      3.8800000      3.4054928      2.1558713 *  
+  2  C               2.1555760 *    3.4032925      3.8824546      3.4056797    
+  3  C               1.0824547 *    2.1536945 *    3.4056797      3.8824546    
+  4  C               2.1558713 *    1.0800000 *    2.1558713 *    3.4054928    
+  5  C               3.4056797      2.1536945 *    1.0824547 *    2.1555760 *  
+  6  C               3.8824546      3.4032925      2.1555760 *    1.0824547 *  
+  7  O               4.4192557      5.1000000      4.4192557      2.5542398 *  
+  8  O               2.5537508 *    4.4170343      5.1020332      4.4190387    
+  9  H               0.0000000      2.4814554 *    4.3000000      4.9649093    
+ 10  H               2.4814554 *    0.0000000      2.4814554 *    4.2974808    
+ 11  H               4.3000000      2.4814554 *    0.0000000      2.4820000 *  
+ 12  H               4.9649093      4.2974808      2.4820000 *    0.0000000    
+
+  * ... LESS THAN  3.000
+
+
+     ATOMIC BASIS SET
+     ----------------
+ THE CONTRACTED PRIMITIVE FUNCTIONS HAVE BEEN UNNORMALIZED
+ THE CONTRACTED BASIS FUNCTIONS ARE NOW NORMALIZED TO UNITY
+
+ SHELL TYPE PRIM    EXPONENT          CONTRACTION COEFFICIENTS
+
+ C         
+
+   1   S    1    6665.000000    0.363584 (  0.000692) 
+   1   S    2    1000.000000    0.674986 (  0.005329) 
+   1   S    3     228.000000    1.131620 (  0.027077) 
+   1   S    4      64.710000    1.653009 (  0.101718) 
+   1   S    5      21.060000    1.923821 (  0.274740) 
+   1   S    6       7.495000    1.447278 (  0.448564) 
+   1   S    7       2.797000    0.439163 (  0.285074) 
+   1   S    8       0.521500    0.006646 (  0.015204) 
+
+   2   S    9    6665.000000   -0.154180 ( -0.000146) 
+   2   S   10    1000.000000   -0.293785 ( -0.001154) 
+   2   S   11     228.000000   -0.480896 ( -0.005725) 
+   2   S   12      64.710000   -0.761434 ( -0.023312) 
+   2   S   13      21.060000   -0.900104 ( -0.063955) 
+   2   S   14       7.495000   -0.972611 ( -0.149981) 
+   2   S   15       2.797000   -0.394042 ( -0.127262) 
+   2   S   16       0.521500    0.478394 (  0.544529) 
+
+   3   S   17       0.159600    0.179964 (  1.000000) 
+
+   4   P   18       9.439000    1.343737 (  0.038109) 
+   4   P   19       2.002000    1.063168 (  0.209480) 
+   4   P   20       0.545600    0.508232 (  0.508557) 
+
+   5   P   21       0.151700    0.134950 (  1.000000) 
+
+   6   D   22       0.550000    0.578155 (  1.000000) 
+
+ C         
+
+   7   S   23    6665.000000    0.363584 (  0.000692) 
+   7   S   24    1000.000000    0.674986 (  0.005329) 
+   7   S   25     228.000000    1.131620 (  0.027077) 
+   7   S   26      64.710000    1.653009 (  0.101718) 
+   7   S   27      21.060000    1.923821 (  0.274740) 
+   7   S   28       7.495000    1.447278 (  0.448564) 
+   7   S   29       2.797000    0.439163 (  0.285074) 
+   7   S   30       0.521500    0.006646 (  0.015204) 
+
+   8   S   31    6665.000000   -0.154180 ( -0.000146) 
+   8   S   32    1000.000000   -0.293785 ( -0.001154) 
+   8   S   33     228.000000   -0.480896 ( -0.005725) 
+   8   S   34      64.710000   -0.761434 ( -0.023312) 
+   8   S   35      21.060000   -0.900104 ( -0.063955) 
+   8   S   36       7.495000   -0.972611 ( -0.149981) 
+   8   S   37       2.797000   -0.394042 ( -0.127262) 
+   8   S   38       0.521500    0.478394 (  0.544529) 
+
+   9   S   39       0.159600    0.179964 (  1.000000) 
+
+  10   P   40       9.439000    1.343737 (  0.038109) 
+  10   P   41       2.002000    1.063168 (  0.209480) 
+  10   P   42       0.545600    0.508232 (  0.508557) 
+
+  11   P   43       0.151700    0.134950 (  1.000000) 
+
+  12   D   44       0.550000    0.578155 (  1.000000) 
+
+ C         
+
+  13   S   45    6665.000000    0.363584 (  0.000692) 
+  13   S   46    1000.000000    0.674986 (  0.005329) 
+  13   S   47     228.000000    1.131620 (  0.027077) 
+  13   S   48      64.710000    1.653009 (  0.101718) 
+  13   S   49      21.060000    1.923821 (  0.274740) 
+  13   S   50       7.495000    1.447278 (  0.448564) 
+  13   S   51       2.797000    0.439163 (  0.285074) 
+  13   S   52       0.521500    0.006646 (  0.015204) 
+
+  14   S   53    6665.000000   -0.154180 ( -0.000146) 
+  14   S   54    1000.000000   -0.293785 ( -0.001154) 
+  14   S   55     228.000000   -0.480896 ( -0.005725) 
+  14   S   56      64.710000   -0.761434 ( -0.023312) 
+  14   S   57      21.060000   -0.900104 ( -0.063955) 
+  14   S   58       7.495000   -0.972611 ( -0.149981) 
+  14   S   59       2.797000   -0.394042 ( -0.127262) 
+  14   S   60       0.521500    0.478394 (  0.544529) 
+
+  15   S   61       0.159600    0.179964 (  1.000000) 
+
+  16   P   62       9.439000    1.343737 (  0.038109) 
+  16   P   63       2.002000    1.063168 (  0.209480) 
+  16   P   64       0.545600    0.508232 (  0.508557) 
+
+  17   P   65       0.151700    0.134950 (  1.000000) 
+
+  18   D   66       0.550000    0.578155 (  1.000000) 
+
+ C         
+
+  19   S   67    6665.000000    0.363584 (  0.000692) 
+  19   S   68    1000.000000    0.674986 (  0.005329) 
+  19   S   69     228.000000    1.131620 (  0.027077) 
+  19   S   70      64.710000    1.653009 (  0.101718) 
+  19   S   71      21.060000    1.923821 (  0.274740) 
+  19   S   72       7.495000    1.447278 (  0.448564) 
+  19   S   73       2.797000    0.439163 (  0.285074) 
+  19   S   74       0.521500    0.006646 (  0.015204) 
+
+  20   S   75    6665.000000   -0.154180 ( -0.000146) 
+  20   S   76    1000.000000   -0.293785 ( -0.001154) 
+  20   S   77     228.000000   -0.480896 ( -0.005725) 
+  20   S   78      64.710000   -0.761434 ( -0.023312) 
+  20   S   79      21.060000   -0.900104 ( -0.063955) 
+  20   S   80       7.495000   -0.972611 ( -0.149981) 
+  20   S   81       2.797000   -0.394042 ( -0.127262) 
+  20   S   82       0.521500    0.478394 (  0.544529) 
+
+  21   S   83       0.159600    0.179964 (  1.000000) 
+
+  22   P   84       9.439000    1.343737 (  0.038109) 
+  22   P   85       2.002000    1.063168 (  0.209480) 
+  22   P   86       0.545600    0.508232 (  0.508557) 
+
+  23   P   87       0.151700    0.134950 (  1.000000) 
+
+  24   D   88       0.550000    0.578155 (  1.000000) 
+
+ C         
+
+  25   S   89    6665.000000    0.363584 (  0.000692) 
+  25   S   90    1000.000000    0.674986 (  0.005329) 
+  25   S   91     228.000000    1.131620 (  0.027077) 
+  25   S   92      64.710000    1.653009 (  0.101718) 
+  25   S   93      21.060000    1.923821 (  0.274740) 
+  25   S   94       7.495000    1.447278 (  0.448564) 
+  25   S   95       2.797000    0.439163 (  0.285074) 
+  25   S   96       0.521500    0.006646 (  0.015204) 
+
+  26   S   97    6665.000000   -0.154180 ( -0.000146) 
+  26   S   98    1000.000000   -0.293785 ( -0.001154) 
+  26   S   99     228.000000   -0.480896 ( -0.005725) 
+  26   S  100      64.710000   -0.761434 ( -0.023312) 
+  26   S  101      21.060000   -0.900104 ( -0.063955) 
+  26   S  102       7.495000   -0.972611 ( -0.149981) 
+  26   S  103       2.797000   -0.394042 ( -0.127262) 
+  26   S  104       0.521500    0.478394 (  0.544529) 
+
+  27   S  105       0.159600    0.179964 (  1.000000) 
+
+  28   P  106       9.439000    1.343737 (  0.038109) 
+  28   P  107       2.002000    1.063168 (  0.209480) 
+  28   P  108       0.545600    0.508232 (  0.508557) 
+
+  29   P  109       0.151700    0.134950 (  1.000000) 
+
+  30   D  110       0.550000    0.578155 (  1.000000) 
+
+ C         
+
+  31   S  111    6665.000000    0.363584 (  0.000692) 
+  31   S  112    1000.000000    0.674986 (  0.005329) 
+  31   S  113     228.000000    1.131620 (  0.027077) 
+  31   S  114      64.710000    1.653009 (  0.101718) 
+  31   S  115      21.060000    1.923821 (  0.274740) 
+  31   S  116       7.495000    1.447278 (  0.448564) 
+  31   S  117       2.797000    0.439163 (  0.285074) 
+  31   S  118       0.521500    0.006646 (  0.015204) 
+
+  32   S  119    6665.000000   -0.154180 ( -0.000146) 
+  32   S  120    1000.000000   -0.293785 ( -0.001154) 
+  32   S  121     228.000000   -0.480896 ( -0.005725) 
+  32   S  122      64.710000   -0.761434 ( -0.023312) 
+  32   S  123      21.060000   -0.900104 ( -0.063955) 
+  32   S  124       7.495000   -0.972611 ( -0.149981) 
+  32   S  125       2.797000   -0.394042 ( -0.127262) 
+  32   S  126       0.521500    0.478394 (  0.544529) 
+
+  33   S  127       0.159600    0.179964 (  1.000000) 
+
+  34   P  128       9.439000    1.343737 (  0.038109) 
+  34   P  129       2.002000    1.063168 (  0.209480) 
+  34   P  130       0.545600    0.508232 (  0.508557) 
+
+  35   P  131       0.151700    0.134950 (  1.000000) 
+
+  36   D  132       0.550000    0.578155 (  1.000000) 
+
+ O         
+
+  37   S  133   11720.000000    0.569702 (  0.000710) 
+  37   S  134    1759.000000    1.058352 (  0.005470) 
+  37   S  135     400.800000    1.776281 (  0.027837) 
+  37   S  136     113.700000    2.599412 (  0.104800) 
+  37   S  137      37.030000    3.026846 (  0.283062) 
+  37   S  138      13.270000    2.222394 (  0.448719) 
+  37   S  139       5.025000    0.647795 (  0.270952) 
+  37   S  140       1.013000    0.011119 (  0.015458) 
+
+  38   S  141   11720.000000   -0.252434 ( -0.000160) 
+  38   S  142    1759.000000   -0.480491 ( -0.001263) 
+  38   S  143     400.800000   -0.786300 ( -0.006267) 
+  38   S  144     113.700000   -1.254170 ( -0.025716) 
+  38   S  145      37.030000   -1.491218 ( -0.070924) 
+  38   S  146      13.270000   -1.610832 ( -0.165411) 
+  38   S  147       5.025000   -0.549798 ( -0.116955) 
+  38   S  148       1.013000    0.788282 (  0.557368) 
+
+  39   S  149       0.302300    0.290562 (  1.000000) 
+
+  40   S  150       0.078960    0.106161 (  1.000000) 
+
+  41   P  151      17.700000    3.243619 (  0.043018) 
+  41   P  152       3.854000    2.567280 (  0.228913) 
+  41   P  153       1.046000    1.117669 (  0.508728) 
+
+  42   P  154       0.275300    0.284248 (  1.000000) 
+
+  43   P  155       0.068560    0.050007 (  1.000000) 
+
+  44   D  156       1.185000    2.215218 (  1.000000) 
+
+  45   D  157       0.332000    0.239002 (  1.000000) 
+
+ O         
+
+  46   S  158   11720.000000    0.569702 (  0.000710) 
+  46   S  159    1759.000000    1.058352 (  0.005470) 
+  46   S  160     400.800000    1.776281 (  0.027837) 
+  46   S  161     113.700000    2.599412 (  0.104800) 
+  46   S  162      37.030000    3.026846 (  0.283062) 
+  46   S  163      13.270000    2.222394 (  0.448719) 
+  46   S  164       5.025000    0.647795 (  0.270952) 
+  46   S  165       1.013000    0.011119 (  0.015458) 
+
+  47   S  166   11720.000000   -0.252434 ( -0.000160) 
+  47   S  167    1759.000000   -0.480491 ( -0.001263) 
+  47   S  168     400.800000   -0.786300 ( -0.006267) 
+  47   S  169     113.700000   -1.254170 ( -0.025716) 
+  47   S  170      37.030000   -1.491218 ( -0.070924) 
+  47   S  171      13.270000   -1.610832 ( -0.165411) 
+  47   S  172       5.025000   -0.549798 ( -0.116955) 
+  47   S  173       1.013000    0.788282 (  0.557368) 
+
+  48   S  174       0.302300    0.290562 (  1.000000) 
+
+  49   S  175       0.078960    0.106161 (  1.000000) 
+
+  50   P  176      17.700000    3.243619 (  0.043018) 
+  50   P  177       3.854000    2.567280 (  0.228913) 
+  50   P  178       1.046000    1.117669 (  0.508728) 
+
+  51   P  179       0.275300    0.284248 (  1.000000) 
+
+  52   P  180       0.068560    0.050007 (  1.000000) 
+
+  53   D  181       1.185000    2.215218 (  1.000000) 
+
+  54   D  182       0.332000    0.239002 (  1.000000) 
+
+ H         
+
+  55   S  183      13.010000    0.163548 (  0.019685) 
+  55   S  184       1.962000    0.277418 (  0.137977) 
+  55   S  185       0.444600    0.315749 (  0.478148) 
+
+  56   S  186       0.122000    0.147123 (  1.000000) 
+
+  57   P  187       0.727000    0.956881 (  1.000000) 
+
+ H         
+
+  58   S  188      13.010000    0.163548 (  0.019685) 
+  58   S  189       1.962000    0.277418 (  0.137977) 
+  58   S  190       0.444600    0.315749 (  0.478148) 
+
+  59   S  191       0.122000    0.147123 (  1.000000) 
+
+  60   P  192       0.727000    0.956881 (  1.000000) 
+
+ H         
+
+  61   S  193      13.010000    0.163548 (  0.019685) 
+  61   S  194       1.962000    0.277418 (  0.137977) 
+  61   S  195       0.444600    0.315749 (  0.478148) 
+
+  62   S  196       0.122000    0.147123 (  1.000000) 
+
+  63   P  197       0.727000    0.956881 (  1.000000) 
+
+ H         
+
+  64   S  198      13.010000    0.163548 (  0.019685) 
+  64   S  199       1.962000    0.277418 (  0.137977) 
+  64   S  200       0.444600    0.315749 (  0.478148) 
+
+  65   S  201       0.122000    0.147123 (  1.000000) 
+
+  66   P  202       0.727000    0.956881 (  1.000000) 
+
+ TOTAL NUMBER OF SHELLS              =   66
+ TOTAL NUMBER OF BASIS FUNCTIONS     =  160
+ NUMBER OF ELECTRONS                 =   56
+ CHARGE OF MOLECULE                  =    0
+ STATE MULTIPLICITY                  =    1
+ NUMBER OF OCCUPIED ORBITALS (ALPHA) =   28
+ NUMBER OF OCCUPIED ORBITALS (BETA ) =   28
+ TOTAL NUMBER OF ATOMS               =   12
+ THE NUCLEAR REPULSION ENERGY IS      333.9576952133
+ TOTAL NUMBER OF CONTAMINANTS DROPPED=   10
+
+
+     $CONTRL OPTIONS
+     ---------------
+     SCFTYP=MCSCF        RUNTYP=ENERGY       EXETYP=RUN     
+     MPLEVL=       2     LOCAL =NONE         UNITS =ANGS    
+     MULT  =       1     ICHARG=       0     MAXIT =     100
+     NPRINT=       7     IREST =       0     COORD =UNIQUE  
+     ECP   =NONE         NORMF =       0     NORMP =       0
+     ITOL  =      30     ICUT  =      13     NZVAR =       0
+     NOSYM =       0     INTTYP=HONDO        GEOM  =INPUT   
+     PLTORB=       F     MOLPLT=       F     RPAC  =       F
+     AIMPAC=       0     FRIEND=             CITYP =NONE    
+     DFTTYP=NONE    
+
+     $SYSTEM OPTIONS
+     ---------------
+     KDIAG =       0     MEMORY=200000000     TIMLIM=  3600000.0 SEC.
+     COREFL=       F     PTIME =        F     XDR   =       F
+     BALTYP=NXTVAL       CBASE = 09001000     FBASE = E9BC10C0
+
+          ----------------
+          PROPERTIES INPUT
+          ----------------
+
+     MOMENTS            FIELD           POTENTIAL          DENSITY
+ IEMOM =       1   IEFLD =       0   IEPOT =       0   IEDEN =       0
+ WHERE =COMASS     WHERE =NUCLEI     WHERE =NUCLEI     WHERE =NUCLEI  
+ OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH    
+ IEMINT=       0   IEFINT=       0                     IEDINT=       0
+                                                       MORB  =       0
+
+
+          ----------------------
+          INTEGRAL INPUT OPTIONS
+          ----------------------
+ NOPK  =       1 NORDER=       0 SCHWRZ=       T
+
+ ATTENTION! AO INTEGRALS WILL BE PACKED.
+ THRESHOLD FOR PACKING PKTHR =  0.10000000D-05
+
+     -------------------------------
+     INTEGRAL TRANSFORMATION OPTIONS
+     -------------------------------
+     NWORD  =       0     CUTTRF = 1.0E-09
+     MPTRAN =       0     DIRTRF =       F
+     AOINTS =DUP          IREST  =       0
+
+          ----------------------
+          MCSCF INPUT PARAMETERS
+          ----------------------
+ CONVERGER SELECTION: FOCAS = F  SOSCF = T  FULLNR = F  QUD = F
+ SECULAR EQUATION METHOD CISTEP = GUGA    
+ --- GENERAL INPUT OPTIONS:
+ MAXIT =     200  MICIT =       5  ACURCY= 1.000E-04
+ DAMP  =   0.000  CANONC=       1  ENGTOL= 1.000E-06
+ EKT   =       F  NPUNCH=       2  NWORD =         0
+ --- INPUT FOR SOSCF CONVERGER:
+ FORS  =       T  NUMFO =       1
+
+ WARNING! THIS VERSION OF FIREFLY IS PROBABLY OUTDATED!
+ PLEASE CHECK FIREFLY HOMEPAGE FOR INFORMATION ON UPDATES!
+
+
+          ------------------------
+          XMCQDPT INPUT PARAMETERS
+          ------------------------
+ *** INPUT PARAMETERS ***
+ # OF ELECTRONS                =        56
+ SPIN MULTIPLICITY             =         1
+ SPATIAL STATE SYMMETRY        =         1 (A   )
+ # OF STATES                   =         5
+ ( = DIMENSION OF EFFECTIVE HAMILTONIAN )
+ # OF FROZEN CORE ORBITALS     =         8
+ # OF DOUBLY OCCUPIED ORBITALS =        14
+ # OF ACTIVE ORBITALS          =        10
+ # OF EXTERNAL ORBITALS        =       118
+ # OF FROZEN VIRTUAL ORBITALS  =         0
+ RUNNING USING RESOLVENT FITTING
+ ***
+      IFORB     INORB      IROT    ISELCT    LENGTH    MAXCSF    MAXERI
+          1         0         0         0     65536      4096      4096
+     MAXROW       MDI    MXBASE    MXTRFR    NSOLUT     NSTCI     NSTOP
+      10000       300       300      1000         5         5      1000
+     GENZRO    THRCON    THRENE    THRERI    THRGEN    THRWGT
+  1.000D-10 1.000D-06-1.000D+00 1.000D-12 1.000D-10 1.000D-06
+ *** WEIGHTS OF STATES IN COMPUTING AVERAGED DENSITY MATRIX (WSTATE)
+ -----------------------------------------------------------------------
+                   1            2            3            4            5
+     1  1.000000D+00 1.000000D+00 1.000000D+00 1.000000D+00 1.000000D+00
+ -----------------------------------------------------------------------
+ *** WEIGHTS OF STATES IN COMPUTING AVERAGED DENSITY MATRIX (AVECOE)
+ -----------------------------------------------------------------------
+                   1            2            3            4            5
+     1  1.000000D+00 1.000000D+00 1.000000D+00 1.000000D+00 1.000000D+00
+ -----------------------------------------------------------------------
+ *** SELECTED STATES
+ -----------------------------------------------------------------------
+             1.    2.    3.    4.    5.
+      1.      1     1     1     1     1
+ -----------------------------------------------------------------------
+
+
+
+     ------------------------------------------
+     THE POINT GROUP IS C1 , NAXIS= 0, ORDER= 1
+     ------------------------------------------
+
+     DIMENSIONS OF THE SYMMETRY SUBSPACES ARE
+ A   = 160
+
+ ..... DONE SETTING UP THE RUN .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.13 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.16 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =     79.63%,  TOTAL =     122.51%
+
+ WARNING! THIS VERSION OF FIREFLY IS PROBABLY OUTDATED!
+ PLEASE CHECK FIREFLY HOMEPAGE FOR INFORMATION ON UPDATES!
+
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+ TIME TO DO ORDINARY INTEGRALS=      0.01
+ TIME TO DO   DIPOLE INTEGRALS=      0.00
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.02 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =    149.94%,  TOTAL =     124.59%
+
+          -------------
+          GUESS OPTIONS
+          -------------
+          GUESS =MOREAD            NORB  =     160          NORDER=       1
+          MIX   =       F          PRTMO =       F          SYMDEN=       F
+          TOLZ  = 0.0E+00          TOLE  = 0.0E+00
+
+ INITIAL GUESS ORBITALS GENERATED BY MOREAD   ROUTINE.
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  4.38163205E+00
+
+ SYMMETRIES FOR INITIAL GUESS ORBITALS FOLLOW.   BOTH SET(S).
+    28 ORBITALS ARE OCCUPIED (    8 CORE ORBITALS).
+     1=A        2=A        3=A        4=A        5=A        6=A        7=A   
+     8=A        9=A       10=A       11=A       12=A       13=A       14=A   
+    15=A       16=A       17=A       18=A       19=A       20=A       21=A   
+    22=A       23=A       24=A       25=A       26=A       27=A       28=A   
+    29=A       30=A       31=A       32=A       33=A       34=A       35=A   
+    36=A       37=A       38=A       39=A       40=A       41=A       42=A   
+    43=A       44=A       45=A       46=A       47=A       48=A       49=A   
+    50=A       51=A       52=A       53=A       54=A       55=A       56=A   
+    57=A       58=A       59=A       60=A       61=A       62=A       63=A   
+    64=A       65=A       66=A       67=A       68=A       69=A       70=A   
+    71=A       72=A       73=A       74=A       75=A       76=A       77=A   
+    78=A       79=A       80=A       81=A       82=A       83=A       84=A   
+    85=A       86=A       87=A       88=A       89=A       90=A       91=A   
+    92=A       93=A       94=A       95=A       96=A       97=A       98=A   
+    99=A      100=A      101=A      102=A      103=A      104=A      105=A   
+   106=A      107=A      108=A      109=A      110=A      111=A      112=A   
+   113=A      114=A      115=A      116=A      117=A      118=A      119=A   
+   120=A      121=A      122=A      123=A      124=A      125=A      126=A   
+   127=A      128=A      129=A      130=A      131=A      132=A      133=A   
+   134=A      135=A      136=A      137=A      138=A      139=A      140=A   
+   141=A      142=A      143=A      144=A      145=A      146=A      147=A   
+   148=A      149=A      150=A      151=A      152=A      153=A      154=A   
+   155=A      156=A      157=A      158=A      159=A      160=A   
+ ...... END OF INITIAL ORBITAL SELECTION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.04 ,  TOTAL =        0.3 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.04 ,  TOTAL =        0.2 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =     94.67%,  TOTAL =     118.81%
+
+          --------------------
+          2 ELECTRON INTEGRALS
+          --------------------
+
+ THE -PK- OPTION IS OFF, THE INTEGRALS ARE NOT IN SUPERMATRIX FORM.
+ STORING    4998 INTEGRALS/RECORD ON DISK, USING 12 BYTES/INTEGRAL.
+ TWO ELECTRON INTEGRAL EVALUATION REQUIRES   37899 WORDS OF MEMORY.
+ SCHWARZ INEQUALITY OVERHEAD:     12814 INTEGRALS, CPU TIME=        0.01
+ II,JST,KST,LST =  1  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  2  1  1  1 NREC =         1 INTLOC =    2
+ II,JST,KST,LST =  3  1  1  1 NREC =         1 INTLOC =    7
+ II,JST,KST,LST =  4  1  1  1 NREC =         1 INTLOC =   22
+ II,JST,KST,LST =  5  1  1  1 NREC =         1 INTLOC =   67
+ II,JST,KST,LST =  6  1  1  1 NREC =         1 INTLOC =  214
+ II,JST,KST,LST =  7  1  1  1 NREC =         1 INTLOC = 1135
+ II,JST,KST,LST =  8  1  1  1 NREC =         1 INTLOC = 2311
+ II,JST,KST,LST =  9  1  1  1 NREC =         1 INTLOC = 3748
+ II,JST,KST,LST = 10  1  1  1 NREC =         2 INTLOC =  487
+ II,JST,KST,LST = 11  1  1  1 NREC =         3 INTLOC = 1854
+ II,JST,KST,LST = 12  1  1  1 NREC =         5 INTLOC = 1253
+ II,JST,KST,LST = 13  1  1  1 NREC =        11 INTLOC = 1938
+ II,JST,KST,LST = 14  1  1  1 NREC =        12 INTLOC = 4809
+ II,JST,KST,LST = 15  1  1  1 NREC =        14 INTLOC = 3518
+ II,JST,KST,LST = 16  1  1  1 NREC =        16 INTLOC = 3126
+ II,JST,KST,LST = 17  1  1  1 NREC =        22 INTLOC = 3946
+ II,JST,KST,LST = 18  1  1  1 NREC =        30 INTLOC = 2429
+ II,JST,KST,LST = 19  1  1  1 NREC =        51 INTLOC = 1513
+ II,JST,KST,LST = 20  1  1  1 NREC =        56 INTLOC = 3175
+ II,JST,KST,LST = 21  1  1  1 NREC =        62 INTLOC = 1755
+ II,JST,KST,LST = 22  1  1  1 NREC =        68 INTLOC = 2346
+ II,JST,KST,LST = 23  1  1  1 NREC =        87 INTLOC = 2436
+ II,JST,KST,LST = 24  1  1  1 NREC =       109 INTLOC = 4341
+ II,JST,KST,LST = 25  1  1  1 NREC =       166 INTLOC =  207
+ II,JST,KST,LST = 26  1  1  1 NREC =       178 INTLOC = 2716
+ II,JST,KST,LST = 27  1  1  1 NREC =       191 INTLOC = 3644
+ II,JST,KST,LST = 28  1  1  1 NREC =       205 INTLOC = 3002
+ II,JST,KST,LST = 29  1  1  1 NREC =       247 INTLOC = 4435
+ II,JST,KST,LST = 30  1  1  1 NREC =       295 INTLOC = 4492
+ II,JST,KST,LST = 31  1  1  1 NREC =       411 INTLOC =  227
+ II,JST,KST,LST = 32  1  1  1 NREC =       435 INTLOC =  962
+ II,JST,KST,LST = 33  1  1  1 NREC =       460 INTLOC = 1925
+ II,JST,KST,LST = 34  1  1  1 NREC =       486 INTLOC = 3150
+ II,JST,KST,LST = 35  1  1  1 NREC =       565 INTLOC = 1645
+ II,JST,KST,LST = 36  1  1  1 NREC =       652 INTLOC = 2730
+ II,JST,KST,LST = 37  1  1  1 NREC =       854 INTLOC = 3761
+ II,JST,KST,LST = 38  1  1  1 NREC =       892 INTLOC = 2809
+ II,JST,KST,LST = 39  1  1  1 NREC =       934 INTLOC =  555
+ II,JST,KST,LST = 40  1  1  1 NREC =       977 INTLOC = 4567
+ II,JST,KST,LST = 41  1  1  1 NREC =      1023 INTLOC = 1826
+ II,JST,KST,LST = 42  1  1  1 NREC =      1153 INTLOC = 2726
+ II,JST,KST,LST = 43  1  1  1 NREC =      1299 INTLOC = 1772
+ II,JST,KST,LST = 44  1  1  1 NREC =      1458 INTLOC = 1984
+ II,JST,KST,LST = 45  1  1  1 NREC =      1805 INTLOC = 4666
+ II,JST,KST,LST = 46  1  1  1 NREC =      2222 INTLOC =  121
+ II,JST,KST,LST = 47  1  1  1 NREC =      2300 INTLOC = 2785
+ II,JST,KST,LST = 48  1  1  1 NREC =      2386 INTLOC =  157
+ II,JST,KST,LST = 49  1  1  1 NREC =      2476 INTLOC = 1953
+ II,JST,KST,LST = 50  1  1  1 NREC =      2569 INTLOC = 4573
+ II,JST,KST,LST = 51  1  1  1 NREC =      2835 INTLOC =  484
+ II,JST,KST,LST = 52  1  1  1 NREC =      3129 INTLOC = 2697
+ II,JST,KST,LST = 53  1  1  1 NREC =      3447 INTLOC =  288
+ II,JST,KST,LST = 54  1  1  1 NREC =      4126 INTLOC = 3420
+ II,JST,KST,LST = 55  1  1  1 NREC =      4924 INTLOC = 2606
+ II,JST,KST,LST = 56  1  1  1 NREC =      5072 INTLOC = 4258
+ II,JST,KST,LST = 57  1  1  1 NREC =      5230 INTLOC =  243
+ II,JST,KST,LST = 58  1  1  1 NREC =      5648 INTLOC = 4202
+ II,JST,KST,LST = 59  1  1  1 NREC =      5795 INTLOC = 4199
+ II,JST,KST,LST = 60  1  1  1 NREC =      5964 INTLOC = 4231
+ II,JST,KST,LST = 61  1  1  1 NREC =      6368 INTLOC = 1502
+ II,JST,KST,LST = 62  1  1  1 NREC =      6533 INTLOC = 4093
+ II,JST,KST,LST = 63  1  1  1 NREC =      6724 INTLOC = 3776
+ II,JST,KST,LST = 64  1  1  1 NREC =      7180 INTLOC = 2871
+ II,JST,KST,LST = 65  1  1  1 NREC =      7375 INTLOC = 4718
+ II,JST,KST,LST = 66  1  1  1 NREC =      7586 INTLOC = 2518
+ SCHWARZ INEQUALITY TEST SKIPPED     86839 INTEGRAL BLOCKS.
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =            40599748
+       8124 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+ CPU        TIME:   STEP =      7.86 ,  TOTAL =        8.1 SECONDS (    0.1 MIN)
+ WALL CLOCK TIME:   STEP =      7.88 ,  TOTAL =        8.1 SECONDS (    0.1 MIN)
+ CPU UTILIZATION:   STEP =     99.77%,  TOTAL =     100.29%
+
+          -----------------
+          MCSCF CALCULATION
+          -----------------
+
+ ----- NUCLEAR ENERGY ----- =       333.9576952133
+
+          -----------------------     ----------------------------
+          GUGA DISTINCT ROW TABLE     WRITTEN BY B.R.BROOKS,P.SAXE
+          -----------------------     ----------------------------
+
+ WARNING! THIS VERSION OF FIREFLY IS PROBABLY OUTDATED!
+ PLEASE CHECK FIREFLY HOMEPAGE FOR INFORMATION ON UPDATES!
+
+
+      GROUP=C1           NPRT=       0
+       FORS=       T   INTACT=       F
+       FOCI=       F   MXNINT=   20000
+       SOCI=       F   MXNEME=    7500
+     IEXCIT=       0   NWORD =  180018
+
+      -CORE-    -INTERNAL-  -EXTERNAL-
+     NFZC=   0   NDOC=   6   NEXT=   0
+     NMCC=  22   NAOS=   0   NFZV=   0
+                 NBOS=   0
+                 NALP=   0
+                 NVAL=   4
+
+ THE MAXIMUM ELECTRON EXCITATION WILL BE   8
+
+ SYMMETRIES FOR THE  22 CORE,  10 ACTIVE,   0 EXTERNAL MO-S ARE
+     CORE= A     A     A     A     A     A     A     A     A     A   
+ A     A     A     A     A     A     A     A     A     A   
+ A     A   
+   ACTIVE= A     A     A     A     A     A     A     A     A     A   
+           DOC   DOC   DOC   DOC   DOC   DOC   VAL   VAL   VAL   VAL 
+
+ MOLECULAR CHARGE          =    0
+ NUMBER OF ALPHA ELECTRONS =   28
+ NUMBER OF  BETA ELECTRONS =   28
+
+ THE ELECTRONIC STATE IS  1-A   
+
+ THE DISTINCT ROW TABLE HAS        85 ROWS.
+ THE WAVEFUNCTION  CONTAINS     13860 WALKS (CSF-S).
+
+ TOTAL NUMBER OF INTEGRALS =       1835
+ NUMBER OF INTEGRALS/GROUP =       1835
+ NUMBER OF INTEGRAL GROUPS =          1
+ MAXIMUM RECORD SIZES ARE     13860 FOR UNIT 11     13860 FOR UNIT 12
+                              15001 FOR UNIT 15     22501 FOR UNIT 16
+ ...... END OF -DRT- GENERATION ...... 
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      5.71 ,  TOTAL =       13.8 SECONDS (    0.2 MIN)
+ WALL CLOCK TIME:   STEP =      5.70 ,  TOTAL =       13.8 SECONDS (    0.2 MIN)
+ CPU UTILIZATION:   STEP =    100.10%,  TOTAL =     100.21%
+ OPENING FILE DAFL30 WITH       81 LOGICAL RECORDS OF   25600 WORDS
+ DAFL30 WILL CONTAIN A MAXIMUM OF      32400 PHYSICAL RECORDS
+ EACH PHYSICAL RECORD WILL CONTAIN      64   WORDS
+
+
+          ------------------------------
+          CASSCF INTEGRAL TRANSFORMATION
+          ------------------------------
+ AO INTEGRALS WILL BE READ IN FROM DISK...
+ MEMORY WHICH WOULD BE NEEDED FOR SINGLE PASS TRANSFORMATION =   21453888
+
+ ----- CHOOSING THREE STEPS TRANSFORMATION -----
+ NUMBER OF WORDS USED      =    4399173
+ NUMBER OF WORDS AVAILABLE =  199999600
+ NUMBER OF PASSES          =          6
+ PASS #   1 COMPLETED IN         0.6 SECONDS ON MASTER.
+ PASS #   2 IS ASSIGNED TO A DIFFERENT RANK.
+ PASS #   3 IS ASSIGNED TO A DIFFERENT RANK.
+ PASS #   4 IS ASSIGNED TO A DIFFERENT RANK.
+ PASS #   5 IS ASSIGNED TO A DIFFERENT RANK.
+ PASS #   6 IS ASSIGNED TO A DIFFERENT RANK.
+
+ ----- NUCLEAR REPULSION ENERGY =    333.95769521
+ ----- FROZEN CORE ENERGY       =   -689.84439868
+
+ ... SYMMETRY ...           CPU =    0.00
+ ... (PQ|RS) -> (PQ|KL) ... CPU =    0.78
+ ... (PQ|KL) -> (IJ|KL) ... CPU =    0.00
+
+ NUMBER OF (PQ|KL) INTEGRALS WRITTEN     340013
+ NUMBER OF (IJ|KL) INTEGRALS WRITTEN        796
+ ..... END OF CASSCF INTEGRAL TRANSFORMATION .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.78 ,  TOTAL =       14.6 SECONDS (    0.2 MIN)
+ WALL CLOCK TIME:   STEP =      0.80 ,  TOTAL =       14.6 SECONDS (    0.2 MIN)
+ CPU UTILIZATION:   STEP =     97.31%,  TOTAL =     100.05%
+
+          ------------------------
+          GUGA-CI INTEGRAL SORTING
+          ------------------------
+
+     30182 WORDS NEEDED TO SORT           1835 GUGA INTEGRALS IN MEMORY
+ 199999600 WORDS ARE AVAILABLE
+ CHOOSING IN-MEMORY SORTING...
+ IN CORE ALGORITHM SORTED             55 NON-ZERO 1E- INTEGRALS
+ IN CORE ALGORITHM SORTED            796 NON-ZERO 2E- INTEGRALS
+ ...... END OF INTEGRAL SORTING ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =       14.6 SECONDS (    0.2 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =       14.6 SECONDS (    0.2 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =     100.03%
+
+ -------------------------     ---------------------------------------
+ ENERGY MATRIX CALCULATION     WRITTEN BY B.R.BROOKS,W.D.LAIDIG,P.SAXE
+ -------------------------     ---------------------------------------
+
+ COMPUTING THE HAMILTONIAN FOR THE     13860 CSF-S...
+
+     6620619 IS THE TOTAL NUMBER OF GENERATED LOOPS
+     6620619 WERE CREATED BY THE LOOP-DRIVEN ALGORITHM
+           0 WERE CREATED IMPLICITLY
+
+     3060426 IS THE TOTAL NUMBER OF PROCESSED LOOPS
+       79945     DIAGONAL LOOPS ARE STORED ON WORK15 IN       2 BUFFERS OF   7500 ELEMENTS.
+     2980481 OFF DIAGONAL LOOPS ARE STORED ON WORK16 IN      67 BUFFERS OF   7500 ELEMENTS.
+ ...... END OF ENERGY MATRIX CALCULATION ...... 
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.31 ,  TOTAL =       14.9 SECONDS (    0.2 MIN)
+ WALL CLOCK TIME:   STEP =      0.31 ,  TOTAL =       14.9 SECONDS (    0.2 MIN)
+ CPU UTILIZATION:   STEP =     99.85%,  TOTAL =     100.03%
+
+          -----------------------------------------
+          DAVIDSON METHOD CI-MATRIX DIAGONALIZATION
+            PROGRAM WRITTEN BY ALEX A. GRANOVSKY
+          -----------------------------------------
+ NUMBER OF STATES REQUESTED =    15
+ MAX. NUMB. OF EXPAN. VEC   =    31
+ MAX. NUMB. IMPROVED STATES =    15
+ MAX. NUMB. OF ITERATIONS   =  1000
+ CONVERGENCE CRITERION      =    1.0E-08
+
+ CHOOSING OUT OF MEMORY STORAGE OF HAMILTONIAN,
+ AND IN MEMORY STORAGE OF TRIAL VECTORS.
+
+ NUMBER OF WORDS AVAILABLE =  199999600
+ NUMBER OF WORDS USED      =    1115955
+ ENERGY MATRIX BUFFER SIZE =       7500
+
+    30 LOWEST DIAGONAL ELEMENTS OF HAMILTONIAN ARE
+   -379.1520254 (CSF     8569)   -379.0876403 (CSF     2521)   -379.0078657 (CSF     8574)
+   -378.9732968 (CSF        1)   -378.9316243 (CSF     8570)   -378.9309853 (CSF     8573)
+   -378.9190751 (CSF     2522)   -378.9188203 (CSF     2525)   -378.8288404 (CSF     8578)
+   -378.8215825 (CSF     8579)   -378.8209635 (CSF     8588)   -378.8149075 (CSF     8571)
+   -378.8144231 (CSF     8575)   -378.8070871 (CSF     2523)   -378.7936440 (CSF     8589)
+   -378.7899428 (CSF     2524)   -378.7624420 (CSF     8572)   -378.7581865 (CSF     2526)
+   -378.7252397 (CSF     8583)   -378.7230248 (CSF     8577)   -378.6966911 (CSF     8582)
+   -378.6770021 (CSF     8586)   -378.6673097 (CSF     8587)   -378.6072442 (CSF     8580)
+   -378.5699761 (CSF     8576)   -378.5663631 (CSF     8581)   -378.4349658 (CSF     8585)
+   -378.3134777 (CSF     9745)   -378.2899691 (CSF     8765)   -378.2802819 (CSF     8584)
+
+
+ ITER. NO.JUST IMPROVED    ENERGY AND STATE
+   0  16(MAX.TOL.STATE)   -379.202129473  1   -379.130492063  2   -379.082936081  3   -379.048568999  4   -378.987431102  5
+                          -378.954568961  6   -378.952936189  7   -378.929098709  8   -378.875186260  9   -378.868074388 10
+                          -378.853927713 11   -378.809943381 12   -378.791375065 13   -378.720967646 14   -378.622268088 15
+   1  15  0.22734757 12   -379.236462291  1   -379.150906532  2   -379.106804014  3   -379.056014694  4   -379.043072283  5
+                          -379.008274309  6   -378.977453856  7   -378.951622434  8   -378.949527677  9   -378.913756403 10
+                          -378.878511385 11   -378.871641167 12   -378.813556353 13   -378.740298078 14   -378.674581748 15
+   2  15  0.99472223 15   -379.240514560  1   -379.153234748  2   -379.116026321  3   -379.060264345  4   -379.057932898  5
+                          -379.034283084  6   -379.002285110  7   -378.982513752  8   -378.955916205  9   -378.930601316 10
+                          -378.920290699 11   -378.883138636 12   -378.816690385 13   -378.741235460 14   -378.712615602 15
+   3  15  0.49643191 14   -379.240991136  1   -379.153288859  2   -379.116652377  3   -379.061580605  4   -379.057990787  5
+                          -379.037998494  6   -379.008397675  7   -378.982878040  8   -378.956009788  9   -378.931815397 10
+                          -378.926297651 11   -378.883251427 12   -378.816711381 13   -378.807406869 14   -378.741592923 15
+   4  15  0.21909588 13   -379.241043563  1   -379.153290968  2   -379.116672683  3   -379.061825310  4   -379.057995889  5
+                          -379.038596962  6   -379.009201778  7   -378.982897091  8   -378.956013864  9   -378.932184893 10
+                          -378.927777456 11   -378.883256959 12   -378.841710096 13   -378.816717878 14   -378.744864424 15
+   5  15  0.31583096 13   -379.241049074  1   -379.153291107  2   -379.116673718  3   -379.061872838  4   -379.057996404  5
+                          -379.038722246  6   -379.009351068  7   -378.982899277  8   -378.956014141  9   -378.932348741 10
+                          -378.927825530 11   -378.883257662 12   -378.869224551 13   -378.816723536 14   -378.747978968 15
+   6  15  0.11509078 13   -379.241049868  1   -379.153291118  2   -379.116673772  3   -379.061879041  4   -379.057996466  5
+                          -379.038741092  6   -379.009376116  7   -378.982899848  8   -378.956014166  9   -378.932483350 10
+                          -378.927843001 11   -378.883257779 12   -378.876170722 13   -378.816727574 14   -378.750821554 15
+   7  15  0.07566883 13   -379.241049992  1   -379.153291120  2   -379.116673777  3   -379.061880585  4   -379.057996475  5
+                          -379.038744198  6   -379.009382110  7   -378.982899866  8   -378.956014170  9   -378.932581853 10
+                          -378.927862996 11   -378.883257801 12   -378.878654080 13   -378.816729973 14   -378.752130831 15
+   8  15  0.04620702 13   -379.241050010  1   -379.153291120  2   -379.116673778  3   -379.061880853  4   -379.057996477  5
+                          -379.038744871  6   -379.009383736  7   -378.982899884  8   -378.956014170  9   -378.932668053 10
+                          -378.927870798 11   -378.883257806 12   -378.879710232 13   -378.816731669 14   -378.752681143 15
+   9  15  0.03204820 13   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880888  4   -379.057996477  5
+                          -379.038745016  6   -379.009384052  7   -378.982899888  8   -378.956014170  9   -378.932715702 10
+                          -378.927874553 11   -378.883257808 12   -378.880193971 13   -378.816733016 14   -378.753056982 15
+  10  15  0.03193338 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880896  4   -379.057996477  5
+                          -379.038745049  6   -379.009384129  7   -378.982899895  8   -378.956014170  9   -378.932749283 10
+                          -378.927876274 11   -378.883257808 12   -378.880419323 13   -378.816734249 14   -378.753539773 15
+  11  15  0.02039153 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880898  4   -379.057996477  5
+                          -379.038745056  6   -379.009384148  7   -378.982899902  8   -378.956014170  9   -378.932769240 10
+                          -378.927877208 11   -378.883257808 12   -378.880531462 13   -378.816735056 14   -378.753894421 15
+  12  15  0.02847048 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880898  4   -379.057996477  5
+                          -379.038745058  6   -379.009384151  7   -378.982900295  8   -378.956014170  9   -378.932787057 10
+                          -378.927877660 11   -378.883257808 12   -378.880581514 13   -378.816735714 14   -378.754286957 15
+  13  15  0.01828723 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384153  7   -378.982900563  8   -378.956014170  9   -378.932802384 10
+                          -378.927877793 11   -378.883257808 12   -378.880605291 13   -378.816736323 14   -378.754493661 15
+  14  15  0.02580672 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384154  7   -378.982900586  8   -378.956014170  9   -378.932817058 10
+                          -378.927877859 11   -378.883257808 12   -378.880619195 13   -378.816736823 14   -378.754723096 15
+  15  15  0.03897964 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384154  7   -378.982900590  8   -378.956014170  9   -378.932831311 10
+                          -378.927877885 11   -378.883257808 12   -378.880627265 13   -378.816737286 14   -378.755363977 15
+  16  15  0.08047358 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384154  7   -378.982900591  8   -378.956014170  9   -378.932846205 10
+                          -378.927877905 11   -378.883257808 12   -378.880630906 13   -378.816737730 14   -378.756265902 15
+  17  15  0.02796712 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384154  7   -378.982900591  8   -378.956014170  9   -378.932861021 10
+                          -378.927877912 11   -378.883257808 12   -378.880632493 13   -378.816738154 14   -378.756513931 15
+  18  14  0.02317174 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384154  7   -378.982900591  8   -378.956014170  9   -378.932874719 10
+                          -378.927877915 11   -378.883257808 12   -378.880633251 13   -378.816738566 14   -378.756704773 15
+  19  12  0.01812025 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.932887730 10
+                          -378.927877917 11   -378.883257808 12   -378.880633593 13   -378.816738942 14   -378.756823818 15
+  20  12  0.01860636 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.932900410 10
+                          -378.927877924 11   -378.883257808 12   -378.880633679 13   -378.816739287 14   -378.756960928 15
+  21  11  0.01850361 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.932911777 10
+                          -378.927877926 11   -378.883257808 12   -378.880633722 13   -378.816739564 14   -378.757090263 15
+  22  11  0.01967911 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.932922602 10
+                          -378.927877928 11   -378.883257808 12   -378.880633773 13   -378.816739720 14   -378.757309857 15
+  23  11  0.02027492 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.932932593 10
+                          -378.927877931 11   -378.883257808 12   -378.880633805 13   -378.816739835 14   -378.757442116 15
+  24  11  0.01968990 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.932941955 10
+                          -378.927877932 11   -378.883257808 12   -378.880633831 13   -378.816739883 14   -378.757616933 15
+  25   9  0.01630459 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.932950495 10
+                          -378.927877934 11   -378.883257808 12   -378.880633855 13   -378.816739936 14   -378.757698084 15
+  26   9  0.01836649 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.932958632 10
+                          -378.927877935 11   -378.883257808 12   -378.880633884 13   -378.816739981 14   -378.757787693 15
+  27   9  0.01789395 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.932966426 10
+                          -378.927877936 11   -378.883257808 12   -378.880633919 13   -378.816740023 14   -378.757866540 15
+  28   9  0.01990759 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.932973766 10
+                          -378.927877938 11   -378.883257808 12   -378.880633962 13   -378.816740062 14   -378.757944407 15
+  29   9  0.02499366 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.932980794 10
+                          -378.927877939 11   -378.883257808 12   -378.880634019 13   -378.816740101 14   -378.758009202 15
+  30   9  0.03268060 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.932987414 10
+                          -378.927877941 11   -378.883257808 12   -378.880634081 13   -378.816740140 14   -378.758078763 15
+  31   9  0.04934830 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.932993717 10
+                          -378.927877942 11   -378.883257808 12   -378.880634151 13   -378.816740178 14   -378.758127686 15
+  32   9  0.26572146 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.932999631 10
+                          -378.927877944 11   -378.883257808 12   -378.880634213 13   -378.816740216 14   -378.758264289 15
+  33   9  0.83617345 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933005238 10
+                          -378.927877945 11   -378.883257808 12   -378.880634270 13   -378.816740253 14   -378.761192217 15
+  34   9  0.10731194 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933010450 10
+                          -378.927877947 11   -378.883257808 12   -378.880634313 13   -378.816740291 14   -378.762655033 15
+  35   9  0.09687053 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933015409 10
+                          -378.927877948 11   -378.883257808 12   -378.880634346 13   -378.816740328 14   -378.763956468 15
+  36   9  0.15007052 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933020011 10
+                          -378.927877949 11   -378.883257808 12   -378.880634370 13   -378.816740366 14   -378.774749696 15
+  37   9  0.10456985 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933024373 10
+                          -378.927877950 11   -378.883257808 12   -378.880634387 13   -378.816740402 14   -378.778126274 15
+  38   9  0.05265803 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933028490 10
+                          -378.927877952 11   -378.883257808 12   -378.880634399 13   -378.816740439 14   -378.778777374 15
+  39   9  0.03867506 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933032346 10
+                          -378.927877953 11   -378.883257808 12   -378.880634408 13   -378.816740475 14   -378.778898901 15
+  40   9  0.03962199 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933035977 10
+                          -378.927877954 11   -378.883257808 12   -378.880634414 13   -378.816740510 14   -378.779067701 15
+  41   9  0.05683202 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933039375 10
+                          -378.927877955 11   -378.883257808 12   -378.880634418 13   -378.816740544 14   -378.779314048 15
+  42   9  0.03835836 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933042596 10
+                          -378.927877956 11   -378.883257808 12   -378.880634421 13   -378.816740581 14   -378.779483795 15
+  43   9  0.04401586 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933045635 10
+                          -378.927877957 11   -378.883257808 12   -378.880634423 13   -378.816740616 14   -378.779622373 15
+  44   9  0.03188749 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933048502 10
+                          -378.927877958 11   -378.883257808 12   -378.880634424 13   -378.816740650 14   -378.779736675 15
+  45   9  0.03540509 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933051197 10
+                          -378.927877959 11   -378.883257808 12   -378.880634425 13   -378.816740685 14   -378.779826841 15
+  46   9  0.02554180 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933053740 10
+                          -378.927877959 11   -378.883257808 12   -378.880634426 13   -378.816740725 14   -378.779893341 15
+  47   8  0.02522218 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933056131 10
+                          -378.927877960 11   -378.883257808 12   -378.880634426 13   -378.816740764 14   -378.779947985 15
+  48   8  0.05579793 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933094474 10
+                          -378.927878086 11   -378.883257808 12   -378.880634428 13   -378.816758031 14   -378.780808730 15
+  49   8  0.02984086 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097190 10
+                          -378.927878095 11   -378.883257808 12   -378.880634428 13   -378.816760931 14   -378.781056053 15
+  50   7  0.02107504 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097283 10
+                          -378.927878096 11   -378.883257808 12   -378.880634428 13   -378.816761494 14   -378.781116525 15
+  51   5  0.01667654 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097309 10
+                          -378.927878096 11   -378.883257808 12   -378.880634428 13   -378.816761680 14   -378.781158703 15
+  52   5  0.02801079 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097582 10
+                          -378.927878096 11   -378.883257808 12   -378.880634428 13   -378.816761868 14   -378.781364500 15
+  53   5  0.03238582 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097679 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816761923 14   -378.781764008 15
+  54   5  0.01277781 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097698 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816761983 14   -378.781795895 15
+  55   5  0.03049729 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097703 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816762016 14   -378.781968800 15
+  56   5  0.01872291 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097708 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816762032 14   -378.782123549 15
+  57   5  0.01262124 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097709 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816762070 14   -378.782140437 15
+  58   5  0.01681893 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097709 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816762088 14   -378.782220641 15
+  59   5  0.03497914 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097709 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816762125 14   -378.782441652 15
+  60   4  0.00625006 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816762128 14   -378.782446877 15
+  61   4  0.02195471 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816762156 14   -378.782553837 15
+  62   4  0.00919532 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816762178 14   -378.782588316 15
+  63   4  0.04974954 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816762261 14   -378.782885810 15
+  64   4  0.02164937 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816762272 14   -378.783044822 15
+  65   4  0.01426887 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816762315 14   -378.783072148 15
+  66   4  0.03041768 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816762409 14   -378.783204497 15
+  67   4  0.01448318 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816762502 14   -378.783302098 15
+  68   4  0.01416550 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816762540 14   -378.783349879 15
+  69   4  0.01735791 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816762548 14   -378.783422656 15
+  70   3  0.01183189 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816762548 14   -378.783442631 15
+  71   3  0.01251019 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816762562 14   -378.783484169 15
+  72   3  0.00638908 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816762855 14   -378.783509605 15
+  73   3  0.06156634 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763049 14   -378.783969235 15
+  74   3  0.17154121 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763174 14   -378.788169335 15
+  75   3  0.06614190 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763202 14   -378.788625802 15
+  76   3  0.04180704 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763213 14   -378.789065130 15
+  77   3  0.02989031 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763346 14   -378.789606155 15
+  78   3  0.05274726 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763479 14   -378.791136339 15
+  79   3  0.04408101 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763495 14   -378.792231692 15
+  80   3  0.03777476 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763521 14   -378.792613077 15
+  81   2  0.00923186 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763522 14   -378.792620736 15
+  82   2  0.01083803 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763524 14   -378.792662236 15
+  83   2  0.00755950 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763528 14   -378.792683078 15
+  84   2  0.02394632 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763630 14   -378.792845913 15
+  85   2  0.02681393 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763704 14   -378.793017288 15
+  86   2  0.01026063 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763877 14   -378.793082209 15
+  87   2  0.02795308 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763942 14   -378.793477577 15
+  88   2  0.02163034 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763977 14   -378.793637501 15
+  89   2  0.01546278 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763982 14   -378.793693794 15
+  90   2  0.00859911 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763982 14   -378.793702821 15
+  91   2  0.01189916 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763982 14   -378.793756221 15
+  92   2  0.00950504 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763982 14   -378.793783472 15
+  93   2  0.02367829 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763982 14   -378.793889663 15
+  94   2  0.00703296 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763983 14   -378.793913458 15
+  95   2  0.02098616 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763984 14   -378.794046180 15
+  96   2  0.01616287 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763985 14   -378.794161126 15
+  97   2  0.00868227 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763986 14   -378.794198039 15
+  98   2  0.00412651 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763986 14   -378.794199475 15
+  99   2  0.00840477 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763987 14   -378.794222374 15
+ 100   2  0.00478031 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763987 14   -378.794232381 15
+ 101   2  0.00157411 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763988 14   -378.794234450 15
+ 102   2  0.00480580 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763988 14   -378.794243492 15
+ 103   2  0.00531138 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763991 14   -378.794258444 15
+ 104   2  0.00351700 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794264600 15
+ 105   2  0.00294307 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794267549 15
+ 106   2  0.00380755 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794269261 15
+ 107   2  0.00360286 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794271601 15
+ 108   2  0.00323600 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794276032 15
+ 109   2  0.00179676 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794277617 15
+ 110   2  0.00111638 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794278106 15
+ 111   2  0.00521161 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794286148 15
+ 112   2  0.00290724 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794290180 15
+ 113   2  0.00105310 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794290818 15
+ 114   2  0.00060494 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794290885 15
+ 115   2  0.00110897 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291132 15
+ 116   2  0.00017160 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291154 15
+ 117   2  0.00067361 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291278 15
+ 118   2  0.00043137 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291395 15
+ 119   2  0.00045582 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291537 15
+ 120   2  0.00045050 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291660 15
+ 121   2  0.00029262 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291691 15
+ 122   2  0.00010249 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291692 15
+ 123   2  0.00024592 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291704 15
+ 124   2  0.00007674 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291709 15
+ 125   2  0.00006091 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291711 15
+ 126   2  0.00017382 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291723 15
+ 127   2  0.00018157 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291738 15
+ 128   2  0.00023793 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291754 15
+ 129   2  0.00016083 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291761 15
+ 130   2  0.00011142 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291763 15
+ 131   2  0.00011102 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291765 15
+ 132   2  0.00005324 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291766 15
+ 133   2  0.00005020 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291769 15
+ 134   2  0.00003216 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291769 15
+ 135   2  0.00006347 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291772 15
+ 136   2  0.00006618 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291774 15
+ 137   2  0.00007424 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291775 15
+ 138   2  0.00004807 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291776 15
+ 139   2  0.00000599 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291776 15
+ 140   2  0.00001083 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291776 15
+ 141   2  0.00001549 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291776 15
+ 142   2  0.00006032 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291778 15
+ 143   2  0.00005225 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291779 15
+ 144   2  0.00004991 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291780 15
+ 145   2  0.00003262 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291780 15
+ 146   2  0.00002043 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291780 15
+ 147   2  0.00003689 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291780 15
+ 148   2  0.00002161 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 149   2  0.00000909 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 150   2  0.00000788 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 151   2  0.00001397 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 152   2  0.00002416 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 153   2  0.00001234 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 154   2  0.00001570 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 155   2  0.00001519 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 156   2  0.00000625 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 157   2  0.00000800 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 158   2  0.00001672 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 159   2  0.00002327 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 160   2  0.00001190 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 161   2  0.00000834 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 162   2  0.00000443 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 163   2  0.00000725 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 164   2  0.00000324 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 165   1  0.00000283 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 166   2  0.00000188 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 167   2  0.00000677 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 168   2  0.00000261 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 169   2  0.00000410 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 170   2  0.00000161 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 171   2  0.00000602 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291781 15
+ 172   2  0.00000496 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 173   2  0.00000452 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 174   2  0.00000206 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 175   2  0.00000295 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 176   2  0.00000144 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 177   1  0.00000031 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 178   1  0.00000036 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 179   1  0.00000176 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 180   2  0.00000122 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 181   1  0.00000048 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 182   1  0.00000083 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 183   1  0.00000114 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 184   1  0.00000059 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 185   1  0.00000008 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 186   1  0.00000077 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 187   1  0.00000205 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 188   2  0.00000382 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 189   2  0.00000323 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 190   2  0.00000258 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 191   2  0.00000259 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 192   2  0.00000097 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 193   1  0.00000134 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 194   2  0.00000031 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 195   1  0.00000023 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 196   1  0.00000015 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 197   1  0.00000051 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 198   1  0.00000072 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 199   2  0.00000011 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 200   1  0.00000010 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 201   1  0.00000012 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 202   1  0.00000001 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 203   1  0.00000016 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 204   1  0.00000008 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 205   1  0.00000005 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 206   1  0.00000023 15   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+ 207   1  0.00000000 14   -379.241050013  1   -379.153291120  2   -379.116673778  3   -379.061880899  4   -379.057996477  5
+                          -379.038745058  6   -379.009384155  7   -378.982900591  8   -378.956014170  9   -378.933097710 10
+                          -378.927878097 11   -378.883257808 12   -378.880634428 13   -378.816763992 14   -378.794291782 15
+
+ STATE #    1  ENERGY =    -379.241050013
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+     2845    0.057660  2221211010
+     5042   -0.070628  2222111100
+     8569    0.899686  2222202000
+     8571   -0.264726  2221212000
+     8572    0.054260  2212212000
+     8575   -0.300600  2222022000
+
+ STATE #    2  ENERGY =    -379.153291120
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+     2521    0.906646  2222211000
+     2523   -0.155344  2221221000
+     3533    0.051785  1222211100
+     8579    0.369236  1222122000
+
+ STATE #    3  ENERGY =    -379.116673778
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+     2522    0.623102  2222121000
+     2525    0.131616  2122221000
+     2857    0.058063  1221221010
+     3537    0.056768  1222121100
+     8574    0.734951  1222212000
+     8583   -0.186273  1221222000
+
+ STATE #    4  ENERGY =    -379.061880899
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+     2847   -0.061806  2122211010
+     5041    0.087450  2222201100
+     5047    0.053207  2222021100
+     5050    0.059365  2122121100
+     8570   -0.751533  2222112000
+     8573   -0.581983  2122212000
+     8576   -0.074960  2221122000
+     8582    0.231180  2121222000
+     8769   -0.057607  1222202010
+
+ STATE #    5  ENERGY =    -379.057996477
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+        1   -0.868206  2222220000
+      342    0.057496  1222220100
+     2863   -0.067381  0222221010
+     8571    0.053552  2221212000
+     8575    0.090416  2222022000
+     8589    0.473191  0222222000
+
+ STATE #    6  ENERGY =    -379.038745058
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+        1   -0.091442  2222220000
+     2843   -0.072667  2222201010
+     5042    0.059088  2222111100
+     8569   -0.360180  2222202000
+     8571   -0.455021  2221212000
+     8572    0.110039  2212212000
+     8575   -0.664620  2222022000
+     8578   -0.243454  2122122000
+     8580    0.293445  2220222000
+     8581   -0.087309  2211222000
+     8584    0.057125  2202222000
+     8587    0.082670  2022222000
+     8589    0.070383  0222222000
+     9778   -0.060357  1222022100
+
+ STATE #    7  ENERGY =    -379.009384155
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+     5041    0.077462  2222201100
+     5050   -0.054044  2122121100
+     8570   -0.543299  2222112000
+     8573    0.645502  2122212000
+     8576   -0.404651  2221122000
+     8582   -0.301932  2121222000
+     8769   -0.075369  1222202010
+
+ STATE #    8  ENERGY =    -378.982900591
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+      337    0.068260  2222210100
+     2522   -0.426257  2222121000
+     2525   -0.710303  2122221000
+     2637   -0.059432  1222211010
+     5060   -0.074006  1122221100
+     8574    0.519721  1222212000
+     8583    0.131367  1221222000
+
+ STATE #    9  ENERGY =    -378.956014170
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+     2521    0.359186  2222211000
+     2523    0.653177  2221221000
+     2524   -0.215004  2212221000
+     5046    0.103839  1222211100
+     8579   -0.592853  1222122000
+     8588   -0.145851  1122222000
+
+ STATE #   10  ENERGY =    -378.933097710
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+     2843   -0.066077  2222201010
+     5045   -0.055754  2122211100
+     5054    0.066839  2121221100
+     8569   -0.068386  2222202000
+     8571   -0.418955  2221212000
+     8572   -0.083084  2212212000
+     8575    0.087871  2222022000
+     8578    0.842256  2122122000
+     8580    0.226315  2220222000
+
+ STATE #   11  ENERGY =    -378.927878097
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+      337   -0.058713  2222210100
+     2522    0.422039  2222121000
+     2525   -0.627849  2122221000
+     2637    0.073118  1222211010
+     2848   -0.080270  1222211010
+     3537    0.058311  1222121100
+     8574   -0.373241  1222212000
+     8583   -0.509685  1221222000
+
+ STATE #   12  ENERGY =    -378.883257808
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+      341    0.067272  2122220100
+     2523    0.379135  2221221000
+     2647   -0.074365  1122221010
+     2862    0.072327  1122221010
+     8579    0.169431  1222122000
+     8588    0.892638  1122222000
+
+ STATE #   13  ENERGY =    -378.880634428
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+     2846   -0.065159  2212211010
+     5049    0.083916  2212121100
+     8571    0.108541  2221212000
+     8572   -0.837630  2212212000
+     8575   -0.241329  2222022000
+     8581    0.352284  2211222000
+     8584   -0.142751  2202222000
+     8587    0.226848  2022222000
+     8803   -0.058622  1212122010
+
+ STATE #   14  ENERGY =    -378.816763992
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+     2521   -0.107248  2222211000
+     2523    0.057622  2221221000
+     2524   -0.921587  2212221000
+     5058   -0.088405  1212221100
+     8579    0.334145  1222122000
+     8832    0.052528  0212222010
+
+ STATE #   15  ENERGY =    -378.794291782
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+     2526    0.088127  1222221000
+     5044   -0.075758  2212211100
+     5053    0.079991  2211221100
+     8573    0.188740  2122212000
+     8576   -0.063221  2221122000
+     8577    0.857707  2212122000
+     8582    0.390126  2121222000
+     8585   -0.175091  2112222000
+     8778    0.054135  1212212010
+     8819   -0.054594  1211222010
+ ...... END OF CI-MATRIX DIAGONALIZATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      5.95 ,  TOTAL =       20.9 SECONDS (    0.3 MIN)
+ WALL CLOCK TIME:   STEP =      6.16 ,  TOTAL =       21.1 SECONDS (    0.4 MIN)
+ CPU UTILIZATION:   STEP =     96.65%,  TOTAL =      99.04%
+
+          -------------------------------------
+          2-PARTICLE DENSITY MATRIX CALCULATION
+          -------------------------------------
+ 2 BODY DENSITY IS AN AVERAGE OF  5 STATE(S).
+   STATE    WEIGHT          ENERGY
+     1    0.200000     -379.2410500135
+     2    0.200000     -379.1532911198
+     3    0.200000     -379.1166737782
+     4    0.200000     -379.0618808986
+     5    0.200000     -379.0579964772
+      6620619 -DM2- LOOPS WERE GENERATED
+      6620619 WERE CREATED BY THE LOOP-DRIVEN ALGORITHM
+            0 WERE CREATED IMPLICITLY
+          1 RECORDS OF LENGTH 20000 WRITTEN TO FILE 15
+ ...... END OF 2-PARTICLE DENSITY MATRIX CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.37 ,  TOTAL =       21.2 SECONDS (    0.4 MIN)
+ WALL CLOCK TIME:   STEP =      0.38 ,  TOTAL =       21.4 SECONDS (    0.4 MIN)
+ CPU UTILIZATION:   STEP =     98.61%,  TOTAL =      99.03%
+
+          ----------------------------------
+          2-PARTICLE DENSITY MATRIX LABELING
+          ----------------------------------
+      47042 WORDS NEEDED TO LABEL DM2 MATRIX
+          1 RECORDS OF LENGTH 20000  READ FROM FILE 15
+          1 RECORDS OF LENGTH  4998 WRITTEN TO FILE 16
+ ...... END OF 2-PARTICLE DENSITY MATRIX LABELING ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =       21.2 SECONDS (    0.4 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =       21.4 SECONDS (    0.4 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      99.02%
+
+          --------------
+          -DM2- ORDERING
+          --------------
+       9092 WORDS NEEDED ( 199999600 AVAILABLE) TO ORDER DM2 IN MEMORY
+ CHOOSING IN MEMORY ORDERING...
+                               1 RECORDS OF LENGTH  4998  READ FROM FILE 16
+       1331 DM2 VALUES IN      1 RECORDS OF LENGTH  4998 WRITTEN TO FILE 15
+ ...... END OF -DM2- ORDERING ...... 
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =       21.2 SECONDS (    0.4 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =       21.4 SECONDS (    0.4 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      99.02%
+
+     ------------------------------  ------------------------------------
+     APPROXIMATE SECOND-ORDER MCSCF  PROGRAM WRITTEN BY ALEX A. GRANOVSKY
+     ------------------------------  ------------------------------------
+
+  NUMBER OF WORDS NEEDED     =     889220
+  NUMBER AVAILABLE           =  199999600
+
+ ----- GAMMA(IJKL)*(PQ|KL) PRODUCTS ----- CPU TIME =      0.010
+ ----- ORBITAL SYMMETRY             ----- CPU TIME =      0.010
+ ----- FOCK OPERATORS CONSTRUCTION  ----- CPU TIME =      0.300
+     MICIT =   1 ASYMM =    0.057204 ROTMAX =    0.066841
+ ----- EFFECTIVE FOCK + ROTATE ORBS ----- CPU TIME =      0.240
+     MICIT =   2 ASYMM =    0.053345 ROTMAX =    0.017068
+     MICIT =   3 ASYMM =    0.055323 ROTMAX =    0.034067
+     MICIT =   4 ASYMM =    0.059272 ROTMAX =    0.033133
+     MICIT =   5 ASYMM =    0.062985 ROTMAX =    0.033639
+ ..... DONE WITH CASSCF ORBITAL UPDATE .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.65 ,  TOTAL =       21.9 SECONDS (    0.4 MIN)
+ WALL CLOCK TIME:   STEP =      0.65 ,  TOTAL =       22.1 SECONDS (    0.4 MIN)
+ CPU UTILIZATION:   STEP =    100.04%,  TOTAL =      99.05%
+
+ ITER    TOTAL ENERGY          DEL(E)    LAG.ASYMM.  SQCDF  MICIT   DAMP
+   1    -379.126178457    -379.126178457  0.057204 6.684E-02  5   0.0000
+       SOSCF IS SCALING ROTATION ANGLE MATRIX, DXMAX=    0.364121
+     ----------START APPROXIMATE SECOND ORDER MCSCF----------
+   2    -379.165667963      -0.039489506  0.024245 2.115E-01  1   0.0000
+       SOSCF IS SCALING ROTATION ANGLE MATRIX, SQCDF=    2.531643
+       SOSCF IS SCALING ROTATION ANGLE MATRIX, DXMAX=    2.417547
+   3    -379.182593250      -0.016925287  0.015692 2.778E-01  1   0.0000
+       SOSCF IS SCALING ROTATION ANGLE MATRIX, DXMAX=    1.008226
+   4    -379.197660867      -0.015067616  0.012662 1.816E-01  1   0.0000
+       SOSCF IS SCALING ROTATION ANGLE MATRIX, DXMAX=    2.179883
+   5    -379.207067952      -0.009407085  0.012578 1.152E-01  1   0.0000
+       SOSCF IS SCALING ROTATION ANGLE MATRIX, DXMAX=    1.924866
+   6    -379.211664055      -0.004596103  0.025357 1.050E-01  1   0.0000
+       SOSCF IS SCALING ROTATION ANGLE MATRIX, DXMAX=    0.923600
+   7    -379.211660535       0.000003520  0.030672 7.105E-02  1   0.0000
+       SOSCF IS SCALING ROTATION ANGLE MATRIX, DXMAX=    0.594779
+   8    -379.209453476       0.002207058  0.028281 1.601E-01  1   0.0000
+       SOSCF IS SCALING ROTATION ANGLE MATRIX, DXMAX=    1.051304
+   9    -379.202841114       0.006612363  0.023723 1.093E-01  1   0.0000
+       SOSCF IS SCALING ROTATION ANGLE MATRIX, DXMAX=    1.191194
+  10    -379.203869885      -0.001028771  0.021001 1.352E-01  1   0.0000
+       SOSCF IS SCALING ROTATION ANGLE MATRIX, DXMAX=    0.693187
+  11    -379.208030235      -0.004160350  0.018543 2.424E-01  1   0.0000
+       SOSCF IS SCALING ROTATION ANGLE MATRIX, DXMAX=    0.846035
+  12    -379.202497941       0.005532294  0.020083 1.827E-01  1   0.0000
+       SOSCF IS SCALING ROTATION ANGLE MATRIX, DXMAX=    1.137605
+  13    -379.202712438      -0.000214496  0.014430 1.505E-01  1   0.0000
+       SOSCF IS SCALING ROTATION ANGLE MATRIX, DXMAX=    0.966473
+  14    -379.205446156      -0.002733718  0.010088 1.834E-01  1   0.0000
+       SOSCF IS SCALING ROTATION ANGLE MATRIX, DXMAX=    0.838341
+  15    -379.208890486      -0.003444330  0.011861 2.258E-01  1   0.0000
+       SOSCF IS SCALING ROTATION ANGLE MATRIX, DXMAX=    0.536131
+  16    -379.204531461       0.004359025  0.015765 3.918E-01  1   0.0000
+       SOSCF IS SCALING ROTATION ANGLE MATRIX, DXMAX=    0.920439
+  17    -379.196868713       0.007662748  0.020654 2.027E-01  1   0.0000

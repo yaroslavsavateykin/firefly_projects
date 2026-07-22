@@ -1,0 +1,640 @@
+              Grand Master is running on host yaroslavhonor
+              rank #     1 is running on host yaroslavhonor
+              rank #     2 is running on host yaroslavhonor
+              rank #     3 is running on host yaroslavhonor
+              rank #     4 is running on host yaroslavhonor
+              rank #     5 is running on host yaroslavhonor
+              rank #     6 is running on host yaroslavhonor
+              rank #     7 is running on host yaroslavhonor
+              rank #     8 is running on host yaroslavhonor
+              rank #     9 is running on host yaroslavhonor
+
+          ******************************************************
+          *      Firefly version 8.2.0, build number 10203     *
+          *   Compiled on    Monday,    19-09-2016, 15:30:23   *
+          *Code development and Intel/AMD specific optimization*
+          *  Copyright (c) 1994, 2016 by  Alex A. Granovsky,   *
+          *          Firefly Project, Moscow, Russia.          *
+          *   Some parts of this program include code due to   *
+          * work of Jim Kress, Peter Burger, and Robert Ponec. *
+          ******************************************************
+          *             Firefly Project homepage:              *
+          * http://classic.chem.msu.su/gran/firefly/index.html *
+          *                      e-mail:                       *
+          *               gran@classic.chem.msu.su             *
+          *This program is not a free software and is provided *
+          *exclusively to its registered users under the terms *
+          *       of Firefly package license agreement         *
+          * Unauthorized use of Firefly is strongly prohibited *
+          *   This program may not be redistributed without    *
+          * the specific, written permission of its developers.*
+          ******************************************************
+
+          ******************************************************
+          *  PARTIALLY BASED ON  US GAMESS VERSION 6 JUN 1999, *
+          *   US GAMESS VERSIONS  6 SEP 2001 AND 12 DEC 2003   *
+          *             FROM IOWA STATE UNIVERSITY             *
+          * M.W.SCHMIDT, K.K.BALDRIDGE, J.A.BOATZ, S.T.ELBERT, *
+          *   M.S.GORDON, J.H.JENSEN, S.KOSEKI, N.MATSUNAGA,   *
+          *          K.A.NGUYEN, S.J.SU, T.L.WINDUS,           *
+          *       TOGETHER WITH M.DUPUIS, J.A.MONTGOMERY       *
+          *         J.COMPUT.CHEM.  14, 1347-1363(1993)        *
+          ******************************************************
+
+
+ Core i7    / Linux  Firefly version running under Linux.
+ Running on Intel CPU:  Brand ID  0, Family  6, Model 170, Stepping  4
+ CPU Brand String    :  Intel(R) Core(TM) Ultra 5 125H                  
+ CPU Features        :  x87 FPU, CMOV, MMX, SSE, SSE2, SSE3, SSSE3, SSE4.1, SSE4.2, AVX, AVX2, FMA3, HTT, MWAIT, EM64T
+ Data cache size     :  L1 32 KB, L2 2048 KB, L3 18432 KB
+ max    # of   cores/package :  64
+ max    # of threads/package : 128
+ max     cache sharing level :  64
+ actual # of   cores/package :  18
+ actual # of threads/package :  18
+ actual # of threads/core    :   1
+ Operating System successfully passed SSE support test.
+ Operating System supports AVX/FMA.
+
+
+ PARALLEL VERSION (MPICH) RUNNING USING   10 PROCESSES (RANKS)
+
+
+ WARNING! THIS VERSION OF FIREFLY IS PROBABLY OUTDATED!
+ PLEASE CHECK FIREFLY HOMEPAGE FOR INFORMATION ON UPDATES!
+
+ EXECUTION OF FIREFLY BEGUN  3:16:51  9-JUL-2026    
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD> $CONTRL SCFTYP=RHF RUNTYP=IRC ICHARG=0 MULT=1 DFTTYP=B3LYP EXETYP=RUN          
+ INPUT CARD>      INTTYP=HONDO ICUT=13 ITOL=30 D5=.T. MAXIT=100 GENCON=.F. WIDE=1 FSTINT=.T.
+ INPUT CARD> $END                                                                           
+ INPUT CARD> $SYSTEM TIMLIM=60000 MWORDS=200 MASMEM=200000000 MXBCST=-1 KDIAG=0 NOJAC=1 $END
+ INPUT CARD> $MOORTH NOSTF=.T. NOZERO=.T. SYMS=.T. SYMDEN=.T. SYMVEC=.T. SYMVX=.T.          
+ INPUT CARD>      TOLE=0.0D0 TOLZ=0.0D0 $END                                                
+ INPUT CARD> $GUESS GUESS=HUCKEL $END                                                       
+ INPUT CARD> $IRC FORWRD=.F. MXOPT=100 NPOINT=35 PACE=GS2 SADDLE=.T. $END                   
+ INPUT CARD> $SCF DIRSCF=.T. FDIFF=.F. DIIS=.T. DAMP=.T. SHIFT=.T. SOSCF=.F. $END           
+ INPUT CARD> $DATA                                                                          
+ INPUT CARD> Step 19 from C3H7F_energy_NEW.out                                              
+ INPUT CARD> C1                                                                             
+ INPUT CARD>    C  6.0            3.1838410000          6.5300850000         -1.0049770000  
+ INPUT CARD>S   8                                                                           
+ INPUT CARD>1    6665.0000000       0.0006920                                               
+ INPUT CARD>2    1000.0000000       0.0053290                                               
+ INPUT CARD>3     228.0000000       0.0270770                                               
+ INPUT CARD>4      64.7100000       0.1017180                                               
+ INPUT CARD>5      21.0600000       0.2747400                                               
+ INPUT CARD>6       7.4950000       0.4485640                                               
+ INPUT CARD>7       2.7970000       0.2850740                                               
+ INPUT CARD>8       0.5215000       0.0152040                                               
+ INPUT CARD>S   8                                                                           
+ INPUT CARD>1    6665.0000000      -0.0001460                                               
+ INPUT CARD>2    1000.0000000      -0.0011540                                               
+ INPUT CARD>3     228.0000000      -0.0057250                                               
+ INPUT CARD>4      64.7100000      -0.0233120                                               
+ INPUT CARD>5      21.0600000      -0.0639550                                               
+ INPUT CARD>6       7.4950000      -0.1499810                                               
+ INPUT CARD>7       2.7970000      -0.1272620                                               
+ INPUT CARD>8       0.5215000       0.5445290                                               
+ INPUT CARD>S   1                                                                           
+ INPUT CARD>1       0.1596000       1.0000000                                               
+ INPUT CARD>S   1                                                                           
+ INPUT CARD>1       0.0469000       1.0000000                                               
+ INPUT CARD>P   3                                                                           
+ INPUT CARD>1       9.4390000       0.0381090                                               
+ INPUT CARD>2       2.0020000       0.2094800                                               
+ INPUT CARD>3       0.5456000       0.5085570                                               
+ INPUT CARD>P   1                                                                           
+ INPUT CARD>1       0.1517000       1.0000000                                               
+ INPUT CARD>P   1                                                                           
+ INPUT CARD>1       0.0404100       1.0000000                                               
+ INPUT CARD>D   1                                                                           
+ INPUT CARD>1       0.5500000       1.0000000                                               
+ INPUT CARD>D   1                                                                           
+ INPUT CARD>1       0.1510000       1.0000000                                               
+ INPUT CARD>                                                                                
+ INPUT CARD>    C  6.0            3.5600530000          7.9535830000         -3.5002550000  
+ INPUT CARD>S   8                                                                           
+  200000000 WORDS OF MEMORY AVAILABLE
+
+ This job is executing on     1 unique host(s)
+ Minimum number of processes per host is:   10
+ Maximum number of processes per host is:   10
+
+ On master's host, detected   18 CPU core(s) in aggregate
+
+ Using processor-specific dynamic link DGEMM library code.
+
+
+ Creating thread pool to serve up to            128 threads.
+
+
+ Loading P2P interface library... loaded successfully (version 2.4).
+ Initializing global P2P interface... topology done.
+
+
+
+     RUN TITLE
+     ---------
+  Step 19 from C3H7F_energy_NEW.out                                              
+
+ THE POINT GROUP OF THE MOLECULE IS C1      
+ THE ORDER OF THE PRINCIPAL AXIS IS     0
+ *** WARNING! ATOM   1 SHELL    1 TYPE S HAS NORMALIZATION   0.99939879
+ *** WARNING! ATOM   1 SHELL    2 TYPE S HAS NORMALIZATION   2.00869625
+ *** WARNING! ATOM   1 SHELL    5 TYPE P HAS NORMALIZATION   1.49516523
+ *** WARNING! ATOM   2 SHELL   10 TYPE S HAS NORMALIZATION   0.99939879
+ *** WARNING! ATOM   2 SHELL   11 TYPE S HAS NORMALIZATION   2.00869625
+ *** WARNING! ATOM   2 SHELL   14 TYPE P HAS NORMALIZATION   1.49516523
+ *** WARNING! ATOM   3 SHELL   19 TYPE S HAS NORMALIZATION   0.99939879
+ *** WARNING! ATOM   3 SHELL   20 TYPE S HAS NORMALIZATION   2.00869625
+ *** WARNING! ATOM   3 SHELL   23 TYPE P HAS NORMALIZATION   1.49516523
+ *** WARNING! ATOM   4 SHELL   28 TYPE S HAS NORMALIZATION   1.70173870
+ *** WARNING! ATOM   5 SHELL   33 TYPE S HAS NORMALIZATION   1.70173870
+ *** WARNING! ATOM   6 SHELL   38 TYPE S HAS NORMALIZATION   1.70173870
+ *** WARNING! ATOM   7 SHELL   43 TYPE S HAS NORMALIZATION   1.70173870
+ *** WARNING! ATOM   8 SHELL   48 TYPE S HAS NORMALIZATION   1.70173870
+ *** WARNING! ATOM   9 SHELL   53 TYPE S HAS NORMALIZATION   1.70173870
+ *** WARNING! ATOM  10 SHELL   58 TYPE S HAS NORMALIZATION   1.70173870
+ *** WARNING! ATOM  11 SHELL   63 TYPE S HAS NORMALIZATION   0.99954745
+ *** WARNING! ATOM  11 SHELL   64 TYPE S HAS NORMALIZATION   1.94662964
+ *** WARNING! ATOM  11 SHELL   67 TYPE P HAS NORMALIZATION   1.44467270
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ C           6.0     6.0165875170       12.3400722260       -1.8991312924
+ C           6.0     6.7275251621       15.0300935861       -6.6145233193
+ C           6.0     2.5074624781       14.7831309479      -10.0045124644
+ H           1.0     2.4400200424       10.7476189173       -1.6631838678
+ H           1.0     6.5218473706       14.6830472729        1.2022796658
+ H           1.0     8.6475643844        9.4465632669       -1.6643366007
+ H           1.0     7.7286850558       18.7710048727       -5.9665078850
+ H           1.0    -0.6194408856       16.4891643556       -8.3517731128
+ H           1.0     3.3106093095       16.6405899998      -13.3600443433
+ H           1.0     1.6094438363       11.0460539157      -10.7995164659
+ F           9.0    10.7498979270       13.0297580111       -8.9909011652
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                    C              C              C              H         
+
+  1  C               0.0000000      2.8972909 *    4.8494031      2.0755227 *  
+  2  C               2.8972909 *    0.0000000      2.8674348 *    4.1410628    
+  3  C               4.8494031      2.8674348 *    0.0000000      4.9036105    
+  4  H               2.0755227 *    4.1410628      4.9036105      0.0000000    
+  5  H               2.0741836 *    4.1419790      6.2995984      3.3618288    
+  6  H               2.0732378 *    4.0772996      6.1652742      3.3562667    
+  7  H               4.1273015      2.0777645 *    4.0808376      5.5717937    
+  8  H               5.3676525      4.0689851      2.0779639 *    4.9376196    
+  9  H               6.6341455      4.0911616      2.0735911 *    6.9461757    
+ 10  H               5.3000804      4.0846687      2.0769254 *    4.8572442    
+ 11  F               4.5266492      2.6893448 *    4.4914480      5.9859667    
+
+                    H              H              H              H         
+
+  1  C               2.0741836 *    2.0732378 *    4.1273015      5.3676525    
+  2  C               4.1419790      4.0772996      2.0777645 *    4.0689851    
+  3  C               6.2995984      6.1652742      4.0808376      2.0779639 *  
+  4  H               3.3618288      3.3562667      5.5717937      4.9376196    
+  5  H               0.0000000      3.3533692      4.4134575      6.3839914    
+  6  H               3.3533692      0.0000000      5.4558717      7.1035497    
+  7  H               4.4134575      5.4558717      0.0000000      4.7504522    
+  8  H               6.3839914      7.1035497      4.7504522      0.0000000    
+  9  H               7.9588904      7.7957465      4.6951602      3.3697831    
+ 10  H               7.1272635      6.1608824      5.8083787      3.3712711    
+ 11  F               5.9047905      4.4569678      3.7878369      6.2978278    
+
+                    H              H              F         
+
+  1  C               6.6341455      5.3000804      4.5266492    
+  2  C               4.0911616      4.0846687      2.6893448 *  
+  3  C               2.0735911 *    2.0769254 *    4.4914480    
+  4  H               6.9461757      4.8572442      5.9859667    
+  5  H               7.9588904      7.1272635      5.9047905    
+  6  H               7.7957465      6.1608824      4.4569678    
+  7  H               4.6951602      5.8083787      3.7878369    
+  8  H               3.3697831      3.3712711      6.2978278    
+  9  H               0.0000000      3.3780039      4.9491660    
+ 10  H               3.3780039      0.0000000      5.0412031    
+ 11  F               4.9491660      5.0412031      0.0000000    
+
+  * ... LESS THAN  3.000
+
+
+     ATOMIC BASIS SET
+     ----------------
+ THE CONTRACTED PRIMITIVE FUNCTIONS HAVE BEEN UNNORMALIZED
+ THE CONTRACTED BASIS FUNCTIONS ARE NOW NORMALIZED TO UNITY
+
+ SHELL TYPE PRIM    EXPONENT          CONTRACTION COEFFICIENTS
+
+ C         
+
+   1   S    1    6665.000000    0.363584 (  0.000692) 
+   1   S    2    1000.000000    0.674986 (  0.005329) 
+   1   S    3     228.000000    1.131620 (  0.027077) 
+   1   S    4      64.710000    1.653009 (  0.101718) 
+   1   S    5      21.060000    1.923821 (  0.274740) 
+   1   S    6       7.495000    1.447278 (  0.448564) 
+   1   S    7       2.797000    0.439163 (  0.285074) 
+   1   S    8       0.521500    0.006646 (  0.015204) 
+
+   2   S    9    6665.000000   -0.154180 ( -0.000146) 
+   2   S   10    1000.000000   -0.293785 ( -0.001154) 
+   2   S   11     228.000000   -0.480896 ( -0.005725) 
+   2   S   12      64.710000   -0.761434 ( -0.023312) 
+   2   S   13      21.060000   -0.900104 ( -0.063955) 
+   2   S   14       7.495000   -0.972611 ( -0.149981) 
+   2   S   15       2.797000   -0.394042 ( -0.127262) 
+   2   S   16       0.521500    0.478394 (  0.544529) 
+
+   3   S   17       0.159600    0.179964 (  1.000000) 
+
+   4   S   18       0.046900    0.071827 (  1.000000) 
+
+   5   P   19       9.439000    1.343737 (  0.038109) 
+   5   P   20       2.002000    1.063168 (  0.209480) 
+   5   P   21       0.545600    0.508232 (  0.508557) 
+
+   6   P   22       0.151700    0.134950 (  1.000000) 
+
+   7   P   23       0.040410    0.025826 (  1.000000) 
+
+   8   D   24       0.550000    0.578155 (  1.000000) 
+
+   9   D   25       0.151000    0.060203 (  1.000000) 
+
+ C         
+
+  10   S   26    6665.000000    0.363584 (  0.000692) 
+  10   S   27    1000.000000    0.674986 (  0.005329) 
+  10   S   28     228.000000    1.131620 (  0.027077) 
+  10   S   29      64.710000    1.653009 (  0.101718) 
+  10   S   30      21.060000    1.923821 (  0.274740) 
+  10   S   31       7.495000    1.447278 (  0.448564) 
+  10   S   32       2.797000    0.439163 (  0.285074) 
+  10   S   33       0.521500    0.006646 (  0.015204) 
+
+  11   S   34    6665.000000   -0.154180 ( -0.000146) 
+  11   S   35    1000.000000   -0.293785 ( -0.001154) 
+  11   S   36     228.000000   -0.480896 ( -0.005725) 
+  11   S   37      64.710000   -0.761434 ( -0.023312) 
+  11   S   38      21.060000   -0.900104 ( -0.063955) 
+  11   S   39       7.495000   -0.972611 ( -0.149981) 
+  11   S   40       2.797000   -0.394042 ( -0.127262) 
+  11   S   41       0.521500    0.478394 (  0.544529) 
+
+  12   S   42       0.159600    0.179964 (  1.000000) 
+
+  13   S   43       0.046900    0.071827 (  1.000000) 
+
+  14   P   44       9.439000    1.343737 (  0.038109) 
+  14   P   45       2.002000    1.063168 (  0.209480) 
+  14   P   46       0.545600    0.508232 (  0.508557) 
+
+  15   P   47       0.151700    0.134950 (  1.000000) 
+
+  16   P   48       0.040410    0.025826 (  1.000000) 
+
+  17   D   49       0.550000    0.578155 (  1.000000) 
+
+  18   D   50       0.151000    0.060203 (  1.000000) 
+
+ C         
+
+  19   S   51    6665.000000    0.363584 (  0.000692) 
+  19   S   52    1000.000000    0.674986 (  0.005329) 
+  19   S   53     228.000000    1.131620 (  0.027077) 
+  19   S   54      64.710000    1.653009 (  0.101718) 
+  19   S   55      21.060000    1.923821 (  0.274740) 
+  19   S   56       7.495000    1.447278 (  0.448564) 
+  19   S   57       2.797000    0.439163 (  0.285074) 
+  19   S   58       0.521500    0.006646 (  0.015204) 
+
+  20   S   59    6665.000000   -0.154180 ( -0.000146) 
+  20   S   60    1000.000000   -0.293785 ( -0.001154) 
+  20   S   61     228.000000   -0.480896 ( -0.005725) 
+  20   S   62      64.710000   -0.761434 ( -0.023312) 
+  20   S   63      21.060000   -0.900104 ( -0.063955) 
+  20   S   64       7.495000   -0.972611 ( -0.149981) 
+  20   S   65       2.797000   -0.394042 ( -0.127262) 
+  20   S   66       0.521500    0.478394 (  0.544529) 
+
+  21   S   67       0.159600    0.179964 (  1.000000) 
+
+  22   S   68       0.046900    0.071827 (  1.000000) 
+
+  23   P   69       9.439000    1.343737 (  0.038109) 
+  23   P   70       2.002000    1.063168 (  0.209480) 
+  23   P   71       0.545600    0.508232 (  0.508557) 
+
+  24   P   72       0.151700    0.134950 (  1.000000) 
+
+  25   P   73       0.040410    0.025826 (  1.000000) 
+
+  26   D   74       0.550000    0.578155 (  1.000000) 
+
+  27   D   75       0.151000    0.060203 (  1.000000) 
+
+ H         
+
+  28   S   76      13.010000    0.163548 (  0.019685) 
+  28   S   77       1.962000    0.277418 (  0.137977) 
+  28   S   78       0.444600    0.315749 (  0.478148) 
+
+  29   S   79       0.122000    0.147123 (  1.000000) 
+
+  30   S   80       0.029740    0.051041 (  1.000000) 
+
+  31   P   81       0.727000    0.956881 (  1.000000) 
+
+  32   P   82       0.141000    0.123158 (  1.000000) 
+
+ H         
+
+  33   S   83      13.010000    0.163548 (  0.019685) 
+  33   S   84       1.962000    0.277418 (  0.137977) 
+  33   S   85       0.444600    0.315749 (  0.478148) 
+
+  34   S   86       0.122000    0.147123 (  1.000000) 
+
+  35   S   87       0.029740    0.051041 (  1.000000) 
+
+  36   P   88       0.727000    0.956881 (  1.000000) 
+
+  37   P   89       0.141000    0.123158 (  1.000000) 
+
+ H         
+
+  38   S   90      13.010000    0.163548 (  0.019685) 
+  38   S   91       1.962000    0.277418 (  0.137977) 
+  38   S   92       0.444600    0.315749 (  0.478148) 
+
+  39   S   93       0.122000    0.147123 (  1.000000) 
+
+  40   S   94       0.029740    0.051041 (  1.000000) 
+
+  41   P   95       0.727000    0.956881 (  1.000000) 
+
+  42   P   96       0.141000    0.123158 (  1.000000) 
+
+ H         
+
+  43   S   97      13.010000    0.163548 (  0.019685) 
+  43   S   98       1.962000    0.277418 (  0.137977) 
+  43   S   99       0.444600    0.315749 (  0.478148) 
+
+  44   S  100       0.122000    0.147123 (  1.000000) 
+
+  45   S  101       0.029740    0.051041 (  1.000000) 
+
+  46   P  102       0.727000    0.956881 (  1.000000) 
+
+  47   P  103       0.141000    0.123158 (  1.000000) 
+
+ H         
+
+  48   S  104      13.010000    0.163548 (  0.019685) 
+  48   S  105       1.962000    0.277418 (  0.137977) 
+  48   S  106       0.444600    0.315749 (  0.478148) 
+
+  49   S  107       0.122000    0.147123 (  1.000000) 
+
+  50   S  108       0.029740    0.051041 (  1.000000) 
+
+  51   P  109       0.727000    0.956881 (  1.000000) 
+
+  52   P  110       0.141000    0.123158 (  1.000000) 
+
+ H         
+
+  53   S  111      13.010000    0.163548 (  0.019685) 
+  53   S  112       1.962000    0.277418 (  0.137977) 
+  53   S  113       0.444600    0.315749 (  0.478148) 
+
+  54   S  114       0.122000    0.147123 (  1.000000) 
+
+  55   S  115       0.029740    0.051041 (  1.000000) 
+
+  56   P  116       0.727000    0.956881 (  1.000000) 
+
+  57   P  117       0.141000    0.123158 (  1.000000) 
+
+ H         
+
+  58   S  118      13.010000    0.163548 (  0.019685) 
+  58   S  119       1.962000    0.277418 (  0.137977) 
+  58   S  120       0.444600    0.315749 (  0.478148) 
+
+  59   S  121       0.122000    0.147123 (  1.000000) 
+
+  60   S  122       0.029740    0.051041 (  1.000000) 
+
+  61   P  123       0.727000    0.956881 (  1.000000) 
+
+  62   P  124       0.141000    0.123158 (  1.000000) 
+
+ F         
+
+  63   S  125   14710.000000    0.686054 (  0.000721) 
+  63   S  126    2207.000000    1.273776 (  0.005553) 
+  63   S  127     502.800000    2.138157 (  0.028267) 
+  63   S  128     142.600000    3.129135 (  0.106444) 
+  63   S  129      46.470000    3.636582 (  0.286814) 
+  63   S  130      16.700000    2.640279 (  0.448641) 
+  63   S  131       6.356000    0.755015 (  0.264761) 
+  63   S  132       1.316000    0.013421 (  0.015333) 
+
+  64   S  133   14710.000000   -0.305764 ( -0.000165) 
+  64   S  134    2207.000000   -0.584323 ( -0.001308) 
+  64   S  135     502.800000   -0.956795 ( -0.006495) 
+  64   S  136     142.600000   -1.528086 ( -0.026691) 
+  64   S  137      46.470000   -1.819623 ( -0.073690) 
+  64   S  138      16.700000   -1.957301 ( -0.170776) 
+  64   S  139       6.356000   -0.623829 ( -0.112327) 
+  64   S  140       1.316000    0.959401 (  0.562814) 
+
+  65   S  141       0.389700    0.351526 (  1.000000) 
+
+  66   S  142       0.098630    0.125434 (  1.000000) 
+
+  67   P  143      22.670000    4.571487 (  0.044878) 
+  67   P  144       4.977000    3.608377 (  0.235718) 
+  67   P  145       1.347000    1.519595 (  0.508521) 
+
+  68   P  146       0.347100    0.379759 (  1.000000) 
+
+  69   P  147       0.085020    0.065440 (  1.000000) 
+
+  70   D  148       1.640000    3.911886 (  1.000000) 
+
+  71   D  149       0.464000    0.429354 (  1.000000) 
+
+ TOTAL NUMBER OF SHELLS              =   71
+ TOTAL NUMBER OF BASIS FUNCTIONS     =  163
+ NUMBER OF ELECTRONS                 =   34
+ CHARGE OF MOLECULE                  =    0
+ STATE MULTIPLICITY                  =    1
+ NUMBER OF OCCUPIED ORBITALS (ALPHA) =   17
+ NUMBER OF OCCUPIED ORBITALS (BETA ) =   17
+ TOTAL NUMBER OF ATOMS               =   11
+ THE NUCLEAR REPULSION ENERGY IS       69.5906195240
+ TOTAL NUMBER OF CONTAMINANTS DROPPED=    8
+
+
+     $CONTRL OPTIONS
+     ---------------
+     SCFTYP=RHF          RUNTYP=IRC          EXETYP=RUN     
+     MPLEVL=       0     LOCAL =NONE         UNITS =ANGS    
+     MULT  =       1     ICHARG=       0     MAXIT =     100
+     NPRINT=       7     IREST =       0     COORD =UNIQUE  
+     ECP   =NONE         NORMF =       0     NORMP =       0
+     ITOL  =      30     ICUT  =      13     NZVAR =       0
+     NOSYM =       0     INTTYP=HONDO        GEOM  =INPUT   
+     PLTORB=       F     MOLPLT=       F     RPAC  =       F
+     AIMPAC=       0     FRIEND=             CITYP =NONE    
+     DFTTYP=B3LYP   
+
+     $SYSTEM OPTIONS
+     ---------------
+     KDIAG =       0     MEMORY=200000000     TIMLIM=  3600000.0 SEC.
+     COREFL=       F     PTIME =        F     XDR   =       F
+     BALTYP=NXTVAL       CBASE = E1DD1000     FBASE = E73110C0
+
+          ----------------
+          PROPERTIES INPUT
+          ----------------
+
+     MOMENTS            FIELD           POTENTIAL          DENSITY
+ IEMOM =       1   IEFLD =       0   IEPOT =       0   IEDEN =       0
+ WHERE =COMASS     WHERE =NUCLEI     WHERE =NUCLEI     WHERE =NUCLEI  
+ OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH    
+ IEMINT=       0   IEFINT=       0                     IEDINT=       0
+                                                       MORB  =       0
+
+
+          ----------------   ------------------------------------
+          DFT CODE OPTIONS   PROGRAM WRITTEN BY ALEX A. GRANOVSKY
+          ----------------   ------------------------------------
+          NRAD   =   63      LMAX   =  29 ( 302 POINTS PER SHELL)
+          ANGPRN =    T      RADPRN =   T
+          KAP    =   5.000   LMIN   =   7 (  26 POINTS PER SHELL)
+          CUTOFF = 1.0E-10   CUTAO  = 1.0E-10
+          CUTWGT = 1.0E-20   CUTORB = 1.0E-15
+          CUTGG1 = 1.0E-13   CUTGG2 = 1.0E-13
+          CUTGG3 = 1.0E-13   CUTGG4 = 1.0E-30
+          B3LYP  =  NWCHEM   O3LYP  = DEFAULT 
+          HFX    =  2.0000000000000000000E-01
+          CPT2   =  0.0000000000000000000E+00
+          SCS(S) =  1.0000000000000000000E+00
+          SCS(T) =  1.0000000000000000000E+00
+
+
+
+          EXTRAPOLATION IN EFFECT
+          DAMPING IN EFFECT
+          LEVEL SHIFTING IN EFFECT
+          DIIS IN EFFECT
+
+          ----------------------
+          INTEGRAL INPUT OPTIONS
+          ----------------------
+ NOPK  =       1 NORDER=       0 SCHWRZ=       T
+
+ ATTENTION! AO INTEGRALS WILL BE PACKED.
+ THRESHOLD FOR PACKING PKTHR =  0.10000000D-05
+
+     -------------------------------
+     INTEGRAL TRANSFORMATION OPTIONS
+     -------------------------------
+     NWORD  =       0     CUTTRF = 1.0E-09
+     MPTRAN =       0     DIRTRF =       T
+     AOINTS =DUP          IREST  =       0
+
+     ------------------------------------------
+     THE POINT GROUP IS C1 , NAXIS= 0, ORDER= 1
+     ------------------------------------------
+
+     DIMENSIONS OF THE SYMMETRY SUBSPACES ARE
+ A   = 163
+
+ ..... DONE SETTING UP THE RUN .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.22 ,  TOTAL =        0.3 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.44 ,  TOTAL =        0.4 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =     50.41%,  TOTAL =      75.61%
+
+          -----------------------------
+          INTRINSIC REACTION COORDINATE
+          -----------------------------
+          PACE   =GS2     
+          STRIDE = 0.30000 BOHR*SQRT(AMU)
+          NPOINT =      35
+          NEXTPT =       0
+          STOTAL =  0.0000 BOHR*SQRT(AMU)
+          SAB    =  0.0000 BOHR*SQRT(AMU)
+          NPRT   =       0
+          NPUN   =       0
+
+          SADDLE =       T
+          TSENGY =       F
+          FORWRD =       F
+          EVIB   = 0.00050 HARTREE
+          FREQ   =     0.0 CM**-1
+
+          STABLZ =       F
+          ELBOW  =  175.00 DEGREES
+          DELTA  = 0.02500 BOHR
+
+          READQB =       F
+          EB     =        0.0000000000 HARTREES
+          GBNORM =        0.0000000000 HARTREES/SQRT(AMU)-BOHR
+
+          GCUT   = 0.0001000 HARTREES/SQRT(AMU)-BOHR
+          RCUT   = 0.0010000 BOHR
+          ACUT   =    5.00 DEGREES
+          MXOPT  =     100
+          IHUPD  =       2
+
+ ATOMIC MASSES USED (IN AMU) ARE
+     C             12.0000
+     C             12.0000
+     C             12.0000
+     H              1.0078
+     H              1.0078
+     H              1.0078
+     H              1.0078
+     H              1.0078
+     H              1.0078
+     H              1.0078
+     F             18.9984
+
+ JUMP AWAY FROM SADDLE POINT WILL BE FOUND FROM THE INPUT HESSIAN MATRIX
+
+
+ JUMPING OFF SADDLE POINT ALONG THE IMAGINARY NORMAL MODE...
+
+ $HESS GROUP READ FROM CARDS
+ ENERGY IS     -218.4051557342 E(NUC) IS      0.0                                
+ *** ERROR READING FORCE CONSTANT MATRIX ELEMENT   1   2
+           INPUT WAS   2   1
+DO YOU NEED TO INCLUDE A TITLE CARD BELOW THE $HESS CARD?
+A BLANK TITLING CARD IS PERFECTLY OK.
+
+ ADDRESS 0xE1F3ABE6 HAS INITIATED PROGRAM ABORT BECAUSE OF FATAL ERROR(S)
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =        0.3 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.01 ,  TOTAL =        0.4 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =    144.72%,  TOTAL =      76.69%
+
+      396948 WORDS OF    DYNAMIC MEMORY USED
+     5585795 BYTES OF    HEAP MEMORY    USED,      133350 BYTES REMAIN IN USE
+
+ WARNING! THIS VERSION OF FIREFLY IS PROBABLY OUTDATED!
+ PLEASE CHECK FIREFLY HOMEPAGE FOR INFORMATION ON UPDATES!
+
+ EXECUTION OF FIREFLY TERMINATED ABNORMALLY AT  3:16:52  9-JUL-2026    

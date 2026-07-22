@@ -1,0 +1,672 @@
+              Grand Master is running on host yaroslavhonor
+              rank #     1 is running on host yaroslavhonor
+              rank #     2 is running on host yaroslavhonor
+              rank #     3 is running on host yaroslavhonor
+              rank #     4 is running on host yaroslavhonor
+              rank #     5 is running on host yaroslavhonor
+              rank #     6 is running on host yaroslavhonor
+              rank #     7 is running on host yaroslavhonor
+              rank #     8 is running on host yaroslavhonor
+              rank #     9 is running on host yaroslavhonor
+
+          ******************************************************
+          *      Firefly version 8.2.0, build number 10203     *
+          *   Compiled on    Monday,    19-09-2016, 15:30:23   *
+          *Code development and Intel/AMD specific optimization*
+          *  Copyright (c) 1994, 2016 by  Alex A. Granovsky,   *
+          *          Firefly Project, Moscow, Russia.          *
+          *   Some parts of this program include code due to   *
+          * work of Jim Kress, Peter Burger, and Robert Ponec. *
+          ******************************************************
+          *             Firefly Project homepage:              *
+          * http://classic.chem.msu.su/gran/firefly/index.html *
+          *                      e-mail:                       *
+          *               gran@classic.chem.msu.su             *
+          *This program is not a free software and is provided *
+          *exclusively to its registered users under the terms *
+          *       of Firefly package license agreement         *
+          * Unauthorized use of Firefly is strongly prohibited *
+          *   This program may not be redistributed without    *
+          * the specific, written permission of its developers.*
+          ******************************************************
+
+          ******************************************************
+          *  PARTIALLY BASED ON  US GAMESS VERSION 6 JUN 1999, *
+          *   US GAMESS VERSIONS  6 SEP 2001 AND 12 DEC 2003   *
+          *             FROM IOWA STATE UNIVERSITY             *
+          * M.W.SCHMIDT, K.K.BALDRIDGE, J.A.BOATZ, S.T.ELBERT, *
+          *   M.S.GORDON, J.H.JENSEN, S.KOSEKI, N.MATSUNAGA,   *
+          *          K.A.NGUYEN, S.J.SU, T.L.WINDUS,           *
+          *       TOGETHER WITH M.DUPUIS, J.A.MONTGOMERY       *
+          *         J.COMPUT.CHEM.  14, 1347-1363(1993)        *
+          ******************************************************
+
+
+ Core i7    / Linux  Firefly version running under Linux.
+ Running on Intel CPU:  Brand ID  0, Family  6, Model 170, Stepping  4
+ CPU Brand String    :  Intel(R) Core(TM) Ultra 5 125H                  
+ CPU Features        :  x87 FPU, CMOV, MMX, SSE, SSE2, SSE3, SSSE3, SSE4.1, SSE4.2, AVX, AVX2, FMA3, HTT, MWAIT, EM64T
+ Data cache size     :  L1 32 KB, L2 2048 KB, L3     0 KB
+ max    # of   cores/package :  64
+ max    # of threads/package : 128
+ max     cache sharing level :   8
+ actual # of   cores/package :  18
+ actual # of threads/package :  18
+ actual # of threads/core    :   1
+ Operating System successfully passed SSE support test.
+ Operating System supports AVX/FMA.
+
+
+ PARALLEL VERSION (MPICH) RUNNING USING   10 PROCESSES (RANKS)
+
+
+ WARNING! THIS VERSION OF FIREFLY IS PROBABLY OUTDATED!
+ PLEASE CHECK FIREFLY HOMEPAGE FOR INFORMATION ON UPDATES!
+
+ EXECUTION OF FIREFLY BEGUN 21:05:57 22-APR-2026    
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD> $CONTRL D5=.T. EXETYP=RUN FSTINT=.T. GENCON=.F. ICHARG=0 ICUT=13 INTTYP=HONDO  
+ INPUT CARD>      ITOL=30 MAXIT=100 MULT=1 RUNTYP=ENERGY SCFTYP=RHF WIDE=1 LOCAL=BOYS $END  
+ INPUT CARD> $MOORTH NOSTF=.T. NOZERO=.T. SYMDEN=.T. SYMS=.T. SYMVEC=.T. SYMVX=.T.          
+ INPUT CARD>      TOLE=0.0D0 TOLZ=0.0D0 $END                                                
+ INPUT CARD> $GUESS GUESS=HUCKEL $END                                                       
+ INPUT CARD> $BASIS GBASIS=STO NGAUSS=3 $END                                                
+ INPUT CARD> $SYSTEM KDIAG=0 MASMEM=200000000 MWORDS=200 MXBCST=-1 NOJAC=1 TIMLIM=60000 $END
+ INPUT CARD> $SCF DAMP=.T. DIIS=.T. DIRSCF=.T. FDIFF=.F. SHIFT=.T. SOSCF=.F. $END           
+ INPUT CARD> $DATA                                                                          
+ INPUT CARD>C2H4 Boys-localized RHF orbitals/STO-3G                                         
+ INPUT CARD>C1                                                                              
+ INPUT CARD>C     6.0    -0.6695000000     0.0000000000     0.0000000000                    
+ INPUT CARD>C     6.0     0.6695000000     0.0000000000     0.0000000000                    
+ INPUT CARD>H     1.0    -1.2320000000     0.9280000000     0.0000000000                    
+ INPUT CARD>H     1.0    -1.2320000000    -0.9280000000     0.0000000000                    
+ INPUT CARD>H     1.0     1.2320000000     0.9280000000     0.0000000000                    
+ INPUT CARD>H     1.0     1.2320000000    -0.9280000000     0.0000000000                    
+ INPUT CARD> $END                                                                           
+  200000000 WORDS OF MEMORY AVAILABLE
+
+ This job is executing on     1 unique host(s)
+ Minimum number of processes per host is:   10
+ Maximum number of processes per host is:   10
+
+ On master's host, detected   18 CPU core(s) in aggregate
+
+ Using processor-specific dynamic link DGEMM library code.
+
+
+ Creating thread pool to serve up to            128 threads.
+
+
+ Loading P2P interface library... loaded successfully (version 2.4).
+ Initializing global P2P interface... topology done.
+
+
+     BASIS OPTIONS
+     -------------
+     GBASIS=STO          IGAUSS=       3      POLAR=NONE    
+     NDFUNC=       0     NFFUNC=       0     DIFFSP=       F
+     NPFUNC=       0      DIFFS=       F
+
+
+     RUN TITLE
+     ---------
+ C2H4 Boys-localized RHF orbitals/STO-3G                                         
+
+ THE POINT GROUP OF THE MOLECULE IS C1      
+ THE ORDER OF THE PRINCIPAL AXIS IS     0
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ C           6.0    -1.2651716410        0.0000000000        0.0000000000
+ C           6.0     1.2651716410        0.0000000000        0.0000000000
+ H           1.0    -2.3281425866        1.7536658444        0.0000000000
+ H           1.0    -2.3281425866       -1.7536658444        0.0000000000
+ H           1.0     2.3281425866        1.7536658444        0.0000000000
+ H           1.0     2.3281425866       -1.7536658444        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                    C              C              H              H         
+
+  1  C               0.0000000      1.3390000 *    1.0851683 *    1.0851683 *  
+  2  C               1.3390000 *    0.0000000      2.1158654 *    2.1158654 *  
+  3  H               1.0851683 *    2.1158654 *    0.0000000      1.8560000 *  
+  4  H               1.0851683 *    2.1158654 *    1.8560000 *    0.0000000    
+  5  H               2.1158654 *    1.0851683 *    2.4640000 *    3.0848066    
+  6  H               2.1158654 *    1.0851683 *    3.0848066      2.4640000 *  
+
+                    H              H         
+
+  1  C               2.1158654 *    2.1158654 *  
+  2  C               1.0851683 *    1.0851683 *  
+  3  H               2.4640000 *    3.0848066    
+  4  H               3.0848066      2.4640000 *  
+  5  H               0.0000000      1.8560000 *  
+  6  H               1.8560000 *    0.0000000    
+
+  * ... LESS THAN  3.000
+
+
+     ATOMIC BASIS SET
+     ----------------
+ THE CONTRACTED PRIMITIVE FUNCTIONS HAVE BEEN UNNORMALIZED
+ THE CONTRACTED BASIS FUNCTIONS ARE NOW NORMALIZED TO UNITY
+
+ SHELL TYPE PRIM    EXPONENT          CONTRACTION COEFFICIENTS
+
+ C         
+
+   1   S    1      71.616837    2.707814 (  0.154329) 
+   1   S    2      13.045096    2.618880 (  0.535328) 
+   1   S    3       3.530512    0.816191 (  0.444635) 
+
+   2   L    4       2.941249   -0.160017 ( -0.099967)     0.856045 (  0.155916) 
+   2   L    5       0.683483    0.214036 (  0.399513)     0.538304 (  0.607684) 
+   2   L    6       0.222290    0.161536 (  0.700115)     0.085276 (  0.391957) 
+
+ C         
+
+   3   S    7      71.616837    2.707814 (  0.154329) 
+   3   S    8      13.045096    2.618880 (  0.535328) 
+   3   S    9       3.530512    0.816191 (  0.444635) 
+
+   4   L   10       2.941249   -0.160017 ( -0.099967)     0.856045 (  0.155916) 
+   4   L   11       0.683483    0.214036 (  0.399513)     0.538304 (  0.607684) 
+   4   L   12       0.222290    0.161536 (  0.700115)     0.085276 (  0.391957) 
+
+ H         
+
+   5   S   13       3.425251    0.276934 (  0.154329) 
+   5   S   14       0.623914    0.267839 (  0.535328) 
+   5   S   15       0.168855    0.083474 (  0.444635) 
+
+ H         
+
+   6   S   16       3.425251    0.276934 (  0.154329) 
+   6   S   17       0.623914    0.267839 (  0.535328) 
+   6   S   18       0.168855    0.083474 (  0.444635) 
+
+ H         
+
+   7   S   19       3.425251    0.276934 (  0.154329) 
+   7   S   20       0.623914    0.267839 (  0.535328) 
+   7   S   21       0.168855    0.083474 (  0.444635) 
+
+ H         
+
+   8   S   22       3.425251    0.276934 (  0.154329) 
+   8   S   23       0.623914    0.267839 (  0.535328) 
+   8   S   24       0.168855    0.083474 (  0.444635) 
+
+ TOTAL NUMBER OF SHELLS              =    8
+ TOTAL NUMBER OF BASIS FUNCTIONS     =   14
+ NUMBER OF ELECTRONS                 =   16
+ CHARGE OF MOLECULE                  =    0
+ STATE MULTIPLICITY                  =    1
+ NUMBER OF OCCUPIED ORBITALS (ALPHA) =    8
+ NUMBER OF OCCUPIED ORBITALS (BETA ) =    8
+ TOTAL NUMBER OF ATOMS               =    6
+ THE NUCLEAR REPULSION ENERGY IS       33.2760445252
+
+     $CONTRL OPTIONS
+     ---------------
+     SCFTYP=RHF          RUNTYP=ENERGY       EXETYP=RUN     
+     MPLEVL=       0     LOCAL =BOYS         UNITS =ANGS    
+     MULT  =       1     ICHARG=       0     MAXIT =     100
+     NPRINT=       7     IREST =       0     COORD =UNIQUE  
+     ECP   =NONE         NORMF =       0     NORMP =       0
+     ITOL  =      30     ICUT  =      13     NZVAR =       0
+     NOSYM =       0     INTTYP=HONDO        GEOM  =INPUT   
+     PLTORB=       F     MOLPLT=       F     RPAC  =       F
+     AIMPAC=       0     FRIEND=             CITYP =NONE    
+     DFTTYP=NONE    
+
+     $SYSTEM OPTIONS
+     ---------------
+     KDIAG =       0     MEMORY=200000000     TIMLIM=  3600000.0 SEC.
+     COREFL=       F     PTIME =        F     XDR   =       F
+     BALTYP=NXTVAL       CBASE = 09001000     FBASE = EC2B10C0
+
+          ----------------
+          PROPERTIES INPUT
+          ----------------
+
+     MOMENTS            FIELD           POTENTIAL          DENSITY
+ IEMOM =       1   IEFLD =       0   IEPOT =       0   IEDEN =       0
+ WHERE =COMASS     WHERE =NUCLEI     WHERE =NUCLEI     WHERE =NUCLEI  
+ OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH    
+ IEMINT=       0   IEFINT=       0                     IEDINT=       0
+                                                       MORB  =       0
+
+          EXTRAPOLATION IN EFFECT
+          DAMPING IN EFFECT
+          LEVEL SHIFTING IN EFFECT
+          DIIS IN EFFECT
+
+          ----------------------
+          INTEGRAL INPUT OPTIONS
+          ----------------------
+ NOPK  =       1 NORDER=       0 SCHWRZ=       T
+
+ ATTENTION! AO INTEGRALS WILL BE PACKED.
+ THRESHOLD FOR PACKING PKTHR =  0.10000000D-05
+
+     -------------------------------
+     INTEGRAL TRANSFORMATION OPTIONS
+     -------------------------------
+     NWORD  =       0     CUTTRF = 1.0E-09
+     MPTRAN =       0     DIRTRF =       T
+     AOINTS =DUP          IREST  =       0
+
+          -----------------------------
+          LOCALIZATION INPUT PARAMETERS
+          -----------------------------
+           LOCAL=BOYS          NOUTA=       2
+          PRTLOC=       F      NOUTB=       0
+          MAXLOC=     250     CVGLOC=1.00E-06
+           FCORE=       T     SYMLOC=       F
+          MOIDON=       F     EDCOMP=       F
+          DIPDCM=       F      NPROT=       0
+          QADDCM=       F     DEPRNT=       F
+          MOOUTA =      1    2
+
+     ------------------------------------------
+     THE POINT GROUP IS C1 , NAXIS= 0, ORDER= 1
+     ------------------------------------------
+
+     DIMENSIONS OF THE SYMMETRY SUBSPACES ARE
+ A   =  14
+
+ ..... DONE SETTING UP THE RUN .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.92 ,  TOTAL =        1.2 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      1.49 ,  TOTAL =        1.5 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =     61.90%,  TOTAL =      78.05%
+
+          -----------------------------
+          LOCALIZATION INPUT PARAMETERS
+          -----------------------------
+           LOCAL=BOYS          NOUTA=       2
+          PRTLOC=       F      NOUTB=       0
+          MAXLOC=     250     CVGLOC=1.00E-06
+           FCORE=       T     SYMLOC=       F
+          MOIDON=       F     EDCOMP=       F
+          DIPDCM=       F      NPROT=       0
+          QADDCM=       F     DEPRNT=       F
+          MOOUTA =      1    2
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.06 ,  TOTAL =        1.2 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.07 ,  TOTAL =        1.6 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =     89.73%,  TOTAL =      78.55%
+
+          -------------
+          GUESS OPTIONS
+          -------------
+          GUESS =HUCKEL            NORB  =       0          NORDER=       0
+          MIX   =       F          PRTMO =       F          SYMDEN=       F
+          TOLZ  = 0.0E+00          TOLE  = 0.0E+00
+
+ INITIAL GUESS ORBITALS GENERATED BY HUCKEL   ROUTINE.
+ HUCKEL GUESS REQUIRES      5922 WORDS.
+
+ LOG10 OF CONDITION NUMBER OF OVERLAP MATRIX IS:  1.07263609E+00
+
+ SYMMETRIES FOR INITIAL GUESS ORBITALS FOLLOW.   BOTH SET(S).
+     8 ORBITALS ARE OCCUPIED (    2 CORE ORBITALS).
+     3=A        4=A        5=A        6=A        7=A        8=A        9=A   
+    10=A       11=A       12=A       13=A       14=A   
+ ...... END OF INITIAL ORBITAL SELECTION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.17 ,  TOTAL =        1.4 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.25 ,  TOTAL =        1.8 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =     68.54%,  TOTAL =      77.17%
+
+          --------------------
+          2 ELECTRON INTEGRALS
+          --------------------
+
+ DIRECT SCF METHOD SKIPS INTEGRAL STORAGE ON DISK.
+ DIRECT TRANSFORMATION SKIPS AO INTEGRAL STORAGE ON DISK.
+ SCHWARZ INEQUALITY OVERHEAD:       103 INTEGRALS, CPU TIME=        0.01
+ ...... END OF TWO-ELECTRON INTEGRALS .....
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =        1.4 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.03 ,  TOTAL =        1.8 SECONDS (    0.0 MIN)
+ CPU UTILIZATION:   STEP =     38.43%,  TOTAL =      76.62%
+
+          -------------------
+          RHF SCF CALCULATION
+          -------------------
+
+     NUCLEAR ENERGY =        33.2760445252
+     MAXIT =  100     NPUNCH=    2
+     EXTRAP=T  DAMP=T  SHIFT=T  RSTRCT=F  DIIS=T  DEM=F  SOSCF=F
+     DENSITY CONV=  2.00E-05
+     MEMORY REQUIRED FOR RHF STEP=     17786 WORDS.
+
+ DIRECT SCF CALCULATION, SCHWRZ=T   FDIFF=F
+ SCHWARZ INEQUALITY OVERHEAD:       105 INTEGRALS, CPU TIME=        0.02
+
+                                                                                                              NONZERO    BLOCKS
+ ITER EX DEM  TOTAL ENERGY      E CHANGE  DENSITY CHANGE    DIIS ERROR      VIR. SHIFT       DAMPING        INTEGRALS   SKIPPED
+   1  0  0   -77.003104502   -77.003104502   0.215707698   0.604612871     0.000000000     1.000000000           6228        16
+          * * *   INITIATING DIIS PROCEDURE   * * *
+   2  1  0   -77.070936554    -0.067832053   0.034614000   0.040972363     0.000000000     1.000000000           6228        16
+   3  2  0   -77.072050296    -0.001113742   0.011029334   0.008721227     0.000000000     1.000000000           6228        16
+   4  3  0   -77.072116063    -0.000065767   0.001775870   0.001142081     0.000000000     1.000000000           6228        16
+   5  4  0   -77.072117470    -0.000001407   0.000028447   0.000023805     0.000000000     1.000000000           6228        16
+   6  5  0   -77.072117471    -0.000000001   0.000002650   0.000002009     0.000000000     1.000000000           6228        16
+   7  6  0   -77.072117471     0.000000000   0.000000059   0.000000077     0.000000000     1.000000000           6228        16
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS =       0.42 SECONDS (       0.06 SEC/ITER)
+     FOCK TIME ON FIRST ITERATION=       0.07, LAST ITERATION=       0.06
+     TIME TO SOLVE SCF EQUATIONS =       0.48 SECONDS (       0.07 SEC/ITER)
+
+ FINAL ENERGY IS      -77.0721174708 AFTER   7 ITERATIONS
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                  -11.0197   -11.0189    -0.9762    -0.7440    -0.6019
+                     A          A          A          A          A   
+    1  C   1  S   0.701858   0.701440   0.177607   0.136715   0.000000
+    2  C   1  S   0.019982   0.030840  -0.471277  -0.415880   0.000000
+    3  C   1  X  -0.002194   0.004279  -0.111428   0.198060   0.000000
+    4  C   1  Y   0.000000   0.000000   0.000000   0.000000   0.393918
+    5  C   1  Z   0.000000   0.000000   0.000000   0.000000   0.000000
+    6  C   2  S   0.701858  -0.701440   0.177607  -0.136715   0.000000
+    7  C   2  S   0.019982  -0.030840  -0.471277   0.415880   0.000000
+    8  C   2  X   0.002194   0.004279   0.111428   0.198060   0.000000
+    9  C   2  Y   0.000000   0.000000   0.000000   0.000000   0.393918
+   10  C   2  Z   0.000000   0.000000   0.000000   0.000000   0.000000
+   11  H   3  S  -0.004743  -0.004881  -0.115399  -0.223568   0.259798
+   12  H   4  S  -0.004743  -0.004881  -0.115399  -0.223568  -0.259798
+   13  H   5  S  -0.004743   0.004881  -0.115399   0.223568   0.259798
+   14  H   6  S  -0.004743   0.004881  -0.115399   0.223568  -0.259798
+
+                      6          7          8          9         10
+                   -0.5283    -0.4629    -0.3231     0.3173     0.6314
+                     A          A          A          A          A   
+    1  C   1  S  -0.015282   0.000000   0.000000   0.000000   0.000000
+    2  C   1  S   0.026451   0.000000   0.000000   0.000000   0.000000
+    3  C   1  X   0.501844   0.000000   0.000000   0.000000   0.000000
+    4  C   1  Y   0.000000  -0.391895   0.000000   0.000000  -0.708085
+    5  C   1  Z   0.000000   0.000000   0.635593   0.809877   0.000000
+    6  C   2  S  -0.015282   0.000000   0.000000   0.000000   0.000000
+    7  C   2  S   0.026451   0.000000   0.000000   0.000000   0.000000
+    8  C   2  X  -0.501844   0.000000   0.000000   0.000000   0.000000
+    9  C   2  Y   0.000000   0.391895   0.000000   0.000000  -0.708085
+   10  C   2  Z   0.000000   0.000000   0.635593  -0.809877   0.000000
+   11  H   3  S  -0.216417  -0.347687   0.000000   0.000000   0.624790
+   12  H   4  S  -0.216417   0.347687   0.000000   0.000000  -0.624790
+   13  H   5  S  -0.216417   0.347687   0.000000   0.000000   0.624790
+   14  H   6  S  -0.216417  -0.347687   0.000000   0.000000  -0.624790
+
+                     11         12         13         14
+                    0.6877     0.6920     0.9402     0.9782
+                     A          A          A          A   
+    1  C   1  S   0.124243  -0.168439   0.000000   0.112256
+    2  C   1  S  -0.821634   1.053154   0.000000  -0.848934
+    3  C   1  X   0.511116  -0.208344   0.000000  -1.146002
+    4  C   1  Y   0.000000   0.000000  -0.949873   0.000000
+    5  C   1  Z   0.000000   0.000000   0.000000   0.000000
+    6  C   2  S   0.124243   0.168439   0.000000  -0.112256
+    7  C   2  S  -0.821634  -1.053154   0.000000   0.848934
+    8  C   2  X  -0.511116  -0.208344   0.000000  -1.146002
+    9  C   2  Y   0.000000   0.000000   0.949873   0.000000
+   10  C   2  Z   0.000000   0.000000   0.000000   0.000000
+   11  H   3  S   0.627407  -0.641981   0.612165  -0.123184
+   12  H   4  S   0.627407  -0.641981  -0.612165  -0.123184
+   13  H   5  S   0.627407   0.641981  -0.612165   0.123184
+   14  H   6  S   0.627407   0.641981   0.612165   0.123184
+
+ WARNING! THIS VERSION OF FIREFLY IS PROBABLY OUTDATED!
+ PLEASE CHECK FIREFLY HOMEPAGE FOR INFORMATION ON UPDATES!
+
+ ...... END OF RHF CALCULATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      1.06 ,  TOTAL =        2.5 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      1.67 ,  TOTAL =        3.5 SECONDS (    0.1 MIN)
+ CPU UTILIZATION:   STEP =     63.48%,  TOTAL =      70.35%
+
+
+                         ------------------------------
+                         properties for the RHF density
+                         ------------------------------
+
+          -----------------
+          ENERGY COMPONENTS
+          -----------------
+
+         WAVEFUNCTION NORMALIZATION =       1.0000000000
+
+                ONE ELECTRON ENERGY =    -169.3461915712
+                TWO ELECTRON ENERGY =      58.9980295752
+           NUCLEAR REPULSION ENERGY =      33.2760445252
+                                      ------------------
+                       TOTAL ENERGY =     -77.0721174708
+
+ ELECTRON-ELECTRON POTENTIAL ENERGY =      58.9980295752
+  NUCLEUS-ELECTRON POTENTIAL ENERGY =    -245.9050663586
+   NUCLEUS-NUCLEUS POTENTIAL ENERGY =      33.2760445252
+                                      ------------------
+             TOTAL POTENTIAL ENERGY =    -153.6309922582
+               TOTAL KINETIC ENERGY =      76.5588747874
+                 VIRIAL RATIO (V/T) =       2.0067038953
+
+  ...... PI ENERGY ANALYSIS ......
+
+ ENERGY ANALYSIS:
+            FOCK ENERGY=     -51.3501324129
+          BARE H ENERGY=    -169.3461915712
+     ELECTRONIC ENERGY =    -110.3481619921
+         KINETIC ENERGY=      76.5588747874
+          N-N REPULSION=      33.2760445252
+           TOTAL ENERGY=     -77.0721174669
+        SIGMA PART(1+2)=    -102.7857140454
+               (K,V1,2)=      74.0226544985    -228.8902396973      52.0818711534
+           PI PART(1+2)=      -7.5624479467
+               (K,V1,2)=       2.5362202888     -17.0148266613       6.9161584257
+  SIGMA SKELETON, ERROR=     -69.5096695202       0.0000000000
+             MIXED PART= 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
+ ...... END OF PI ENERGY ANALYSIS ......
+
+          ---------------------------------------
+          MULLIKEN AND LOWDIN POPULATION ANALYSES
+          ---------------------------------------
+
+     MULLIKEN ATOMIC POPULATION IN EACH MOLECULAR ORBITAL
+
+                      1          2          3          4          5
+
+                  2.000000   2.000000   2.000000   2.000000   2.000000
+
+    1             1.001041   1.000881   0.816953   0.581640   0.572263
+    2             1.001041   1.000881   0.816953   0.581640   0.572263
+    3            -0.000520  -0.000441   0.091524   0.209180   0.213869
+    4            -0.000520  -0.000441   0.091524   0.209180   0.213869
+    5            -0.000520  -0.000441   0.091524   0.209180   0.213869
+    6            -0.000520  -0.000441   0.091524   0.209180   0.213869
+
+                      6          7          8
+
+                  2.000000   2.000000   2.000000
+
+    1             0.731087   0.420765   1.000000
+    2             0.731087   0.420765   1.000000
+    3             0.134457   0.289618   0.000000
+    4             0.134457   0.289618   0.000000
+    5             0.134457   0.289618   0.000000
+    6             0.134457   0.289618   0.000000
+
+               ----- POPULATIONS IN EACH AO -----
+                             MULLIKEN      LOWDIN
+              1  C   1  S     1.99294     1.98695
+              2  C   1  S     1.15977     1.03106
+              3  C   1  X     0.97888     1.02872
+              4  C   1  Y     0.99303     1.01739
+              5  C   1  Z     1.00000     1.00000
+              6  C   2  S     1.99294     1.98695
+              7  C   2  S     1.15977     1.03106
+              8  C   2  X     0.97888     1.02872
+              9  C   2  Y     0.99303     1.01739
+             10  C   2  Z     1.00000     1.00000
+             11  H   3  S     0.93769     0.96794
+             12  H   4  S     0.93769     0.96794
+             13  H   5  S     0.93769     0.96794
+             14  H   6  S     0.93769     0.96794
+
+          ----- MULLIKEN ATOMIC OVERLAP POPULATIONS -----
+          (OFF-DIAGONAL ELEMENTS NEED TO BE MULTIPLIED BY 2)
+
+             1           2           3           4           5
+
+    1    4.7922746
+    2    0.5989418   4.7922746
+    3    0.3921382  -0.0254319   0.5971281
+    4    0.3921382  -0.0254319  -0.0235083   0.5971281
+    5   -0.0254319   0.3921382  -0.0045782   0.0019377   0.5971281
+    6   -0.0254319   0.3921382   0.0019377  -0.0045782  -0.0235083
+
+             6
+
+    6    0.5971281
+
+          TOTAL MULLIKEN AND LOWDIN ATOMIC POPULATIONS
+       ATOM         MULL.POP.    CHARGE          LOW.POP.     CHARGE
+    1 C             6.124629   -0.124629         6.064115   -0.064115
+    2 C             6.124629   -0.124629         6.064115   -0.064115
+    3 H             0.937686    0.062314         0.967943    0.032057
+    4 H             0.937686    0.062314         0.967943    0.032057
+    5 H             0.937686    0.062314         0.967943    0.032057
+    6 H             0.937686    0.062314         0.967943    0.032057
+
+          -------------------------------
+          BOND ORDER AND VALENCE ANALYSIS     BOND ORDER THRESHOLD=0.050
+          -------------------------------
+
+                   BOND                       BOND                       BOND
+  ATOM PAIR DIST  ORDER      ATOM PAIR DIST  ORDER      ATOM PAIR DIST  ORDER
+    1   2  1.339  2.014        1   3  1.085  0.977        1   4  1.085  0.977
+    2   5  1.085  0.977        2   6  1.085  0.977
+
+                       TOTAL       BONDED        FREE
+      ATOM            VALENCE     VALENCE     VALENCE
+    1 C                 3.972       3.972       0.000
+    2 C                 3.972       3.972       0.000
+    3 H                 0.996       0.996       0.000
+    4 H                 0.996       0.996       0.000
+    5 H                 0.996       0.996       0.000
+    6 H                 0.996       0.996       0.000
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (BOHR)    CHARGE
+                 0.000000    0.000000    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+     0.000000    0.000000    0.000000    0.000000
+ ...... END OF PROPERTY EVALUATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.28 ,  TOTAL =        2.7 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.49 ,  TOTAL =        4.0 SECONDS (    0.1 MIN)
+ CPU UTILIZATION:   STEP =     57.70%,  TOTAL =      68.81%
+ ......END OF NBO ANALYSIS......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.01 ,  TOTAL =        2.8 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.03 ,  TOTAL =        4.0 SECONDS (    0.1 MIN)
+ CPU UTILIZATION:   STEP =     38.77%,  TOTAL =      68.61%
+
+          -------------------------
+          BOYS ORBITAL LOCALIZATION
+          -------------------------
+          S.F.BOYS, IN "QUANTUM THEORY OF ATOMS, MOLECULES, AND SOLIDS"
+          P.O.LOWDIN, ED. ACADEMIC PRESS, NY, 1966 PP253-266.
+
+          THIS LOCALIZATION REQUIRES       811 WORDS OF MEMORY.
+          THIS LOCALIZATION HAS   8 ORBITALS, OF WHICH   2 ARE FROZEN.
+
+          THE INITIAL LOCALIZATION SUM IS      0.000000 DEBYE**2
+          BOYS ITERATION  10 ORBITAL CHANGE=    7.3561226207E-06
+          LOCALIZATION CONVERGED IN  16 ITERATIONS
+            THE FINAL LOCALIZATION SUM IS    145.736759 DEBYE**2
+
+          THE BOYS LOCALIZED ORBITALS ARE
+
+                      1          2          3          4          5
+
+    1  C   1  S   0.701858   0.701440   0.120680   0.016035   0.120680
+    2  C   1  S   0.019982   0.030840  -0.352108  -0.063772  -0.352108
+    3  C   1  X  -0.002194   0.004279   0.252342  -0.054282   0.252342
+    4  C   1  Y   0.000000   0.000000  -0.392907   0.001011   0.392907
+    5  C   1  Z   0.000000   0.000000   0.000000   0.000000   0.000000
+    6  C   2  S   0.701858  -0.701440  -0.016035  -0.120680  -0.016035
+    7  C   2  S   0.019982  -0.030840   0.063772   0.352108   0.063772
+    8  C   2  X   0.002194   0.004279  -0.054282   0.252342  -0.054282
+    9  C   2  Y   0.000000   0.000000  -0.001011   0.392907   0.001011
+   10  C   2  Z   0.000000   0.000000   0.000000   0.000000   0.000000
+   11  H   3  S  -0.004743  -0.004881  -0.535112  -0.036143   0.072373
+   12  H   4  S  -0.004743  -0.004881   0.072373   0.051746  -0.535112
+   13  H   5  S  -0.004743   0.004881   0.036143   0.535112  -0.051746
+   14  H   6  S  -0.004743   0.004881  -0.051746  -0.072373   0.036143
+
+                      6          7          8
+
+    1  C   1  S  -0.102047  -0.016035  -0.102047
+    2  C   1  S   0.264258   0.063772   0.264258
+    3  C   1  X   0.291757   0.054282   0.291757
+    4  C   1  Y   0.000000   0.001011   0.000000
+    5  C   1  Z  -0.449432   0.000000   0.449432
+    6  C   2  S  -0.102047   0.120680  -0.102047
+    7  C   2  S   0.264258  -0.352108   0.264258
+    8  C   2  X  -0.291757  -0.252342  -0.291757
+    9  C   2  Y   0.000000   0.392907   0.000000
+   10  C   2  Z  -0.449432   0.000000   0.449432
+   11  H   3  S  -0.038411  -0.051746  -0.038411
+   12  H   4  S  -0.038411   0.036143  -0.038411
+   13  H   5  S  -0.038411   0.072373  -0.038411
+   14  H   6  S  -0.038411  -0.535112  -0.038411
+ ...... END OF ORBITAL LOCALIZATION ......
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.04 ,  TOTAL =        2.8 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.07 ,  TOTAL =        4.1 SECONDS (    0.1 MIN)
+ CPU UTILIZATION:   STEP =     57.65%,  TOTAL =      68.43%
+
+                         TIMING STATISTICS ON RANK 0:
+ CPU        TIME:   STEP =      0.00 ,  TOTAL =        2.8 SECONDS (    0.0 MIN)
+ WALL CLOCK TIME:   STEP =      0.00 ,  TOTAL =        4.1 SECONDS (    0.1 MIN)
+ CPU UTILIZATION:   STEP =      0.00%,  TOTAL =      68.43%
+
+                         OVERALL  TIMING  STATISTICS:
+ GLOBAL CPU TIME ELAPSED      =        13.7 SECONDS (     0.2 MIN)
+ RANK 0 WALL CLOCK TIME       =         4.1 SECONDS (     0.1 MIN)
+ JOB CPU UTILIZATION:   TOTAL =    335.51%, PER RANK AVERAGE =     33.54%
+
+      396855 WORDS OF    DYNAMIC MEMORY USED
+     5585795 BYTES OF    HEAP MEMORY    USED,      113783 BYTES REMAIN IN USE
+
+ WARNING! THIS VERSION OF FIREFLY IS PROBABLY OUTDATED!
+ PLEASE CHECK FIREFLY HOMEPAGE FOR INFORMATION ON UPDATES!
+
+ EXECUTION OF FIREFLY TERMINATED NORMALLY 21:06:01 22-APR-2026    

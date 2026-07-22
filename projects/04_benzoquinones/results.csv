@@ -1,0 +1,24 @@
+row_type,isomer,stage,status,geometry,basis_functions,energy_hartree,xmc_state,spin_s,excitation_ev,nsearch_or_mcscf_iter,max_gradient,rms_gradient,cpu_seconds,wall_seconds,note,file
+stage,p_bq,01_mp2_opt,normal,initial -> MP2 optimized,160,-380.4203931653,,,,12,8.78e-05,3.03e-05,1979.5,376.2,"MP2 geometry optimization; OPTTOL=1D-4, NSTEP=100",p_bq/01_mp2_opt/p_bq_mp2_opt.out
+stage,p_bq,02_cis,normal,initial,160,-379.2449408512,,,,,,,131.9,21.8,CIS/RHF single point,p_bq/02_cis/p_bq_cis.out
+stage,p_bq,03_cis_opt_geometry,normal,MP2 optimized,160,-379.2697346213,,,,,,,141.0,23.3,CIS/RHF single point,p_bq/03_cis_opt_geometry/p_bq_cis_opt_geometry.out
+stage,p_bq,04_xmcqdpt2,normal,MP2 optimized,160,-379.1176177977,,,,3,,,983.5,812.7,"XMCQDPT2/CASSCF(12,10); MP2 geometry, CIS $VEC, ACURCY=5D-2 ENGTOL=1D-2",p_bq/04_xmcqdpt2/p_bq_xmcqdpt2.out
+stage,o_bq,01_mp2_opt,normal,initial -> MP2 optimized,160,-380.408058016,,,,0,2.73e-05,9e-06,148.7,24.5,"MP2 geometry optimization; OPTTOL=1D-4, NSTEP=100",o_bq/01_mp2_opt/o_bq_mp2_opt.out
+stage,o_bq,02_cis,normal,initial,160,-378.9732967948,,,,,,,118.2,21.4,CIS/RHF single point,o_bq/02_cis/o_bq_cis.out
+stage,o_bq,03_cis_opt_geometry,normal,MP2 optimized,160,-379.2537711015,,,,,,,121.5,21.4,CIS/RHF single point,o_bq/03_cis_opt_geometry/o_bq_cis_opt_geometry.out
+stage,o_bq,04_xmcqdpt2,normal,MP2 optimized,160,-379.1167721935,,,,4,,,601.8,453.9,"XMCQDPT2/CASSCF(12,10); MP2 geometry, CIS $VEC, ACURCY=5D-3 ENGTOL=1D-3",o_bq/04_xmcqdpt2/o_bq_xmcqdpt2.out
+xmc_state,p_bq,04_xmcqdpt2,normal,MP2 optimized,160,-379.2584921769,1,,0.0,,,,,,XMCQDPT2 state total energy; excitation relative to state 1,p_bq/04_xmcqdpt2/p_bq_xmcqdpt2.out
+xmc_state,p_bq,04_xmcqdpt2,normal,MP2 optimized,160,-379.1284215362,2,,3.5394024433511553,,,,,,XMCQDPT2 state total energy; excitation relative to state 1,p_bq/04_xmcqdpt2/p_bq_xmcqdpt2.out
+xmc_state,p_bq,04_xmcqdpt2,normal,MP2 optimized,160,-379.1329250018,3,,3.416856901463768,,,,,,XMCQDPT2 state total energy; excitation relative to state 1,p_bq/04_xmcqdpt2/p_bq_xmcqdpt2.out
+xmc_state,p_bq,04_xmcqdpt2,normal,MP2 optimized,160,-379.1014492093,4,,4.2733568485807165,,,,,,XMCQDPT2 state total energy; excitation relative to state 1,p_bq/04_xmcqdpt2/p_bq_xmcqdpt2.out
+xmc_state,p_bq,04_xmcqdpt2,normal,MP2 optimized,160,-378.9668010646,5,,7.937319521316789,,,,,,XMCQDPT2 state total energy; excitation relative to state 1,p_bq/04_xmcqdpt2/p_bq_xmcqdpt2.out
+xmc_state,o_bq,04_xmcqdpt2,normal,MP2 optimized,160,-379.2370583809,1,,0.0,,,,,,XMCQDPT2 state total energy; excitation relative to state 1,o_bq/04_xmcqdpt2/o_bq_xmcqdpt2.out
+xmc_state,o_bq,04_xmcqdpt2,normal,MP2 optimized,160,-379.1499086434,2,,2.371465168348937,,,,,,XMCQDPT2 state total energy; excitation relative to state 1,o_bq/04_xmcqdpt2/o_bq_xmcqdpt2.out
+xmc_state,o_bq,04_xmcqdpt2,normal,MP2 optimized,160,-379.1143826387,3,,3.3381770040171173,,,,,,XMCQDPT2 state total energy; excitation relative to state 1,o_bq/04_xmcqdpt2/o_bq_xmcqdpt2.out
+xmc_state,o_bq,04_xmcqdpt2,normal,MP2 optimized,160,-379.1180363505,4,,3.2387544409962232,,,,,,XMCQDPT2 state total energy; excitation relative to state 1,o_bq/04_xmcqdpt2/o_bq_xmcqdpt2.out
+xmc_state,o_bq,04_xmcqdpt2,normal,MP2 optimized,160,-378.964474954,5,,7.417372913630519,,,,,,XMCQDPT2 state total energy; excitation relative to state 1,o_bq/04_xmcqdpt2/o_bq_xmcqdpt2.out
+attempt,o_bq,04_xmcqdpt2_failed_andrew_vec,abnormal,various test geometries,160,,,,,,,,,,Andrew p-BQ $VEC on o-BQ; MCSCF did not converge,o_bq/04_xmcqdpt2/o_bq_xmcqdpt2_failed_andrew_vec.out
+attempt,o_bq,04_xmcqdpt2_failed_own_mcscf_vec,abnormal,various test geometries,160,,,,,,,,,,Restart from failed o-BQ MCSCF $VEC; MCSCF did not converge in 200 iterations,o_bq/04_xmcqdpt2/o_bq_xmcqdpt2_failed_own_mcscf_vec.out
+attempt,o_bq,04_xmcqdpt2_failed_mp2geom_nstate5,abnormal,various test geometries,160,,,,,,,,,,"NSTATE=5 had only 3 singlet CI eigenvectors, DETDM2 error",o_bq/04_xmcqdpt2/o_bq_xmcqdpt2_failed_mp2geom_nstate5.out
+attempt,o_bq,04_xmcqdpt2_failed_mp2geom_nstate9,abnormal,various test geometries,160,,,,,,,,,,"NSTATE=9 still insufficient for five singlet averaged roots, DETDM2 error",o_bq/04_xmcqdpt2/o_bq_xmcqdpt2_failed_mp2geom_nstate9.out
+attempt,o_bq,01_mp2_opt_trmax005_failed,abnormal,various test geometries,160,,,,,,,,,,Initial o-BQ MP2 with TRMAX=0.05 failed; final used restart geometry and TRMAX=0.01,o_bq/01_mp2_opt/o_bq_mp2_opt_trmax005_failed.out

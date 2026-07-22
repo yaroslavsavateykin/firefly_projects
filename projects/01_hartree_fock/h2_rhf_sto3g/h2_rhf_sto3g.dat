@@ -1,0 +1,22 @@
+ $DATA
+H2 RHF/STO-3G, Koopmans neutral reference                                       
+C1       0
+H           1.0      0.0000000000      0.0000000000     -0.3700000000
+   STO        3
+           
+H           1.0      0.0000000000      0.0000000000      0.3700000000
+   STO        3
+           
+ $END      
+--- RHF ORBITALS --- GENERATED AT 21:05:27 22-APR-2026    
+H2 RHF/STO-3G, Koopmans neutral reference                                       
+E(RHF)=       -1.1167593075, E(NUC)=    0.7151043387,    2 ITERS
+ $VEC
+ 1  1 -5.48842275178731300D-01 -5.48842275178732100D-01
+ 2  1  1.21245191920886400D+00 -1.21245191920886400D+00
+ $END
+ POPULATION ANALYSIS
+H            1.00000   0.00000   1.00000   0.00000
+H            1.00000   0.00000   1.00000   0.00000
+ MOMENTS AT POINT    1 X,Y,Z=  0.000000  0.000000  0.000000
+ DIPOLE       0.000000  0.000000  0.000000
